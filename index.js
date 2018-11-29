@@ -2,6 +2,9 @@
 const packageJson = require('./package.json');
 const program = require('commander');
 const fsp = require('fs').promises;
+const _ = require('lodash');
+const Chance = require('chance');
+const chance = new Chance();
 
 let allPokemon = {};
 
@@ -76,11 +79,23 @@ async function getOptions (program) {
     allOptions.map(o => {
         if (program[o.long]) {
             options[o.long] = program[o.long];
+        } else {
+            options[o.long] = o.default;
         }
     });
     return options;
 }
 
 async function pickRandomPokemon (options) {
+    const pokemonKeys = Object.keys(allPokemon);
+    const numPokemon = pokemonKeys.length;
+    let chosenPokemon = [];
     console.log('picking', options.number, 'random pokemon');
+    _.times(options.number, () => {
+        const randomNum = chance.integer({ min: 0, max: numPokemon - 1 });
+        const randomKey = pokemonKeys[randomNum];
+        const randomPokemon = allPokemon[randomKey];
+        console.log('chose', randomPokemon.name);
+        chosenPokemon.push(randomPokemon);
+    });
 }
