@@ -11,5 +11,8 @@
     "random"
   ],
   "author": "Dylan Stankievech",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^2.19.0"
+  }
 }
