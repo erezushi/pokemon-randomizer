@@ -8,29 +8,6 @@ const chance = new Chance();
 
 let allPokemon = {};
 
-/**
- * Ideas for options:
- * -r: allow repeated pokemon?
- * -g: gens to pick from? list?
- * -e: evolved forms only?
- * -b: babies / first form only?
- * -l: level? range? list of ranges?
- * -t: type list?
- * -s: super effective against?
- * -b: sort by best stats?
- * -m: include randomized moves? attacking vs non-attacking?
- * -n: include nature?
- * -i: include IVs?
- * -ev: include EVs?
- * -s: include shiny chance?
- * -u: all unique? unique types?
- * -f: parse options from file
- * -v: verbose?
- * -h: help?
- * -o: output to file?
- * -p: format output somehow?
- * use prompt?? spinner??
- */
 const allOptions = [
     {
         short: 'n',
