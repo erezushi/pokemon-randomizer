@@ -1,0 +1,15 @@
+{
+  "name": "pokemon-randomizer",
+  "version": "1.0.0",
+  "description": "CLI to pick random teams of pokemon",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "pokemon",
+    "random"
+  ],
+  "author": "Dylan Stankievech",
+  "license": "ISC"
+}
