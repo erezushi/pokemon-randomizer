@@ -1,8 +1,7 @@
 
-const package = require('./package.json');
+const packageJson = require('./package.json');
 const program = require('commander');
 const fsp = require('fs').promises;
-const _ = require('lodash');
 
 let allPokemon = {};
 
@@ -27,7 +26,6 @@ let allPokemon = {};
  * -h: help?
  * -o: output to file?
  * -p: format output somehow?
- * 
  * use prompt?? spinner??
  */
 const allOptions = [
@@ -35,10 +33,10 @@ const allOptions = [
         short: 'n',
         long: 'number',
         type: '<n>',
-        description: "Number of Pokemon",
+        description: 'Number of Pokemon',
         default: 6,
     },
-]
+];
 
 const pokemonFile = 'pokemon.json';
 loadPokemon()
@@ -49,12 +47,12 @@ loadPokemon()
         process.exit(-1);
     });
 
-async function loadPokemon() {
+async function loadPokemon () {
     const pokemonString = await fsp.readFile(pokemonFile, 'utf8');
     allPokemon = JSON.parse(pokemonString);
 }
 
-async function handleInput() {
+async function handleInput () {
     try {
         const parsedOptions = await parseInput();
         return await pickRandomPokemon(parsedOptions);
@@ -65,25 +63,24 @@ async function handleInput() {
     }
 }
 
-async function parseInput() {
-    program.version(package.version);
+async function parseInput () {
+    program.version(packageJson.version);
     allOptions.map(o => program.option(`-${o.short} --${o.long} ${o.type}`, o.description));
     program.parse(process.argv);
 
-    return await getOptions(program);
+    return getOptions(program);
 }
 
-async function getOptions(program) {
+async function getOptions (program) {
     let options = {};
     allOptions.map(o => {
         if (program[o.long]) {
             options[o.long] = program[o.long];
         }
     });
-    
     return options;
 }
 
-async function pickRandomPokemon(options) {
+async function pickRandomPokemon (options) {
     console.log('picking', options.number, 'random pokemon');
 }
