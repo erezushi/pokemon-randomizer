@@ -10,5 +10,5 @@ Options:
 
 Examples:
 
-* npm run start -- -n 5
+* pr -n 5
 
