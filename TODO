@@ -7,7 +7,6 @@ Use prompt or spinner?
 Ideas for options:
 -r: allow repeated pokemon?
 -g: gens to pick from? list?
--e: evolved forms only?
 -b: babies / first form only?
 -l: level? range? list of ranges?
 -t: type list?
