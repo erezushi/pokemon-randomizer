@@ -40,19 +40,49 @@ describe('getFilteredPokemon', async function () {
 describe('pickRandomPokemon', async function () {
     it('should return expected number of pokemon', async function () {
         const options = {
-            number: chance.integer({ min: 1, max: 100 })
+            number: chance.integer({ min: 1, max: 1000 })
         };
 
         const result = await picker.pickRandomPokemon(options);
         expect(result.length).to.be.eq(options.number);
     });
 
-    it('should return empty array for 0 pokemon', async function () {
+    it('should throw an error for 0 number option', async function () {
         const options = {
             number: 0
         };
 
-        const result = await picker.pickRandomPokemon(options);
-        expect(result.length).to.be.eq(options.number);
+        try {
+            await picker.pickRandomPokemon(options);
+            throw new Error(`Didn't throw!`);
+        } catch (err) {
+            expect(err.message).to.be.eq('Number of pokemon to pick must be a positive integer');
+        }
+    });
+
+    it('should throw an error for negative number option', async function () {
+        const options = {
+            number: chance.integer({ min: Number.MIN_SAFE_INTEGER, max: -1 })
+        };
+
+        try {
+            await picker.pickRandomPokemon(options);
+            throw new Error(`Didn't throw!`);
+        } catch (err) {
+            expect(err.message).to.be.eq('Number of pokemon to pick must be a positive integer');
+        }
+    });
+
+    it('should throw an error for non-integer number option', async function () {
+        const options = {
+            number: chance.string()
+        };
+
+        try {
+            await picker.pickRandomPokemon(options);
+            throw new Error(`Didn't throw!`);
+        } catch (err) {
+            expect(err.message).to.be.eq('Number of pokemon to pick must be a positive integer');
+        }
     });
 });
