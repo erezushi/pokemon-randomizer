@@ -4,7 +4,7 @@
   "description": "CLI to pick random teams of pokemon",
   "main": "index.js",
   "bin": {
-    "pr": "./bin/index.js"
+    "poke-rand": "./bin/index.js"
   },
   "scripts": {
     "lint": "eslint .",
