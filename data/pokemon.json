@@ -7,7 +7,7 @@
         "defense": 49,
         "evolveLevel": 16,
         "evolveTo": "2",
-        "type": "grass",
+        "type": "grass poison",
         "moves": [
             "tackle",
             "vine whip"
@@ -25,7 +25,7 @@
         "defense": 63,
         "evolveLevel": 32,
         "evolveTo": "3",
-        "type": "grass",
+        "type": "grass poison",
         "moves": [
             "tackle",
             "vine whip",
@@ -37,7 +37,7 @@
         "name": "Venusaur",
         "attack": 82,
         "defense": 83,
-        "type": "grass",
+        "type": "grass poison",
         "moves": [
             "tackle",
             "vine whip",
@@ -83,7 +83,7 @@
         "name": "Charizard",
         "attack": 84,
         "defense": 78,
-        "type": "fire",
+        "type": "fire flying",
         "moves": [
             "flamethrower",
             "wing attack",
@@ -160,7 +160,7 @@
         "name": "Butterfree",
         "attack": 45,
         "defense": 50,
-        "type": "bug",
+        "type": "bug flying",
         "moves": [
             "confusion",
             "gust",
@@ -175,7 +175,7 @@
         "defense": 30,
         "evolveLevel": 7,
         "evolveTo": "14",
-        "type": "bug",
+        "type": "bug poison",
         "moves": [
             "poison sting"
         ],
@@ -186,13 +186,25 @@
         ],
         "probability": 15
     },
+    "14": {
+        "_TODO": "fill this out",
+        "name": "Kakuna",
+        "evolveLevel": 10,
+        "evolveTo": "15",
+        "type": "bug poison"
+    },
+    "15": {
+        "_TODO": "fill this out",
+        "name": "Beedrill",
+        "type": "bug poison"
+    },
     "16": {
         "name": "Pidgey",
         "attack": 45,
         "defense": 40,
         "evolveLevel": 18,
         "evolveTo": "17",
-        "type": "normal",
+        "type": "normal flying",
         "moves": [
             "tackle",
             "gust"
@@ -210,7 +222,7 @@
         "defense": 55,
         "evolveLevel": 36,
         "evolveTo": "18",
-        "type": "normal",
+        "type": "normal flying",
         "moves": [
             "tackle",
             "gust",
@@ -222,7 +234,7 @@
         "name": "Pidgeot",
         "attack": 80,
         "defense": 75,
-        "type": "normal",
+        "type": "normal flying",
         "moves": [
             "tackle",
             "gust",
@@ -265,7 +277,7 @@
         "defense": 30,
         "evolveLevel": 20,
         "evolveTo": "22",
-        "type": "normal",
+        "type": "normal flying",
         "moves": [
             "peck"
         ],
@@ -280,7 +292,7 @@
         "name": "Fearow",
         "attack": 90,
         "defense": 65,
-        "type": "normal",
+        "type": "normal flying",
         "moves": [
             "peck",
             "drill peck"
@@ -387,11 +399,17 @@
         ],
         "probability": 15
     },
+    "30": {
+        "_TODO": "fill this out",
+        "name": "Nidorina",
+        "evolveTo": "31",
+        "type": "poison"
+    },
     "31": {
         "name": "Nidoqueen",
         "attack": 82,
         "defense": 87,
-        "type": "poison",
+        "type": "poison ground",
         "moves": [
             "scratch",
             "poison sting",
@@ -417,11 +435,16 @@
         ],
         "probability": 15
     },
+    "33": {
+        "name": "Nidorino",
+        "evolveTo": "34",
+        "type": "poison",
+    },
     "34": {
         "name": "Nidoking",
         "attack": 92,
         "defense": 77,
-        "type": "poison",
+        "type": "poison ground",
         "moves": [
             "peck",
             "poison sting",
