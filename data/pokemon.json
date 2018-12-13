@@ -438,7 +438,7 @@
     "33": {
         "name": "Nidorino",
         "evolveTo": "34",
-        "type": "poison",
+        "type": "poison"
     },
     "34": {
         "name": "Nidoking",
