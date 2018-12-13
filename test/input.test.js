@@ -2,14 +2,14 @@
 
 const input = require('../lib/input');
 const expect = require('chai').expect;
-const constants = require('../lib/constants');
+const allOptions = require('../lib/options');
 const Chance = require('chance');
 const chance = new Chance();
 
 describe('input', async function () {
     describe('getOptions', async function () {
         describe('number', async function () {
-            const numberOption = constants.ALL_OPTIONS.find(o => o.long === 'number');
+            const numberOption = allOptions.ALL_OPTIONS.find(o => o.long === 'number');
             const getErrorText = (value) => 'Number option must be a positive integer. Received: ' + value;
 
             it('should accept a positive integer', async function () {
@@ -72,7 +72,7 @@ describe('input', async function () {
         });
 
         describe('evolved', async function () {
-            const evolvedOption = constants.ALL_OPTIONS.find(o => o.long === 'evolved');
+            const evolvedOption = allOptions.ALL_OPTIONS.find(o => o.long === 'evolved');
             const getErrorText = (value) => 'Evolved option must be a boolean. Received: ' + value;
 
             it('should accept true', async function () {
