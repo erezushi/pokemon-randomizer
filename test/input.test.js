@@ -14,19 +14,19 @@ describe('input', async function () {
 
             it('should accept a positive integer', async function () {
                 const number = chance.natural();
-                const options = input.getOptions({ number });
+                const options = await input.getOptions({ number });
                 expect(options.number).to.eq(number);
             });
     
             it('should choose default if given undefined', async function () {
                 const number = undefined;
-                const options = input.getOptions({ number });
+                const options = await input.getOptions({ number });
                 expect(options.number).to.eq(numberOption.default);
             });
 
             it('should choose default if given null', async function () {
                 const number = null;
-                const options = input.getOptions({ number });
+                const options = await input.getOptions({ number });
                 expect(options.number).to.eq(numberOption.default);
             });
 
@@ -77,25 +77,25 @@ describe('input', async function () {
 
             it('should accept true', async function () {
                 const evolved = true;
-                const options = input.getOptions({ evolved });
+                const options = await input.getOptions({ evolved });
                 expect(options.evolved).to.eq(evolved);
             });
     
             it('should accept false', async function () {
                 const evolved = false;
-                const options = input.getOptions({ evolved });
+                const options = await input.getOptions({ evolved });
                 expect(options.evolved).to.eq(evolved);
             });
 
             it('should use default for null', async function () {
                 const evolved = null;
-                const options = input.getOptions({ evolved });
+                const options = await input.getOptions({ evolved });
                 expect(options.evolved).to.eq(evolvedOption.default);
             });
 
             it('should use default for undefined', async function () {
                 const evolved = undefined;
-                const options = input.getOptions({ evolved });
+                const options = await input.getOptions({ evolved });
                 expect(options.evolved).to.eq(evolvedOption.default);
             });
 
