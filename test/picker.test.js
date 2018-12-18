@@ -56,5 +56,25 @@ describe('picker', async function () {
             const result = await picker.pickRandomPokemon(options);
             expect(result.length).to.be.eq(options.number);
         });
+
+        it('should return unique pokemon', async function () {
+            const options = {
+                number: 6,
+                unique: true
+            };
+
+            const result = await picker.pickRandomPokemon(options);
+            const counts = result.reduce((acc, poke) => {
+                if (!acc[poke.name]) {
+                    acc[poke.name] = 1;
+                } else {
+                    acc[poke.name]++;
+                }
+                return acc;
+            }, {});
+            _.forEach(counts, (value, key) => {
+                expect(value).to.be.eq(1);
+            });
+        });
     });
 });
