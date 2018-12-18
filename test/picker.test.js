@@ -36,6 +36,15 @@ describe('picker', async function () {
             const result = await picker.getFilteredPokemon(options);
             _.forEach(result, (poke) => expect(poke.evolveTo).to.be.undefined);
         });
+
+        it('should filter type of pokemon', async function () {
+            const options = {
+                type: 'fire'
+            };
+
+            const result = await picker.getFilteredPokemon(options);
+            _.forEach(result, (poke) => expect(poke.type).to.include(options.type));
+        });
     });
 
     describe('pickRandomPokemon', async function () {

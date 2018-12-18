@@ -119,5 +119,64 @@ describe('input', async function () {
                 }
             });
         });
+
+        describe('type', async function () {
+            const typeOption = allOptions.ALL_OPTIONS.find(o => o.long === 'type');
+            const getErrorText = (value) => 'Type option must be a valid type. Received: ' + value;
+
+            it('should accept valid types', async function () {
+                const types = ['normal', 'fire', 'fighting', 'water', 'flying', 'grass',
+                    'poison', 'electric', 'ground', 'psychic', 'rock', 'ice', 'bug',
+                    'dragon', 'ghost', 'dark', 'steel', 'fairy'];
+                return types.forEach(async type => {
+                    const options = await input.getOptions({ type });
+                    expect(options.type).to.eq(type);
+                });
+            });
+
+            it('should allow uppercase', async function () {
+                const type = 'DraGOn';
+                const options = await input.getOptions({ type });
+                expect(options.type).to.eq(type.toLowerCase());
+            });
+
+            it('should allow whitespace', async function () {
+                const type = '          ghost                   ';
+                const options = await input.getOptions({ type });
+                expect(options.type).to.eq(type.trim());
+            });
+
+            it('should use default for null', async function () {
+                const type = null;
+                const options = await input.getOptions({ type });
+                expect(options.type).to.eq(typeOption.default);
+            });
+
+            it('should use default for undefined', async function () {
+                const type = undefined;
+                const options = await input.getOptions({ type });
+                expect(options.type).to.eq(typeOption.default);
+            });
+
+            it('should throw error if given a number', async function () {
+                const type = chance.integer();
+                try {
+                    await input.getOptions({ type });
+                    throw new Error(`Didn't throw!`);
+                } catch (err) {
+                    expect(err.message).to.be.eq(getErrorText(type));
+                }
+            });
+
+            it('should throw error if given an invalid type', async function () {
+                const type = chance.string();
+                try {
+                    await input.getOptions({ type });
+                    throw new Error(`Didn't throw!`);
+                } catch (err) {
+                    expect(err.message).to.be.eq(getErrorText(type));
+                }
+            });
+        });
     });
 });
