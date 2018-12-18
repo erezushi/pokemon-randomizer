@@ -178,5 +178,54 @@ describe('input', async function () {
                 }
             });
         });
+
+        describe('unique', async function () {
+            const uniqueOption = allOptions.ALL_OPTIONS.find(o => o.long === 'unique');
+            const getErrorText = (value) => 'Unique option must be a boolean. Received: ' + value;
+
+            it('should accept true', async function () {
+                const unique = true;
+                const options = await input.getOptions({ unique });
+                expect(options.unique).to.eq(unique);
+            });
+    
+            it('should accept false', async function () {
+                const unique = false;
+                const options = await input.getOptions({ unique });
+                expect(options.unique).to.eq(unique);
+            });
+
+            it('should use default for null', async function () {
+                const unique = null;
+                const options = await input.getOptions({ unique });
+                expect(options.unique).to.eq(uniqueOption.default);
+            });
+
+            it('should use default for undefined', async function () {
+                const unique = undefined;
+                const options = await input.getOptions({ unique });
+                expect(options.unique).to.eq(uniqueOption.default);
+            });
+
+            it('should throw error if given a number', async function () {
+                const unique = chance.integer();
+                try {
+                    await input.getOptions({ unique });
+                    throw new Error(`Didn't throw!`);
+                } catch (err) {
+                    expect(err.message).to.be.eq(getErrorText(unique));
+                }
+            });
+
+            it('should throw error if given a string', async function () {
+                const unique = chance.string();
+                try {
+                    await input.getOptions({ unique });
+                    throw new Error(`Didn't throw!`);
+                } catch (err) {
+                    expect(err.message).to.be.eq(getErrorText(unique));
+                }
+            });
+        });
     });
 });
