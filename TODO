@@ -1,25 +1,23 @@
-Unit testing!
-Organize code into separate files / directories
 Add more options
 Update pokemon.json (more gens, more stats / info?)
 Use prompt or spinner?
 
 Ideas for options:
--r: allow repeated pokemon?
--g: gens to pick from? list?
+-rt: random type?
 -b: babies / first form only?
+-s: super effective against? resistant against?
+-m: include randomized moves? attacking vs non-attacking?
+-f: parse options from file
 -l: level? range? list of ranges?
 -t: type list?
--s: super effective against?
+-tc: type coverage?
+-ut: unique types?
+-g: gens to pick from? list?
 -b: sort by best stats?
--m: include randomized moves? attacking vs non-attacking?
 -n: include nature?
 -i: include IVs?
 -ev: include EVs?
 -s: include shiny chance?
--u: all unique? unique types?
--f: parse options from file
 -v: verbose?
--h: help?
 -o: output to file?
 -p: format output somehow?
