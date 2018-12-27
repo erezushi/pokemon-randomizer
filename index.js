@@ -1,3 +1,3 @@
 const picker = require('./lib/picker');
 
-exports = picker;
+module.exports = picker;
