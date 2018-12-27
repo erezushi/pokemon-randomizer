@@ -1,7 +1,7 @@
 {
   "name": "pokemon-randomizer",
   "version": "0.1.0",
-  "description": "CLI to pick random teams of pokemon",
+  "description": "Library to pick random teams of pokemon",
   "scripts": {
     "lint": "eslint .",
     "lint-fix": "eslint . --fix",
