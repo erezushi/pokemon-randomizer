@@ -2,6 +2,7 @@
   "name": "pokemon-randomizer",
   "version": "0.1.0",
   "description": "Library to pick random teams of pokemon",
+  "main": "index.js",
   "scripts": {
     "lint": "eslint .",
     "lint-fix": "eslint . --fix",
@@ -13,6 +14,7 @@
   ],
   "author": "Dylan Stankievech",
   "license": "ISC",
+  "repository": "https://github.com/Dylanlan/pokemon-randomizer",
   "dependencies": {
     "chance": "^1.0.16",
     "lodash": "^4.17.11"
