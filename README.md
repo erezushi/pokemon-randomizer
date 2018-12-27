@@ -1,7 +1,7 @@
 Pokemon Randomizer
 ==================
 
-This is a simple command line interface to generate random teams of pokemon
+This is a simple library to generate random teams of pokemon
 
 
 Options:
@@ -11,5 +11,10 @@ Options:
 
 Examples:
 
-* pr -n 5
+const pokeRand = require('pokemon-randomizer');
 
+// Chooses 6 random pokemon
+const pokemon = pokeRand.pickRandomPokemon();
+
+// Chooses 3 random final stage pokemon
+const fullyEvolved = pokeRand.pickRandomPokemon({ number: 3, evolved: true });
