@@ -4,9 +4,9 @@ Update pokemon.json (more gens, more stats / info?)
 Ideas for options:
 -rt: random type?
 -b: babies / first form only?
--s: super effective against? resistant against?
+-r: resistant against?
+-w: weak against?
 -m: include randomized moves? attacking vs non-attacking?
--f: parse options from file
 -l: level? range? list of ranges?
 -t: type list?
 -tc: type coverage?

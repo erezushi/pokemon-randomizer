@@ -11,10 +11,10 @@ Options:
 
 Examples:
 
-const pokeRand = require('pokemon-randomizer');
+    const pokeRand = require('pokemon-randomizer');
 
-// Chooses 6 random pokemon
-const pokemon = pokeRand.pickRandomPokemon();
+    // Chooses 6 random pokemon
+    const pokemon = pokeRand.pickRandomPokemon();
 
-// Chooses 3 random final stage pokemon
-const fullyEvolved = pokeRand.pickRandomPokemon({ number: 3, evolved: true });
+    // Chooses 3 random final stage pokemon
+    const fullyEvolved = pokeRand.pickRandomPokemon({ number: 3, evolved: true });
