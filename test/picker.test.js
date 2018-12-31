@@ -45,6 +45,29 @@ describe('picker', async function () {
             const result = await picker.getFilteredPokemon(options);
             _.forEach(result, (poke) => expect(poke.type).to.include(options.type));
         });
+
+        it('should filter fire pokemon', async function () {
+            const pokemon = ['Charmander', 'Charmeleon', 'Charizard', 'Vulpix', 'Ninetales',
+                'Growlithe', 'Arcanine', 'Ponyta', 'Rapidash', 'Magmar', 'Flareon', 'Moltres'];
+            const options = {
+                type: 'fire'
+            };
+
+            const result = await picker.getFilteredPokemon(options);
+            const names = result.map(r => r.name);
+            _.forEach(pokemon, (poke) => expect(names).to.include(poke));
+            expect(names.length).to.be.eq(pokemon.length);
+        });
+
+        it('should filter super effective against fire', async function () {
+            const types = ['water', 'ground', 'rock'];
+            const options = {
+                superEffective: 'fire'
+            };
+
+            const result = await picker.getFilteredPokemon(options);
+            _.forEach(result, (poke) => expect(_.intersection(poke.type.split(' '), types).length).to.be.above(0));
+        });
     });
 
     describe('pickRandomPokemon', async function () {
