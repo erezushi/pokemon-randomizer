@@ -85,7 +85,7 @@ describe('data', async function () {
         describe('getPokemon', async function () {
             it('should return expected number of pokemon', async function () {
                 const results = await data.getPokemon();
-                expect(Object.keys(results).length).to.be.eq(129);
+                expect(Object.keys(results).length).to.be.eq(151);
             });
 
             it('should return names for all pokemon', async function () {

@@ -156,6 +156,10 @@
         ],
         "probability": 15
     },
+    "11": {
+        "name": "Metapod",
+        "type": "bug"
+    },
     "12": {
         "name": "Butterfree",
         "attack": 45,
@@ -452,6 +456,20 @@
         ],
         "curve": 1.3
     },
+    "35": {
+        "name": "Clefairy",
+        "type": "fairy",
+        "evolveTo": "36"
+    },
+    "36": {
+        "name": "Clefable",
+        "type": "fairy"
+    },
+    "37": {
+        "name": "Vulpix",
+        "type": "fire",
+        "evolveTo": "38"
+    },
     "38": {
         "name": "Ninetales",
         "attack": 76,
@@ -462,13 +480,22 @@
         ],
         "curve": 1.6
     },
+    "39": {
+        "name": "Jigglypuff",
+        "type": "normal fairy",
+        "evolveTo": "40"
+    },
+    "40": {
+        "name": "Wigglytuff",
+        "type": "normal fairy"
+    },
     "41": {
         "name": "Zubat",
         "attack": 45,
         "defense": 35,
         "evolveLevel": 22,
         "evolveTo": "42",
-        "type": "poison",
+        "type": "poison flying",
         "moves": [
             "astonish",
             "bite",
@@ -485,7 +512,7 @@
         "name": "Golbat",
         "attack": 80,
         "defense": 70,
-        "type": "poison",
+        "type": "poison flying",
         "moves": [
             "poison fang",
             "bite",
@@ -494,13 +521,27 @@
         ],
         "curve": 1.6
     },
+    "43": {
+        "name": "Oddish",
+        "type": "grass poison",
+        "evolveTo": "44"
+    },
+    "44": {
+        "name": "Gloom",
+        "type": "grass poison",
+        "evolveTo": "45"
+    },
+    "45": {
+        "name": "Vileplume",
+        "type": "grass poison"
+    },
     "46": {
         "name": "Paras",
         "attack": 70,
         "defense": 55,
         "evolveLevel": 24,
         "evolveTo": "47",
-        "type": "bug",
+        "type": "bug grass",
         "moves": [
             "scratch"
         ],
@@ -515,7 +556,7 @@
         "name": "Parasect",
         "attack": 95,
         "defense": 80,
-        "type": "bug",
+        "type": "bug grass",
         "moves": [
             "scratch",
             "slash"
@@ -528,7 +569,7 @@
         "defense": 50,
         "evolveLevel": 31,
         "evolveTo": "49",
-        "type": "bug",
+        "type": "bug poison",
         "moves": [
             "tackle",
             "confusion"
@@ -544,7 +585,7 @@
         "name": "Venomoth",
         "attack": 65,
         "defense": 60,
-        "type": "bug",
+        "type": "bug poison",
         "moves": [
             "psybeam",
             "psychic",
@@ -674,6 +715,11 @@
         ],
         "curve": 1.6
     },
+    "58": {
+        "name": "Growlithe",
+        "type": "fire",
+        "evolveTo": "59"
+    },
     "59": {
         "name": "Arcanine",
         "attack": 110,
@@ -703,15 +749,29 @@
         ],
         "probability": 6
     },
+    "61": {
+        "name": "Poliwhirl",
+        "type": "water"
+    },
     "62": {
         "name": "Poliwrath",
         "attack": 85,
         "defense": 95,
-        "type": "water",
+        "type": "water fighting",
         "moves": [
             "water gun"
         ],
         "curve": 1.3
+    },
+    "63": {
+        "name": "Abra",
+        "type": "psychic",
+        "evolveTo": "64"
+    },
+    "64": {
+        "name": "Kadabra",
+        "type": "psychic",
+        "evolveTo": "65"
     },
     "65": {
         "name": "Alakazam",
@@ -743,6 +803,11 @@
         ],
         "probability": 12
     },
+    "67": {
+        "name": "Machoke",
+        "type": "fighting",
+        "evolveTo": "68"
+    },
     "68": {
         "name": "Machamp",
         "attack": 130,
@@ -762,7 +827,7 @@
         "defense": 35,
         "evolveLevel": 21,
         "evolveTo": "70",
-        "type": "grass",
+        "type": "grass poison",
         "moves": [
             "vine whip"
         ],
@@ -773,11 +838,16 @@
         ],
         "probability": 15
     },
+    "70": {
+        "name": "Weepinbell",
+        "type": "grass poison",
+        "evolveTo": "71"
+    },
     "71": {
         "name": "Victreebel",
         "attack": 105,
         "defense": 65,
-        "type": "grass",
+        "type": "grass poison",
         "moves": [
             "vine whip",
             "razor leaf"
@@ -790,7 +860,7 @@
         "defense": 35,
         "evolveLevel": 30,
         "evolveTo": "73",
-        "type": "water",
+        "type": "water poison",
         "moves": [
             "poison sting",
             "constrict",
@@ -808,7 +878,7 @@
         "name": "Tentacruel",
         "attack": 70,
         "defense": 65,
-        "type": "water",
+        "type": "water poison",
         "moves": [
             "hydro pump",
             "constrict",
@@ -823,7 +893,7 @@
         "defense": 100,
         "evolveLevel": 25,
         "evolveTo": "75",
-        "type": "rock",
+        "type": "rock ground",
         "moves": [
             "tackle",
             "rock throw"
@@ -835,11 +905,16 @@
         ],
         "probability": 15
     },
+    "75": {
+        "name": "Graveler",
+        "type": "rock ground",
+        "evolveTo": "76"
+    },
     "76": {
         "name": "Golem",
         "attack": 110,
         "defense": 130,
-        "type": "rock",
+        "type": "rock ground",
         "moves": [
             "tackle",
             "rock throw",
@@ -883,7 +958,7 @@
         "defense": 65,
         "evolveLevel": 37,
         "evolveTo": "80",
-        "type": "water",
+        "type": "water psychic",
         "moves": [
             "tackle",
             "water gun",
@@ -901,7 +976,7 @@
         "name": "Slowbro",
         "attack": 75,
         "defense": 110,
-        "type": "water",
+        "type": "water psychic",
         "moves": [
             "psychic",
             "water gun",
@@ -916,7 +991,7 @@
         "defense": 70,
         "evolveLevel": 30,
         "evolveTo": "82",
-        "type": "electric",
+        "type": "electric steel",
         "moves": [
             "tackle",
             "thundershock",
@@ -933,7 +1008,7 @@
         "name": "Magneton",
         "attack": 60,
         "defense": 95,
-        "type": "electric",
+        "type": "electric steel",
         "moves": [
             "tackle",
             "thundershock",
@@ -946,7 +1021,7 @@
         "name": "Farfetch'd",
         "attack": 65,
         "defense": 55,
-        "type": "normal",
+        "type": "normal flying",
         "moves": [
             "peck",
             "slash"
@@ -964,7 +1039,7 @@
         "defense": 45,
         "evolveLevel": 31,
         "evolveTo": "85",
-        "type": "normal",
+        "type": "normal flying",
         "moves": [
             "peck"
         ],
@@ -979,7 +1054,7 @@
         "name": "Dodrio",
         "attack": 110,
         "defense": 70,
-        "type": "normal",
+        "type": "normal flying",
         "moves": [
             "peck",
             "drill peck"
@@ -1009,7 +1084,7 @@
         "name": "Dewgong",
         "attack": 70,
         "defense": 80,
-        "type": "water",
+        "type": "water ice",
         "moves": [
             "ice beam",
             "headbutt",
@@ -1048,11 +1123,16 @@
         ],
         "curve": 1.6
     },
+    "90": {
+        "name": "Shellder",
+        "type": "water",
+        "evolveTo": "91"
+    },
     "91": {
         "name": "Cloyster",
         "attack": 95,
         "defense": 180,
-        "type": "water",
+        "type": "water ice",
         "moves": [
             "aurora beam"
         ],
@@ -1064,7 +1144,7 @@
         "defense": 30,
         "evolveLevel": 25,
         "evolveTo": "93",
-        "type": "ghost",
+        "type": "ghost poison",
         "moves": [
             "tackle",
             "lick"
@@ -1076,11 +1156,16 @@
         ],
         "probability": 10
     },
+    "93": {
+        "name": "Haunter",
+        "type": "ghost poison",
+        "evolveTo": "94"
+    },
     "94": {
         "name": "Gengar",
         "attack": 65,
         "defense": 60,
-        "type": "ghost",
+        "type": "ghost poison",
         "moves": [
             "tackle",
             "lick",
@@ -1093,7 +1178,7 @@
         "name": "Onix",
         "attack": 45,
         "defense": 160,
-        "type": "rock",
+        "type": "rock ground",
         "moves": [
             "iron tail",
             "rock throw",
@@ -1202,11 +1287,16 @@
         ],
         "curve": 1.6
     },
+    "102": {
+        "name": "Exeggcute",
+        "type": "grass pyschic",
+        "evolveTo": "103"
+    },
     "103": {
         "name": "Exeggutor",
         "attack": 95,
         "defense": 85,
-        "type": "grass",
+        "type": "grass psychic",
         "moves": [
             "confusion",
             "stomp",
@@ -1327,7 +1417,7 @@
         "defense": 95,
         "evolveLevel": 42,
         "evolveTo": "112",
-        "type": "ground",
+        "type": "ground rock",
         "moves": [
             "horn attack",
             "stomp"
@@ -1343,7 +1433,7 @@
         "name": "Rhydon",
         "attack": 130,
         "defense": 120,
-        "type": "ground",
+        "type": "ground rock",
         "moves": [
             "horn attack",
             "stomp",
@@ -1465,11 +1555,16 @@
         ],
         "curve": 1.6
     },
+    "120": {
+        "name": "Staryu",
+        "type": "water",
+        "evolveTo": "121"
+    },
     "121": {
         "name": "Starmie",
         "attack": 75,
         "defense": 85,
-        "type": "water",
+        "type": "water psychic",
         "moves": [
             "water gun",
             "swift"
@@ -1498,7 +1593,7 @@
         "name": "Scyther",
         "attack": 110,
         "defense": 80,
-        "type": "bug",
+        "type": "bug flying",
         "moves": [
             "wing attack",
             "slash"
@@ -1514,7 +1609,7 @@
         "name": "Jynx",
         "attack": 50,
         "defense": 35,
-        "type": "ice",
+        "type": "ice psychic",
         "moves": [
             "body slam",
             "blizzard",
@@ -1616,7 +1711,7 @@
         "name": "Gyarados",
         "attack": 125,
         "defense": 79,
-        "type": "water",
+        "type": "water flying",
         "moves": [
             "bite",
             "twister",
@@ -1628,7 +1723,7 @@
         "name": "Lapras",
         "attack": 85,
         "defense": 80,
-        "type": "water",
+        "type": "water ice",
         "moves": [
             "water gun",
             "body slam",
@@ -1641,6 +1736,10 @@
             15
         ],
         "probability": 4
+    },
+    "132": {
+        "name": "Ditto",
+        "type": "normal"
     },
     "133": {
         "name": "Eevee",
@@ -1657,6 +1756,10 @@
             35
         ],
         "probability": 8
+    },
+    "134": {
+        "name": "Vaporeon",
+        "type": "water"
     },
     "135": {
         "levels": [
@@ -1711,7 +1814,7 @@
         "defense": 100,
         "evolveLevel": 40,
         "evolveTo": "139",
-        "type": "rock",
+        "type": "rock water",
         "moves": [
             "constrict",
             "bite",
@@ -1724,7 +1827,7 @@
         "name": "Omastar",
         "attack": 60,
         "defense": 125,
-        "type": "rock",
+        "type": "rock water",
         "moves": [
             "ancientpower",
             "hydro pump",
@@ -1739,7 +1842,7 @@
         "defense": 90,
         "evolveLevel": 40,
         "evolveTo": "141",
-        "type": "rock",
+        "type": "rock water",
         "moves": [
             "scratch",
             "mud shot"
@@ -1750,7 +1853,7 @@
         "name": "Kabutops",
         "attack": 115,
         "defense": 105,
-        "type": "rock",
+        "type": "rock water",
         "moves": [
             "scratch",
             "mud shot",
@@ -1763,7 +1866,7 @@
         "name": "Aerodactyl",
         "attack": 105,
         "defense": 65,
-        "type": "rock",
+        "type": "rock flying",
         "moves": [
             "wing attack",
             "bite",
@@ -1793,7 +1896,7 @@
         "name": "Articuno",
         "attack": 85,
         "defense": 100,
-        "type": "ice",
+        "type": "ice flying",
         "moves": [
             "gust",
             "powder snow",
@@ -1811,7 +1914,7 @@
         "name": "Zapdos",
         "attack": 90,
         "defense": 85,
-        "type": "electric",
+        "type": "electric flying",
         "moves": [
             "peck",
             "thundershock",
@@ -1829,7 +1932,7 @@
         "name": "Moltres",
         "attack": 100,
         "defense": 90,
-        "type": "fire",
+        "type": "fire flying",
         "moves": [
             "wing attack",
             "ember",
@@ -1878,7 +1981,7 @@
         "name": "Dragonite",
         "attack": 134,
         "defense": 95,
-        "type": "dragon",
+        "type": "dragon flying",
         "moves": [
             "twister",
             "slam",
