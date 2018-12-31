@@ -1,56 +1,110 @@
 {
     "normal": {
-
+        "super-effective": "",
+        "not-effective": "rock ghost steel",
+        "resistant": "",
+        "immune": "ghost"
     },
     "fire": {
-
+        "super-effective": "bug steel grass ice",
+        "not-effective": "rock fire water dragon",
+        "resistant": "bug steel fire grass ice",
+        "immune": ""
     },
     "fighting": {
-
+        "super-effective": "normal rock steel ice dark",
+        "not-effective": "flying poison psychic bug ghost fairy",
+        "resistant": "rock bug dark",
+        "immune": ""
     },
     "water": {
-
+        "super-effective": "ground rock fire",
+        "not-effective": "water grass dragon",
+        "resistant": "steel fire water ice",
+        "immune": ""
     },
     "flying": {
-
+        "super-effective": "fighting bug grass",
+        "not-effective": "rock steel electric",
+        "resistant": "fighting ground bug grass",
+        "immune": "ground"
     },
     "grass": {
-
+        "super-effective": "ground rock water",
+        "not-effective": "flying poison bug steel fire grass dragon",
+        "resistant": "ground water grass electric",
+        "immune": ""
     },
     "poison": {
-
+        "super-effective": "grass fairy",
+        "not-effective": "poison ground rock ghost steel",
+        "resistant": "fighting poison grass fairy",
+        "immune": ""
     },
     "electric": {
-
+        "super-effective": "flying water",
+        "not-effective": "ground grass electric dragon",
+        "resistant": "flying steel electric",
+        "immune": ""
     },
     "ground": {
-
+        "super-effective": "poison rock steel fire electric",
+        "not-effective": "flying bug grass",
+        "resistant": "poison rock electric",
+        "immune": "electric"
     },
     "psychic": {
-
+        "super-effective": "fighting poison",
+        "not-effective": "steel psychic dark",
+        "resistant": "fighting psychic",
+        "immune": ""
     },
     "rock": {
-
+        "super-effective": "flying bug fire ice",
+        "not-effective": "fighting ground steel",
+        "resistant": "normal flying poison fire",
+        "immune": ""
     },
     "ice": {
-
+        "super-effective": "flying ground grass dragon",
+        "not-effective": "steel fire water ice",
+        "resistant": "ice",
+        "immune": ""
     },
     "bug": {
-
+        "super-effective": "grass psychic dark",
+        "not-effective": "fighting flying poison ghost steel fire fairy",
+        "resistant": "fighting ground grass",
+        "immune": ""
     },
     "dragon": {
-
+        "super-effective": "dragon",
+        "not-effective": "steel fairy",
+        "resistant": "fire water grass electric",
+        "immune": ""
     },
     "ghost": {
-
+        "super-effective": "ghost psychic",
+        "not-effective": "normal dark",
+        "resistant": "normal fighting poison bug",
+        "immune": "normal fighting"
     },
     "dark": {
-
+        "super-effective": "ghost psychic",
+        "not-effective": "fighting dark fairy",
+        "resistant": "ghost pyschic dark",
+        "immune": "psychic"
     },
     "steel": {
-
+        "super-effective": "rock ice fairy",
+        "not-effective": "steel fire water electric",
+        "resistant": "normal flying poison rock bug steel grass psychic ice dragon fairy",
+        "immune": "poison"
     },
     "fairy": {
-
+        "super-effective": "fighting dragon dark",
+        "not-effective": "poison steel fire",
+        "resistant": "fighting bug dragon dark",
+        "immune": "dragon"
     }
 }
