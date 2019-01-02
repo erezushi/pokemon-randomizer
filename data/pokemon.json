@@ -158,7 +158,8 @@
     },
     "11": {
         "name": "Metapod",
-        "type": "bug"
+        "type": "bug",
+        "evolveTo": "12"
     },
     "12": {
         "name": "Butterfree",
@@ -338,6 +339,7 @@
         "attack": 55,
         "defense": 40,
         "type": "electric",
+        "evolveTo": "26",
         "moves": [
             "thundershock",
             "thunderbolt"
@@ -751,7 +753,8 @@
     },
     "61": {
         "name": "Poliwhirl",
-        "type": "water"
+        "type": "water",
+        "evolveTo": "62"
     },
     "62": {
         "name": "Poliwrath",
@@ -1337,8 +1340,6 @@
         "name": "Hitmonlee",
         "attack": 120,
         "defense": 53,
-        "evolveLevel": 20,
-        "evolveTo": "107",
         "type": "fighting",
         "moves": [
             "rolling kick"
@@ -1746,6 +1747,7 @@
         "attack": 55,
         "defense": 50,
         "type": "normal",
+        "evolveTo": "134 135 136",
         "moves": [
             "tackle",
             "bite"
