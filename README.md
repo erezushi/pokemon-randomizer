@@ -6,8 +6,11 @@ This is a simple library to generate random teams of pokemon
 
 Options:
 
-* n: number of random pokemon to generate
-* e: choose only fully evolved pokemon
+* number: number of random pokemon to generate
+* evolved: choose only fully evolved pokemon
+* type: choose only pokemon of this type
+* superEffective: choose only pokemon super effective against this type
+* unique: choose unique pokemon
 
 Examples:
 
@@ -16,5 +19,10 @@ Examples:
     // Chooses 6 random pokemon
     const pokemon = pokeRand.pickRandomPokemon();
 
-    // Chooses 3 random final stage pokemon
-    const fullyEvolved = pokeRand.pickRandomPokemon({ number: 3, evolved: true });
+    // Chooses 3 random, unique, final stage pokemon, that are super effective against fire
+    const fullyEvolved = pokeRand.pickRandomPokemon({
+        number: 3,
+        unique: true,
+        evolved: true,
+        superEffective: 'fire'
+    });
