@@ -47,11 +47,237 @@ describe('picker', async function () {
                 _.forEach(result, (poke) => expect(poke.type).to.include(options.type));
             });
 
+            it('should filter normal pokemon', async function () {
+                const pokemon = ['Pidgey', 'Pidgeotto', 'Pidgeot', 'Rattata', 'Raticate',
+                    'Spearow', 'Fearow', 'Jigglypuff', 'Wigglytuff', 'Meowth', 'Persian', 'Farfetch\'d',
+                    'Doduo', 'Dodrio', 'Lickitung', 'Chansey', 'Kangaskhan', 'Tauros', 'Ditto', 'Eevee',
+                    'Porygon', 'Snorlax'];
+                const options = {
+                    type: 'normal'
+                };
+    
+                const result = await picker.getFilteredPokemon(options);
+                const names = result.map(r => r.name);
+                _.forEach(pokemon, (poke) => expect(names).to.include(poke));
+                expect(names.length).to.be.eq(pokemon.length);
+            });
+
             it('should filter fire pokemon', async function () {
                 const pokemon = ['Charmander', 'Charmeleon', 'Charizard', 'Vulpix', 'Ninetales',
                     'Growlithe', 'Arcanine', 'Ponyta', 'Rapidash', 'Magmar', 'Flareon', 'Moltres'];
                 const options = {
                     type: 'fire'
+                };
+    
+                const result = await picker.getFilteredPokemon(options);
+                const names = result.map(r => r.name);
+                _.forEach(pokemon, (poke) => expect(names).to.include(poke));
+                expect(names.length).to.be.eq(pokemon.length);
+            });
+
+            it('should filter fighting pokemon', async function () {
+                const pokemon = ['Mankey', 'Primeape', 'Poliwrath', 'Machop', 'Machoke',
+                    'Machamp', 'Hitmonlee', 'Hitmonchan'];
+                const options = {
+                    type: 'fighting'
+                };
+    
+                const result = await picker.getFilteredPokemon(options);
+                const names = result.map(r => r.name);
+                _.forEach(pokemon, (poke) => expect(names).to.include(poke));
+                expect(names.length).to.be.eq(pokemon.length);
+            });
+
+            it('should filter water pokemon', async function () {
+                const pokemon = ['Squirtle', 'Wartortle', 'Blastoise', 'Psyduck', 'Golduck',
+                    'Poliwag', 'Poliwhirl', 'Poliwrath', 'Tentacool', 'Tentacruel', 'Slowpoke',
+                    'Slowbro', 'Seel', 'Dewgong', 'Shellder', 'Cloyster', 'Krabby', 'Kingler',
+                    'Horsea', 'Seadra', 'Goldeen', 'Seaking', 'Staryu', 'Starmie', 'Magikarp',
+                    'Gyarados', 'Lapras', 'Vaporeon', 'Omanyte', 'Omastar', 'Kabuto', 'Kabutops'];
+                const options = {
+                    type: 'water'
+                };
+    
+                const result = await picker.getFilteredPokemon(options);
+                const names = result.map(r => r.name);
+                _.forEach(pokemon, (poke) => expect(names).to.include(poke));
+                expect(names.length).to.be.eq(pokemon.length);
+            });
+
+            it('should filter flying pokemon', async function () {
+                //const pokemon = ['Charmander', 'Charmeleon', 'Charizard', 'Vulpix', 'Ninetales',
+                //    'Growlithe', 'Arcanine', 'Ponyta', 'Rapidash', 'Magmar', 'Flareon', 'Moltres'];
+                const options = {
+                    type: 'flying'
+                };
+    
+                const result = await picker.getFilteredPokemon(options);
+                const names = result.map(r => r.name);
+                _.forEach(pokemon, (poke) => expect(names).to.include(poke));
+                expect(names.length).to.be.eq(pokemon.length);
+            });
+
+            it('should filter grass pokemon', async function () {
+                //const pokemon = ['Charmander', 'Charmeleon', 'Charizard', 'Vulpix', 'Ninetales',
+                //    'Growlithe', 'Arcanine', 'Ponyta', 'Rapidash', 'Magmar', 'Flareon', 'Moltres'];
+                const options = {
+                    type: 'grass'
+                };
+    
+                const result = await picker.getFilteredPokemon(options);
+                const names = result.map(r => r.name);
+                _.forEach(pokemon, (poke) => expect(names).to.include(poke));
+                expect(names.length).to.be.eq(pokemon.length);
+            });
+
+            it('should filter poison pokemon', async function () {
+                //const pokemon = ['Charmander', 'Charmeleon', 'Charizard', 'Vulpix', 'Ninetales',
+                //    'Growlithe', 'Arcanine', 'Ponyta', 'Rapidash', 'Magmar', 'Flareon', 'Moltres'];
+                const options = {
+                    type: 'poison'
+                };
+    
+                const result = await picker.getFilteredPokemon(options);
+                const names = result.map(r => r.name);
+                _.forEach(pokemon, (poke) => expect(names).to.include(poke));
+                expect(names.length).to.be.eq(pokemon.length);
+            });
+
+            it('should filter electric pokemon', async function () {
+                //const pokemon = ['Charmander', 'Charmeleon', 'Charizard', 'Vulpix', 'Ninetales',
+                //    'Growlithe', 'Arcanine', 'Ponyta', 'Rapidash', 'Magmar', 'Flareon', 'Moltres'];
+                const options = {
+                    type: 'electric'
+                };
+    
+                const result = await picker.getFilteredPokemon(options);
+                const names = result.map(r => r.name);
+                _.forEach(pokemon, (poke) => expect(names).to.include(poke));
+                expect(names.length).to.be.eq(pokemon.length);
+            });
+
+            it('should filter ground pokemon', async function () {
+                //const pokemon = ['Charmander', 'Charmeleon', 'Charizard', 'Vulpix', 'Ninetales',
+                //    'Growlithe', 'Arcanine', 'Ponyta', 'Rapidash', 'Magmar', 'Flareon', 'Moltres'];
+                const options = {
+                    type: 'ground'
+                };
+    
+                const result = await picker.getFilteredPokemon(options);
+                const names = result.map(r => r.name);
+                _.forEach(pokemon, (poke) => expect(names).to.include(poke));
+                expect(names.length).to.be.eq(pokemon.length);
+            });
+
+            it('should filter psychic pokemon', async function () {
+                //const pokemon = ['Charmander', 'Charmeleon', 'Charizard', 'Vulpix', 'Ninetales',
+                //    'Growlithe', 'Arcanine', 'Ponyta', 'Rapidash', 'Magmar', 'Flareon', 'Moltres'];
+                const options = {
+                    type: 'psychic'
+                };
+    
+                const result = await picker.getFilteredPokemon(options);
+                const names = result.map(r => r.name);
+                _.forEach(pokemon, (poke) => expect(names).to.include(poke));
+                expect(names.length).to.be.eq(pokemon.length);
+            });
+
+            it('should filter rock pokemon', async function () {
+                //const pokemon = ['Charmander', 'Charmeleon', 'Charizard', 'Vulpix', 'Ninetales',
+                //    'Growlithe', 'Arcanine', 'Ponyta', 'Rapidash', 'Magmar', 'Flareon', 'Moltres'];
+                const options = {
+                    type: 'rock'
+                };
+    
+                const result = await picker.getFilteredPokemon(options);
+                const names = result.map(r => r.name);
+                _.forEach(pokemon, (poke) => expect(names).to.include(poke));
+                expect(names.length).to.be.eq(pokemon.length);
+            });
+
+            it('should filter ice pokemon', async function () {
+                //const pokemon = ['Charmander', 'Charmeleon', 'Charizard', 'Vulpix', 'Ninetales',
+                //    'Growlithe', 'Arcanine', 'Ponyta', 'Rapidash', 'Magmar', 'Flareon', 'Moltres'];
+                const options = {
+                    type: 'ice'
+                };
+    
+                const result = await picker.getFilteredPokemon(options);
+                const names = result.map(r => r.name);
+                _.forEach(pokemon, (poke) => expect(names).to.include(poke));
+                expect(names.length).to.be.eq(pokemon.length);
+            });
+
+            it('should filter bug pokemon', async function () {
+                //const pokemon = ['Charmander', 'Charmeleon', 'Charizard', 'Vulpix', 'Ninetales',
+                //    'Growlithe', 'Arcanine', 'Ponyta', 'Rapidash', 'Magmar', 'Flareon', 'Moltres'];
+                const options = {
+                    type: 'bug'
+                };
+    
+                const result = await picker.getFilteredPokemon(options);
+                const names = result.map(r => r.name);
+                _.forEach(pokemon, (poke) => expect(names).to.include(poke));
+                expect(names.length).to.be.eq(pokemon.length);
+            });
+
+            it('should filter dragon pokemon', async function () {
+                //const pokemon = ['Charmander', 'Charmeleon', 'Charizard', 'Vulpix', 'Ninetales',
+                //    'Growlithe', 'Arcanine', 'Ponyta', 'Rapidash', 'Magmar', 'Flareon', 'Moltres'];
+                const options = {
+                    type: 'dragon'
+                };
+    
+                const result = await picker.getFilteredPokemon(options);
+                const names = result.map(r => r.name);
+                _.forEach(pokemon, (poke) => expect(names).to.include(poke));
+                expect(names.length).to.be.eq(pokemon.length);
+            });
+
+            it('should filter ghost pokemon', async function () {
+                //const pokemon = ['Charmander', 'Charmeleon', 'Charizard', 'Vulpix', 'Ninetales',
+                //    'Growlithe', 'Arcanine', 'Ponyta', 'Rapidash', 'Magmar', 'Flareon', 'Moltres'];
+                const options = {
+                    type: 'ghost'
+                };
+    
+                const result = await picker.getFilteredPokemon(options);
+                const names = result.map(r => r.name);
+                _.forEach(pokemon, (poke) => expect(names).to.include(poke));
+                expect(names.length).to.be.eq(pokemon.length);
+            });
+
+            it('should filter dark pokemon', async function () {
+                //const pokemon = ['Charmander', 'Charmeleon', 'Charizard', 'Vulpix', 'Ninetales',
+                //    'Growlithe', 'Arcanine', 'Ponyta', 'Rapidash', 'Magmar', 'Flareon', 'Moltres'];
+                const options = {
+                    type: 'dark'
+                };
+    
+                const result = await picker.getFilteredPokemon(options);
+                const names = result.map(r => r.name);
+                _.forEach(pokemon, (poke) => expect(names).to.include(poke));
+                expect(names.length).to.be.eq(pokemon.length);
+            });
+
+            it('should filter steel pokemon', async function () {
+                //const pokemon = ['Charmander', 'Charmeleon', 'Charizard', 'Vulpix', 'Ninetales',
+                //    'Growlithe', 'Arcanine', 'Ponyta', 'Rapidash', 'Magmar', 'Flareon', 'Moltres'];
+                const options = {
+                    type: 'steel'
+                };
+    
+                const result = await picker.getFilteredPokemon(options);
+                const names = result.map(r => r.name);
+                _.forEach(pokemon, (poke) => expect(names).to.include(poke));
+                expect(names.length).to.be.eq(pokemon.length);
+            });
+
+            it('should filter fairy pokemon', async function () {
+                //const pokemon = ['Charmander', 'Charmeleon', 'Charizard', 'Vulpix', 'Ninetales',
+                //    'Growlithe', 'Arcanine', 'Ponyta', 'Rapidash', 'Magmar', 'Flareon', 'Moltres'];
+                const options = {
+                    type: 'fairy'
                 };
     
                 const result = await picker.getFilteredPokemon(options);
