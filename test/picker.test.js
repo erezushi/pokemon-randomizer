@@ -105,8 +105,9 @@ describe('picker', async function () {
             });
 
             it('should filter flying pokemon', async function () {
-                //const pokemon = ['Charmander', 'Charmeleon', 'Charizard', 'Vulpix', 'Ninetales',
-                //    'Growlithe', 'Arcanine', 'Ponyta', 'Rapidash', 'Magmar', 'Flareon', 'Moltres'];
+                const pokemon = ['Charizard', 'Butterfree', 'Pidgey', 'Pidgeotto', 'Pidgeot',
+                    'Spearow', 'Fearow', 'Zubat', 'Golbat', 'Farfetch\'d', 'Doduo', 'Dodrio',
+                    'Scyther', 'Gyarados', 'Aerodactyl', 'Articuno', 'Zapdos', 'Moltres', 'Dragonite'];
                 const options = {
                     type: 'flying'
                 };
@@ -118,8 +119,9 @@ describe('picker', async function () {
             });
 
             it('should filter grass pokemon', async function () {
-                //const pokemon = ['Charmander', 'Charmeleon', 'Charizard', 'Vulpix', 'Ninetales',
-                //    'Growlithe', 'Arcanine', 'Ponyta', 'Rapidash', 'Magmar', 'Flareon', 'Moltres'];
+                const pokemon = ['Bulbasaur', 'Ivysaur', 'Venusaur', 'Oddish', 'Gloom', 'Vileplume',
+                    'Paras', 'Parasect', 'Bellsprout', 'Weepinbell', 'Victreebel', 'Exeggcute',
+                    'Exeggutor', 'Tangela'];
                 const options = {
                     type: 'grass'
                 };
@@ -131,8 +133,11 @@ describe('picker', async function () {
             });
 
             it('should filter poison pokemon', async function () {
-                //const pokemon = ['Charmander', 'Charmeleon', 'Charizard', 'Vulpix', 'Ninetales',
-                //    'Growlithe', 'Arcanine', 'Ponyta', 'Rapidash', 'Magmar', 'Flareon', 'Moltres'];
+                const pokemon = ['Bulbasaur', 'Ivysaur', 'Venusaur', 'Weedle', 'Kakuna', 'Beedrill',
+                    'Ekans', 'Arbok', 'Nidoran♀', 'Nidorina', 'Nidoqueen', 'Nidoran♂', 'Nidorino', 'Nidoking',
+                    'Zubat', 'Golbat', 'Oddish', 'Gloom', 'Vileplume', 'Venonat', 'Venomoth', 'Bellsprout',
+                    'Weepinbell', 'Victreebel', 'Tentacool', 'Tentacruel', 'Grimer', 'Muk', 'Gastly',
+                    'Haunter', 'Gengar', 'Koffing', 'Weezing'];
                 const options = {
                     type: 'poison'
                 };
@@ -144,8 +149,8 @@ describe('picker', async function () {
             });
 
             it('should filter electric pokemon', async function () {
-                //const pokemon = ['Charmander', 'Charmeleon', 'Charizard', 'Vulpix', 'Ninetales',
-                //    'Growlithe', 'Arcanine', 'Ponyta', 'Rapidash', 'Magmar', 'Flareon', 'Moltres'];
+                const pokemon = ['Pikachu', 'Raichu', 'Magnemite', 'Magneton', 'Voltorb',
+                    'Electrode', 'Electabuzz', 'Jolteon', 'Zapdos'];
                 const options = {
                     type: 'electric'
                 };
@@ -157,8 +162,9 @@ describe('picker', async function () {
             });
 
             it('should filter ground pokemon', async function () {
-                //const pokemon = ['Charmander', 'Charmeleon', 'Charizard', 'Vulpix', 'Ninetales',
-                //    'Growlithe', 'Arcanine', 'Ponyta', 'Rapidash', 'Magmar', 'Flareon', 'Moltres'];
+                const pokemon = ['Sandshrew', 'Sandslash', 'Nidoqueen', 'Nidoking', 'Diglett',
+                    'Dugtrio', 'Geodude', 'Graveler', 'Golem', 'Onix', 'Cubone', 'Marowak',
+                    'Rhyhorn', 'Rhydon'];
                 const options = {
                     type: 'ground'
                 };
