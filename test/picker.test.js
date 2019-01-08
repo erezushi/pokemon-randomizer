@@ -176,8 +176,8 @@ describe('picker', async function () {
             });
 
             it('should filter psychic pokemon', async function () {
-                //const pokemon = ['Charmander', 'Charmeleon', 'Charizard', 'Vulpix', 'Ninetales',
-                //    'Growlithe', 'Arcanine', 'Ponyta', 'Rapidash', 'Magmar', 'Flareon', 'Moltres'];
+                const pokemon = ['Abra', 'Kadabra', 'Alakazam', 'Slowpoke', 'Slowbro', 'Drowzee', 'Hypno',
+                    'Exeggcute', 'Exeggutor', 'Starmie', 'Mr. Mime', 'Jynx', 'Mewtwo', 'Mew'];
                 const options = {
                     type: 'psychic'
                 };
@@ -189,8 +189,8 @@ describe('picker', async function () {
             });
 
             it('should filter rock pokemon', async function () {
-                //const pokemon = ['Charmander', 'Charmeleon', 'Charizard', 'Vulpix', 'Ninetales',
-                //    'Growlithe', 'Arcanine', 'Ponyta', 'Rapidash', 'Magmar', 'Flareon', 'Moltres'];
+                const pokemon = ['Geodude', 'Graveler', 'Golem', 'Onix', 'Rhyhorn', 'Rhydon',
+                    'Omanyte', 'Omastar', 'Kabuto', 'Kabutops', 'Aerodactyl'];
                 const options = {
                     type: 'rock'
                 };
@@ -202,8 +202,7 @@ describe('picker', async function () {
             });
 
             it('should filter ice pokemon', async function () {
-                //const pokemon = ['Charmander', 'Charmeleon', 'Charizard', 'Vulpix', 'Ninetales',
-                //    'Growlithe', 'Arcanine', 'Ponyta', 'Rapidash', 'Magmar', 'Flareon', 'Moltres'];
+                const pokemon = ['Dewgong', 'Cloyster', 'Jynx', 'Lapras', 'Articuno'];
                 const options = {
                     type: 'ice'
                 };
@@ -215,8 +214,8 @@ describe('picker', async function () {
             });
 
             it('should filter bug pokemon', async function () {
-                //const pokemon = ['Charmander', 'Charmeleon', 'Charizard', 'Vulpix', 'Ninetales',
-                //    'Growlithe', 'Arcanine', 'Ponyta', 'Rapidash', 'Magmar', 'Flareon', 'Moltres'];
+                const pokemon = ['Caterpie', 'Metapod', 'Butterfree', 'Weedle', 'Kakuna',
+                    'Beedrill', 'Paras', 'Parasect', 'Venonat', 'Venomoth', 'Scyther', 'Pinsir'];
                 const options = {
                     type: 'bug'
                 };
@@ -228,8 +227,7 @@ describe('picker', async function () {
             });
 
             it('should filter dragon pokemon', async function () {
-                //const pokemon = ['Charmander', 'Charmeleon', 'Charizard', 'Vulpix', 'Ninetales',
-                //    'Growlithe', 'Arcanine', 'Ponyta', 'Rapidash', 'Magmar', 'Flareon', 'Moltres'];
+                const pokemon = ['Dratini', 'Dragonair', 'Dragonite'];
                 const options = {
                     type: 'dragon'
                 };
@@ -241,8 +239,7 @@ describe('picker', async function () {
             });
 
             it('should filter ghost pokemon', async function () {
-                //const pokemon = ['Charmander', 'Charmeleon', 'Charizard', 'Vulpix', 'Ninetales',
-                //    'Growlithe', 'Arcanine', 'Ponyta', 'Rapidash', 'Magmar', 'Flareon', 'Moltres'];
+                const pokemon = ['Gastly', 'Haunter', 'Gengar'];
                 const options = {
                     type: 'ghost'
                 };
@@ -254,21 +251,20 @@ describe('picker', async function () {
             });
 
             it('should filter dark pokemon', async function () {
-                //const pokemon = ['Charmander', 'Charmeleon', 'Charizard', 'Vulpix', 'Ninetales',
-                //    'Growlithe', 'Arcanine', 'Ponyta', 'Rapidash', 'Magmar', 'Flareon', 'Moltres'];
                 const options = {
                     type: 'dark'
                 };
     
-                const result = await picker.getFilteredPokemon(options);
-                const names = result.map(r => r.name);
-                _.forEach(pokemon, (poke) => expect(names).to.include(poke));
-                expect(names.length).to.be.eq(pokemon.length);
+                try {
+                    await picker.getFilteredPokemon(options);
+                    throw new Error(`Didn't throw`);
+                } catch (err) {
+                    expect(err.message).to.be.eq('No pokemon satisfy those options');
+                }
             });
 
             it('should filter steel pokemon', async function () {
-                //const pokemon = ['Charmander', 'Charmeleon', 'Charizard', 'Vulpix', 'Ninetales',
-                //    'Growlithe', 'Arcanine', 'Ponyta', 'Rapidash', 'Magmar', 'Flareon', 'Moltres'];
+                const pokemon = ['Magnemite', 'Magneton'];
                 const options = {
                     type: 'steel'
                 };
@@ -280,8 +276,7 @@ describe('picker', async function () {
             });
 
             it('should filter fairy pokemon', async function () {
-                //const pokemon = ['Charmander', 'Charmeleon', 'Charizard', 'Vulpix', 'Ninetales',
-                //    'Growlithe', 'Arcanine', 'Ponyta', 'Rapidash', 'Magmar', 'Flareon', 'Moltres'];
+                const pokemon = ['Clefairy', 'Clefable', 'Jigglypuff', 'Wigglytuff', 'Mr. Mime'];
                 const options = {
                     type: 'fairy'
                 };
