@@ -1292,7 +1292,7 @@
     },
     "102": {
         "name": "Exeggcute",
-        "type": "grass pyschic",
+        "type": "grass psychic",
         "evolveTo": "103"
     },
     "103": {
@@ -1573,10 +1573,10 @@
         "curve": 1
     },
     "122": {
-        "name": "Mr. mime",
+        "name": "Mr. Mime",
         "attack": 45,
         "defense": 65,
-        "type": "psychic",
+        "type": "psychic fairy",
         "moves": [
             "confusion",
             "magical leaf",
