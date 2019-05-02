@@ -2,7 +2,6 @@ Add more options
 Update pokemon.json (more gens, more stats / info?)
 
 Ideas for options:
--rt: random type?
 -b: babies / first form only?
 -r: resistant against?
 -w: weak against?
@@ -19,4 +18,4 @@ Ideas for options:
 -s: include shiny chance?
 -v: verbose?
 -o: output to file?
--p: format output somehow?
+-p: format output somehow? colours?

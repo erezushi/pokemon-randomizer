@@ -500,5 +500,34 @@ describe('picker', async function () {
                 expect(value).to.be.eq(1);
             });
         });
+
+        it('should pick a random type', async function () {
+            const options = {
+                number: 100,
+                randomType: true
+            };
+
+            try {
+                const result = await picker.pickRandomPokemon(options);
+                expect(options.type).to.exist;
+                _.forEach(result, (poke) => expect(poke.type.split(' ').includes(options.type)).to.be.true);
+            } catch (err) {
+                // TODO: remove this weird expected case once gen 2 is added
+                expect(options.type).to.be.eq('dark');
+                expect(err.message).to.be.eq('No pokemon satisfy those options');
+            }
+        });
+
+        it('should not overwrite a given type with random type', async function () {
+            const options = {
+                number: 100,
+                type: 'fire',
+                randomType: true
+            };
+
+            const result = await picker.pickRandomPokemon(options);
+            expect(options.type).to.be.eq('fire');
+            _.forEach(result, (poke) => expect(poke.type.split(' ').includes('fire')).to.be.true);
+        });
     });
 });

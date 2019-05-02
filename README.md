@@ -9,6 +9,7 @@ Options:
 * number: number of random pokemon to generate
 * evolved: choose only fully evolved pokemon
 * type: choose only pokemon of this type
+* randomType: choose only pokemon of a random type
 * superEffective: choose only pokemon super effective against this type
 * unique: choose unique pokemon
 
