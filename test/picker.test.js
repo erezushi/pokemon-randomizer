@@ -478,7 +478,7 @@ describe('picker', async function () {
             };
 
             const result = await picker.pickRandomPokemon(options);
-            expect(result.length).to.be.eq(options.number);
+            expect(result.pokemon.length).to.be.eq(options.number);
         });
 
         it('should return unique pokemon', async function () {
@@ -488,7 +488,7 @@ describe('picker', async function () {
             };
 
             const result = await picker.pickRandomPokemon(options);
-            const counts = result.reduce((acc, poke) => {
+            const counts = result.pokemon.reduce((acc, poke) => {
                 if (!acc[poke.name]) {
                     acc[poke.name] = 1;
                 } else {
@@ -509,11 +509,10 @@ describe('picker', async function () {
 
             try {
                 const result = await picker.pickRandomPokemon(options);
-                expect(options.type).to.exist;
-                _.forEach(result, (poke) => expect(poke.type.split(' ').includes(options.type)).to.be.true);
+                expect(result.options.type).to.exist;
+                _.forEach(result.pokemon, (poke) => expect(poke.type.split(' ').includes(result.options.type)).to.be.true);
             } catch (err) {
-                // TODO: remove this weird expected case once gen 2 is added
-                expect(options.type).to.be.eq('dark');
+                // TODO: remove this weird expected case once gen 2 is added with dark type
                 expect(err.message).to.be.eq('No pokemon satisfy those options');
             }
         });
@@ -526,8 +525,8 @@ describe('picker', async function () {
             };
 
             const result = await picker.pickRandomPokemon(options);
-            expect(options.type).to.be.eq('fire');
-            _.forEach(result, (poke) => expect(poke.type.split(' ').includes('fire')).to.be.true);
+            expect(result.options.type).to.be.eq('fire');
+            _.forEach(result.pokemon, (poke) => expect(poke.type.split(' ').includes('fire')).to.be.true);
         });
     });
 });
