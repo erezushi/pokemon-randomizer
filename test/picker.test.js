@@ -478,7 +478,7 @@ describe('picker', async function () {
             };
 
             const result = await picker.pickRandomPokemon(options);
-            expect(result.pokemon.length).to.be.eq(options.number);
+            expect(result.length).to.be.eq(options.number);
         });
 
         it('should return unique pokemon', async function () {
@@ -488,7 +488,7 @@ describe('picker', async function () {
             };
 
             const result = await picker.pickRandomPokemon(options);
-            const counts = result.pokemon.reduce((acc, poke) => {
+            const counts = result.reduce((acc, poke) => {
                 if (!acc[poke.name]) {
                     acc[poke.name] = 1;
                 } else {
@@ -500,16 +500,33 @@ describe('picker', async function () {
                 expect(value).to.be.eq(1);
             });
         });
+    });
 
-        it('should pick a random type', async function () {
+    describe('pickRandomPokemonWithOptions', async function () {
+        it('should return the options used', async function () {
             const options = {
                 number: 100,
                 randomType: true
             };
 
             try {
-                const result = await picker.pickRandomPokemon(options);
+                const result = await picker.pickRandomPokemonWithOptions(options);
                 expect(result.options.type).to.exist;
+                _.forEach(result.pokemon, (poke) => expect(poke.type.split(' ').includes(result.options.type)).to.be.true);
+            } catch (err) {
+                // TODO: remove this weird expected case once gen 2 is added with dark type
+                expect(err.message).to.be.eq('No pokemon satisfy those options');
+            }
+        });
+
+        it('should pick pokemon of a random type', async function () {
+            const options = {
+                number: 10,
+                randomType: true
+            };
+
+            try {
+                const result = await picker.pickRandomPokemonWithOptions(options);
                 _.forEach(result.pokemon, (poke) => expect(poke.type.split(' ').includes(result.options.type)).to.be.true);
             } catch (err) {
                 // TODO: remove this weird expected case once gen 2 is added with dark type
@@ -519,12 +536,12 @@ describe('picker', async function () {
 
         it('should not overwrite a given type with random type', async function () {
             const options = {
-                number: 100,
+                number: 1,
                 type: 'fire',
                 randomType: true
             };
 
-            const result = await picker.pickRandomPokemon(options);
+            const result = await picker.pickRandomPokemonWithOptions(options);
             expect(result.options.type).to.be.eq('fire');
             _.forEach(result.pokemon, (poke) => expect(poke.type.split(' ').includes('fire')).to.be.true);
         });

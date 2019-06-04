@@ -8,7 +8,7 @@ const Chance = require('chance');
 const chance = new Chance();
 
 describe('validators', function () {
-    describe('validateOptions', function () {        
+    describe('validateOptions', function () {
         it('should assign default number of pokemon', async function () {
             const options = await validators.validateOptions({});
             expect(options.number).to.be.eq(constants.DEFAULT_NUMBER);

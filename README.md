@@ -18,7 +18,12 @@ Examples:
     const pokeRand = require('pokemon-randomizer');
 
     // Chooses 6 random pokemon
-    const pokemon = pokeRand.pickRandomPokemon();
+    const result = pokeRand.pickRandomPokemon();
+    result = [
+        { name: 'Pikachu' ... },
+        { name: 'Mewtwo' ... },
+        ...
+    ]
 
     // Chooses 3 random, unique, final stage pokemon, that are super effective against fire
     const fullyEvolved = pokeRand.pickRandomPokemon({
@@ -27,3 +32,9 @@ Examples:
         evolved: true,
         superEffective: 'fire'
     });
+    fullyEvolved = [
+        { name: 'Blastoise' ... },
+        { name: 'Golem' ... },
+        { name: 'Omastar' ...},
+    ]
+
