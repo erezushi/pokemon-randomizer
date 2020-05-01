@@ -1,5 +1,6 @@
 Add more options
 Update pokemon.json (more gens, more stats / info?)
+Migrate to typescript
 
 Ideas for options:
 -b: babies / first form only?
