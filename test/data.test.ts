@@ -15,10 +15,8 @@ describe('data', async function () {
 
     beforeEach(async function () {
         fakeData = proxyquire('../src/data', {
-            'fs': {
-                promises: {
-                    readFile: async () => fileContents
-                }
+            'fs/promises': {
+                readFile: async () => fileContents,
             }
         });
         fakeData.clearCache();
