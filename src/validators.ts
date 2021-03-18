@@ -1,10 +1,10 @@
 'use strict';
 
-const _ = require('lodash');
-const constants = require('./constants');
-const data = require('./data');
+import _ from 'lodash';
+import * as constants from './constants';
+import * as data from './data';
 
-exports.validateOptions = async (options) => {
+export const validateOptions = async (options) => {
     let inputOptions;
     if (options === null || options === undefined) {
         inputOptions = {};
@@ -15,21 +15,21 @@ exports.validateOptions = async (options) => {
     }
 
     const sanitizedOptions = {};
-    sanitizedOptions.number = exports.positiveIntegerValidator('number', inputOptions.number);
+    sanitizedOptions.number = positiveIntegerValidator('number', inputOptions.number);
     if (sanitizedOptions.number === null) {
         sanitizedOptions.number = constants.DEFAULT_NUMBER;
     }
 
-    sanitizedOptions.evolved = exports.booleanValidator('evolved', inputOptions.evolved);
-    sanitizedOptions.unique = exports.booleanValidator('unique', inputOptions.unique);
-    sanitizedOptions.randomType = exports.booleanValidator('randomType', inputOptions.randomType);
-    sanitizedOptions.type = await exports.typeValidator('type', inputOptions.type);
-    sanitizedOptions.superEffective = await exports.typeValidator('superEffective', inputOptions.superEffective);
+    sanitizedOptions.evolved = booleanValidator('evolved', inputOptions.evolved);
+    sanitizedOptions.unique = booleanValidator('unique', inputOptions.unique);
+    sanitizedOptions.randomType = booleanValidator('randomType', inputOptions.randomType);
+    sanitizedOptions.type = await typeValidator('type', inputOptions.type);
+    sanitizedOptions.superEffective = await typeValidator('superEffective', inputOptions.superEffective);
 
     return sanitizedOptions;
 };
 
-exports.validatePokemon = (options, poke, allTypes) => {
+export const validatePokemon = (options, poke, allTypes) => {
     if (options) {
         const pokeTypes = poke.type.split(' ');
         if (options.evolved && poke.evolveTo) {
@@ -57,19 +57,19 @@ exports.validatePokemon = (options, poke, allTypes) => {
     return true;
 };
 
-exports.booleanValidator = (optionName, value) => {
+export const booleanValidator = (optionName, value) => {
     if (value === undefined || value === null) {
         return null;
     } else if (value === true || value === false) {
         return value;
-    } else if (exports.isBoolString(value)) {
+    } else if (isBoolString(value)) {
         return value.trim().toLowerCase() === 'true';
     } else {
         throw Error(`Option ${optionName} must be a boolean. Received: ` + value);
     }
 };
 
-exports.isBoolString = (value) => {
+export const isBoolString = (value) => {
     if (typeof value === 'string') {
         const lowerCase = value.trim().toLowerCase();
         if (lowerCase === 'true' || lowerCase === 'false') {
@@ -80,7 +80,7 @@ exports.isBoolString = (value) => {
     return false;
 };
 
-exports.positiveIntegerValidator = (optionName, value) => {
+export const positiveIntegerValidator = (optionName, value) => {
     const parsed = Number(value);
     const isInteger = !!value && !isNaN(value) && Number.isInteger(parsed) && parsed > 0;
     
@@ -93,7 +93,7 @@ exports.positiveIntegerValidator = (optionName, value) => {
     }
 };
 
-exports.stringValidator = (optionName, value) => {
+export const stringValidator = (optionName, value) => {
     if (value === undefined || value === null) {
         return null;
     } else if (_.isString(value)) {
@@ -104,8 +104,8 @@ exports.stringValidator = (optionName, value) => {
     }
 };
 
-exports.typeValidator = async (optionName, value) => {
-    const lowerCase = exports.stringValidator(optionName, value);
+export const typeValidator = async (optionName, value) => {
+    const lowerCase = stringValidator(optionName, value);
     const validTypes = await data.getTypes();
     if (lowerCase === null) {
         return null;

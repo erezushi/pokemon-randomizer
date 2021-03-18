@@ -1,17 +1,17 @@
 'use strict';
 
-const _ = require('lodash');
-const Chance = require('chance');
+import _ from 'lodash';
+import Chance from 'chance';
+import * as data from './data';
+import * as validators from './validators';
 const chance = new Chance();
-const data = require('./data');
-const validators = require('./validators');
 
-exports.pickRandomPokemon = async (unsantizedOptions) => {
+export const pickRandomPokemon = async (unsantizedOptions) => {
     const result = await pickRandomPokemonAndOptions(unsantizedOptions);
     return result.pokemon;
 };
 
-exports.pickRandomPokemonWithOptions = async (unsantizedOptions) => {
+export const pickRandomPokemonWithOptions = async (unsantizedOptions) => {
     return pickRandomPokemonAndOptions(unsantizedOptions);
 };
 
@@ -23,7 +23,7 @@ const pickRandomPokemonAndOptions = async (unsanitizedOptions) => {
         options.type = randomType;
     }
 
-    const pokemonToPickFrom = await exports.getFilteredPokemon(options);
+    const pokemonToPickFrom = await getFilteredPokemon(options);
     const pokemonKeys = Object.keys(pokemonToPickFrom);
     const numPokemon = pokemonKeys.length;
 
@@ -57,7 +57,7 @@ const getRandomKey = (items) => {
     return keys[randomNum];
 };
 
-exports.getFilteredPokemon = async (options) => {
+export const getFilteredPokemon = async (options) => {
     const allPokemon = await data.getPokemon();
     const allTypes = await data.getTypes();
     const filteredPokemon = [];

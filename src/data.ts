@@ -1,18 +1,18 @@
 'use strict';
 
-const fsp = require('fs').promises;
-const constants = require('./constants');
-const path = require('path');
+import * as fsp from 'fs/promises';
+import * as constants from './constants';
+import * as path from 'path';
 
 let POKEMON = null;
 let TYPES = null;
 
-exports.clearCache = async () => {
+export const clearCache = async () => {
     POKEMON = null;
     TYPES = null;
 };
 
-exports.getPokemon = async () => {
+export const getPokemon = async () => {
     if (POKEMON) {
         return POKEMON;
     }
@@ -23,7 +23,7 @@ exports.getPokemon = async () => {
     return POKEMON;
 };
 
-exports.getTypes = async () => {
+export const getTypes = async () => {
     if (TYPES) {
         return TYPES;
     }
