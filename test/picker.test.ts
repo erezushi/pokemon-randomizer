@@ -1,3 +1,4 @@
+// @ts-nocheck
 'ust strict';
 
 import * as picker from '../src/picker';

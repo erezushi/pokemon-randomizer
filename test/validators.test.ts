@@ -1,3 +1,4 @@
+// @ts-nocheck
 'ust strict';
 
 import * as validators from '../src/validators';
