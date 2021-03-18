@@ -29,7 +29,7 @@ export const validateOptions = async (options: unknown) => {
     return sanitizedOptions;
 };
 
-export const validatePokemon = (options, poke, allTypes) => {
+export const validatePokemon = (options: types.Options, poke: types.Pokemon, allTypes: types.TypeMap) => {
     if (options) {
         const pokeTypes = poke.type.split(' ');
         if (options.evolved && poke.evolveTo) {

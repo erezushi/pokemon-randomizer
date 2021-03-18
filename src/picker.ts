@@ -35,11 +35,11 @@ const pickRandomPokemonAndOptions = async (unsanitizedOptions: unknown) => {
 
     let chosenPokemon: types.Pokemon[] = [];
     _.times(options.number, () => {
-        const randomKey = getRandomKey(pokemonToPickFrom);
+        const randomIndex = parseInt(getRandomKey(pokemonToPickFrom), 10);
 
         const randomPokemon = options.unique
-            ? pokemonToPickFrom.splice(parseInt(randomKey, 10), 1)[0]
-            : pokemonToPickFrom[randomKey]
+            ? pokemonToPickFrom.splice(randomIndex, 1)[0]
+            : pokemonToPickFrom[randomIndex]
         chosenPokemon.push(randomPokemon);
     });
     
