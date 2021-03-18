@@ -12,7 +12,13 @@
         "lib": [
             "es2016"
         ],
-        "rootDir": "src"
+        "rootDir": "src",
+        "typeRoots": [
+            "node_modules/@types"
+        ],
+        "types": [
+            "node"
+        ]
     },
     "include": [
         "src"
