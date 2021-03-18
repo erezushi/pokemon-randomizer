@@ -3,17 +3,18 @@
 import * as fsp from 'fs/promises';
 import * as constants from './constants';
 import * as path from 'path';
+import * as types from './types';
 
-let POKEMON = null;
-let TYPES = null;
+let POKEMON: types.PokemonMap = {};
+let TYPES: types.TypeMap = {};
 
 export const clearCache = async () => {
-    POKEMON = null;
-    TYPES = null;
+    POKEMON = {};
+    TYPES = {};
 };
 
-export const getPokemon = async () => {
-    if (POKEMON) {
+export const getPokemon = async (): Promise<types.PokemonMap> => {
+    if (Object.keys(POKEMON).length > 0) {
         return POKEMON;
     }
 
@@ -23,8 +24,8 @@ export const getPokemon = async () => {
     return POKEMON;
 };
 
-export const getTypes = async () => {
-    if (TYPES) {
+export const getTypes = async (): Promise<types.TypeMap> => {
+    if (Object.keys(TYPES).length > 0) {
         return TYPES;
     }
 

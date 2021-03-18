@@ -4,18 +4,20 @@ import _ from 'lodash';
 import Chance from 'chance';
 import * as data from './data';
 import * as validators from './validators';
+import * as types from './types';
+
 const chance = new Chance();
 
-export const pickRandomPokemon = async (unsantizedOptions) => {
+export const pickRandomPokemon = async (unsantizedOptions: unknown) => {
     const result = await pickRandomPokemonAndOptions(unsantizedOptions);
     return result.pokemon;
 };
 
-export const pickRandomPokemonWithOptions = async (unsantizedOptions) => {
+export const pickRandomPokemonWithOptions = async (unsantizedOptions: unknown) => {
     return pickRandomPokemonAndOptions(unsantizedOptions);
 };
 
-const pickRandomPokemonAndOptions = async (unsanitizedOptions) => {
+const pickRandomPokemonAndOptions = async (unsanitizedOptions: unknown) => {
     const options = await validators.validateOptions(unsanitizedOptions);
     if (options && options.randomType === true && !options.type) {
         const types = await data.getTypes();
@@ -31,16 +33,13 @@ const pickRandomPokemonAndOptions = async (unsanitizedOptions) => {
         throw Error('Not enough pokemon satisfy those options');
     }
 
-    let chosenPokemon = [];
+    let chosenPokemon: types.Pokemon[] = [];
     _.times(options.number, () => {
         const randomKey = getRandomKey(pokemonToPickFrom);
 
-        let randomPokemon;
-        if (options.unique) {
-            randomPokemon = pokemonToPickFrom.splice(randomKey, 1)[0];
-        } else {
-            randomPokemon = pokemonToPickFrom[randomKey];
-        }
+        const randomPokemon = options.unique
+            ? pokemonToPickFrom.splice(parseInt(randomKey, 10), 1)[0]
+            : pokemonToPickFrom[randomKey]
         chosenPokemon.push(randomPokemon);
     });
     
@@ -50,18 +49,18 @@ const pickRandomPokemonAndOptions = async (unsanitizedOptions) => {
     };
 };
 
-const getRandomKey = (items) => {
+const getRandomKey = (items: types.Pokemon[] | types.TypeMap) => {
     const keys = Object.keys(items);
     const numItems = keys.length;
     const randomNum = chance.integer({ min: 0, max: numItems - 1 });
     return keys[randomNum];
 };
 
-export const getFilteredPokemon = async (options) => {
+export const getFilteredPokemon = async (options: types.Options) => {
     const allPokemon = await data.getPokemon();
     const allTypes = await data.getTypes();
-    const filteredPokemon = [];
-    _.forEach(allPokemon, async poke => {
+    const filteredPokemon: types.Pokemon[] = [];
+    _.forEach(allPokemon, async (poke: types.Pokemon) => {
         if (validators.validatePokemon(options, poke, allTypes)) {
             filteredPokemon.push(poke);
         }
