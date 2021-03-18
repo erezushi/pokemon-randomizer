@@ -1,9 +1,10 @@
 'ust strict';
 
-const picker = require('../lib/picker');
-const expect = require('chai').expect;
-const _ = require('lodash');
-const Chance = require('chance');
+import * as picker from '../src/picker';
+import { expect } from 'chai';
+import _ from 'lodash';
+import Chance from 'chance';
+
 const chance = new Chance();
 
 describe('picker', async function () {

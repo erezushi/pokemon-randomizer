@@ -1,11 +1,12 @@
 'ust strict';
 
-const data = require('../lib/data');
-const expect = require('chai').expect;
-const Chance = require('chance');
+import * as data from '../src/data';
+import { expect } from 'chai';
+import Chance from 'chance';
+import _ from 'lodash';
+import proxyquire from 'proxyquire';
+
 const chance = new Chance();
-const _ = require('lodash');
-const proxyquire = require('proxyquire');
 
 describe('data', async function () {
     let fakeData;
