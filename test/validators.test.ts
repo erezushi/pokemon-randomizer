@@ -211,16 +211,16 @@ describe('validators', function () {
             expect(result).to.be.false;
         });
         
-        it('should return null for undefined', function () {
+        it('should return undefined for undefined', function () {
             const value = undefined;
             const result = validators.booleanValidator('thing', value);
-            expect(result).to.be.null;
+            expect(result).to.be.undefined;
         });
     
-        it('should return null for null', function () {
+        it('should return undefined for null', function () {
             const value = null;
             const result = validators.booleanValidator('thing', value);
-            expect(result).to.be.null;
+            expect(result).to.be.undefined;
         });
     
         it('should throw error for non boolean value', function () {
@@ -317,16 +317,16 @@ describe('validators', function () {
             expect(result).to.be.eq(value);
         });
 
-        it('should return null for undefined', function () {
+        it('should return undefined for undefined', function () {
             const value = undefined;
             const result = validators.positiveIntegerValidator('thing', value);
-            expect(result).to.be.null;
+            expect(result).to.be.undefined;
         });
 
-        it('should return null for null', function () {
+        it('should return undefined for null', function () {
             const value = null;
             const result = validators.positiveIntegerValidator('thing', value);
-            expect(result).to.be.null;
+            expect(result).to.be.undefined;
         });
 
         it('should throw an error for negative integer', function () {
@@ -411,16 +411,16 @@ describe('validators', function () {
             expect(result).to.be.eq(value.trim());
         });
 
-        it('should return null for undefined', function () {
+        it('should return undefined for undefined', function () {
             const value = null;
             const result = validators.stringValidator('thing', value);
-            expect(result).to.be.null;
+            expect(result).to.be.undefined;
         });
 
-        it('should return null for null', function () {
+        it('should return undefined for null', function () {
             const value = null;
             const result = validators.stringValidator('thing', value);
-            expect(result).to.be.null;
+            expect(result).to.be.undefined;
         });
 
         it('should throw an error for an integer', function () {
@@ -466,16 +466,16 @@ describe('validators', function () {
             expect(result).to.be.eq(value.trim());
         });
 
-        it('should return null for undefined', async function () {
+        it('should return undefined for undefined', async function () {
             const value = null;
             const result = await validators.typeValidator('thing', value);
-            expect(result).to.be.null;
+            expect(result).to.be.undefined;
         });
 
-        it('should return null for null', async function () {
+        it('should return undefined for null', async function () {
             const value = null;
             const result = await validators.typeValidator('thing', value);
-            expect(result).to.be.null;
+            expect(result).to.be.undefined;
         });
 
         it('should throw an error for an integer', async function () {

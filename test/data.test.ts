@@ -14,7 +14,7 @@ describe('data', async function () {
     let fileContents;
 
     beforeEach(async function () {
-        fakeData = proxyquire('../lib/data', {
+        fakeData = proxyquire('../src/data', {
             'fs': {
                 promises: {
                     readFile: async () => fileContents

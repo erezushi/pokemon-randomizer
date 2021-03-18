@@ -81,12 +81,13 @@ export const isBoolString = (value: unknown) => {
 };
 
 export const positiveIntegerValidator = (optionName: string, value: unknown) => {
-    const parsed = Number(value);
-    const isInteger = !!value && !isNaN(parsed) && Number.isInteger(parsed) && parsed > 0;
-    
     if (value === undefined || value === null) {
         return undefined;
-    } else if (isInteger) {
+    }
+
+    const parsed = Number(value);
+    const isInteger = !!value && !isNaN(parsed) && Number.isInteger(parsed) && parsed > 0;
+    if (isInteger) {
         return parsed;
     } else {
         throw Error(`Option ${optionName} must be a positive integer. Received: ` + value);
@@ -105,11 +106,13 @@ export const stringValidator = (optionName: string, value: unknown) => {
 };
 
 export const typeValidator = async (optionName: string, value: unknown) => {
+    if (value === null || value === undefined) {
+        return undefined;
+    }
+
     const lowerCase = stringValidator(optionName, value) ?? '';
     const validTypes = await data.getTypes();
-    if (lowerCase === null) {
-        return undefined;
-    } else if (Object.keys(validTypes).includes(lowerCase)) {
+    if (Object.keys(validTypes).includes(lowerCase)) {
         return lowerCase;
     } else {
         throw Error(`Option ${optionName} must be a valid type. Received: ` + value);
