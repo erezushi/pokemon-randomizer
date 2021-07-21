@@ -22,6 +22,7 @@ module.exports = {
         '@typescript-eslint/indent': ['error', 4],
         'linebreak-style': 0,
         'func-names': 0,
+        'arrow-body-style': 0,
         '@typescript-eslint/no-unused-expressions': 0,
         'chai-friendly/no-unused-expressions': 2,
         "prefer-arrow-callback": 0,
