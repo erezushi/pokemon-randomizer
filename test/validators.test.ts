@@ -1,11 +1,13 @@
 // @ts-nocheck
+
 'ust strict';
 
+import { expect } from 'chai';
+import Chance from 'chance';
 import * as validators from '../src/validators';
 import * as constants from '../src/constants';
 import * as data from '../src/data';
-import { expect } from 'chai';
-import Chance from 'chance';
+
 const chance = new Chance();
 
 describe('validators', function () {
@@ -59,37 +61,37 @@ describe('validators', function () {
         it('should throw an error if options is a bool', async function () {
             try {
                 await validators.validateOptions(chance.bool());
-                throw new Error(`Didn't throw`);
+                throw new Error('Didn\'t throw');
             } catch (err) {
-                expect(err.message).to.be.eq(`Options must be an object. Received: boolean`);
+                expect(err.message).to.be.eq('Options must be an object. Received: boolean');
             }
         });
 
         it('should throw an error if options is an integer', async function () {
             try {
                 await validators.validateOptions(chance.integer());
-                throw new Error(`Didn't throw`);
+                throw new Error('Didn\'t throw');
             } catch (err) {
-                expect(err.message).to.be.eq(`Options must be an object. Received: number`);
+                expect(err.message).to.be.eq('Options must be an object. Received: number');
             }
         });
 
         it('should throw an error if options is a string', async function () {
             try {
                 await validators.validateOptions(chance.string());
-                throw new Error(`Didn't throw`);
+                throw new Error('Didn\'t throw');
             } catch (err) {
-                expect(err.message).to.be.eq(`Options must be an object. Received: string`);
+                expect(err.message).to.be.eq('Options must be an object. Received: string');
             }
         });
 
         it('should throw error for non integer number', async function () {
             const invalidOptions = {
-                number: chance.string()
+                number: chance.string(),
             };
             try {
                 await validators.validateOptions(invalidOptions);
-                throw new Error(`Didn't throw`);
+                throw new Error('Didn\'t throw');
             } catch (err) {
                 expect(err.message).to.be.eq(`Option number must be a positive integer. Received: ${invalidOptions.number}`);
             }
@@ -97,11 +99,11 @@ describe('validators', function () {
 
         it('should throw error for non bool unique', async function () {
             const invalidOptions = {
-                unique: chance.string()
+                unique: chance.string(),
             };
             try {
                 await validators.validateOptions(invalidOptions);
-                throw new Error(`Didn't throw`);
+                throw new Error('Didn\'t throw');
             } catch (err) {
                 expect(err.message).to.be.eq(`Option unique must be a boolean. Received: ${invalidOptions.unique}`);
             }
@@ -109,11 +111,11 @@ describe('validators', function () {
 
         it('should throw error for non bool randomType', async function () {
             const invalidOptions = {
-                randomType: chance.string()
+                randomType: chance.string(),
             };
             try {
                 await validators.validateOptions(invalidOptions);
-                throw new Error(`Didn't throw`);
+                throw new Error('Didn\'t throw');
             } catch (err) {
                 expect(err.message).to.be.eq(`Option randomType must be a boolean. Received: ${invalidOptions.randomType}`);
             }
@@ -121,11 +123,11 @@ describe('validators', function () {
 
         it('should throw error for non bool evolved', async function () {
             const invalidOptions = {
-                evolved: chance.string()
+                evolved: chance.string(),
             };
             try {
                 await validators.validateOptions(invalidOptions);
-                throw new Error(`Didn't throw`);
+                throw new Error('Didn\'t throw');
             } catch (err) {
                 expect(err.message).to.be.eq(`Option evolved must be a boolean. Received: ${invalidOptions.evolved}`);
             }
@@ -133,18 +135,18 @@ describe('validators', function () {
 
         it('should throw error for non string type', async function () {
             const invalidOptions = {
-                type: chance.bool()
+                type: chance.bool(),
             };
             try {
                 await validators.validateOptions(invalidOptions);
-                throw new Error(`Didn't throw`);
+                throw new Error('Didn\'t throw');
             } catch (err) {
                 expect(err.message).to.be.eq(`Option type must be a string. Received: ${invalidOptions.type}`);
             }
         });
     });
 
-    describe('validatePokemon', async function () {
+    describe('validatePokemon', function () {
         let allTypes;
         let options;
         let pokemon;
@@ -153,7 +155,7 @@ describe('validators', function () {
             allTypes = await data.getTypes();
             options = {};
             pokemon = {
-                type: 'water'
+                type: 'water',
             };
         });
 
@@ -197,37 +199,37 @@ describe('validators', function () {
     });
 
     describe('booleanValidator', function () {
-        const getErrorText = (value) => 'Option thing must be a boolean. Received: ' + value;
-    
+        const getErrorText = (value) => `Option thing must be a boolean. Received: ${value}`;
+
         it('should return true', function () {
             const value = true;
             const result = validators.booleanValidator('thing', value);
             expect(result).to.be.true;
         });
-    
+
         it('should return false', function () {
             const value = false;
             const result = validators.booleanValidator('thing', value);
             expect(result).to.be.false;
         });
-        
+
         it('should return undefined for undefined', function () {
             const value = undefined;
             const result = validators.booleanValidator('thing', value);
             expect(result).to.be.undefined;
         });
-    
+
         it('should return undefined for null', function () {
             const value = null;
             const result = validators.booleanValidator('thing', value);
             expect(result).to.be.undefined;
         });
-    
+
         it('should throw error for non boolean value', function () {
             const value = chance.string();
             try {
                 validators.booleanValidator('thing', value);
-                throw new Error(`Didn't throw`);
+                throw new Error('Didn\'t throw');
             } catch (err) {
                 expect(err.message).to.be.eq(getErrorText(value));
             }
@@ -252,7 +254,7 @@ describe('validators', function () {
             const result = validators.isBoolString(value);
             expect(result).to.be.true;
         });
-    
+
         it('should return true for false string', function () {
             const value = 'false';
             const result = validators.isBoolString(value);
@@ -303,8 +305,8 @@ describe('validators', function () {
     });
 
     describe('positiveIntegerValidator', function () {
-        const getErrorText = (value) => 'Option thing must be a positive integer. Received: ' + value;
-    
+        const getErrorText = (value) => `Option thing must be a positive integer. Received: ${value}`;
+
         it('should return positive integer', function () {
             const value = chance.integer({ min: 1, max: 99999 });
             const result = validators.positiveIntegerValidator('thing', value);
@@ -333,7 +335,7 @@ describe('validators', function () {
             const value = chance.integer({ min: -99999, max: -1 });
             try {
                 validators.positiveIntegerValidator('thing', value);
-                throw new Error(`Didn't throw`);
+                throw new Error('Didn\'t throw');
             } catch (err) {
                 expect(err.message).to.be.eq(getErrorText(value));
             }
@@ -343,7 +345,7 @@ describe('validators', function () {
             const value = chance.integer({ min: -99999, max: -1 });
             try {
                 validators.positiveIntegerValidator('thing', value.toString());
-                throw new Error(`Didn't throw`);
+                throw new Error('Didn\'t throw');
             } catch (err) {
                 expect(err.message).to.be.eq(getErrorText(value));
             }
@@ -353,7 +355,7 @@ describe('validators', function () {
             const value = 0;
             try {
                 validators.positiveIntegerValidator('thing', value);
-                throw new Error(`Didn't throw`);
+                throw new Error('Didn\'t throw');
             } catch (err) {
                 expect(err.message).to.be.eq(getErrorText(value));
             }
@@ -363,7 +365,7 @@ describe('validators', function () {
             const value = 0;
             try {
                 validators.positiveIntegerValidator('thing', value.toString());
-                throw new Error(`Didn't throw`);
+                throw new Error('Didn\'t throw');
             } catch (err) {
                 expect(err.message).to.be.eq(getErrorText(value));
             }
@@ -373,7 +375,7 @@ describe('validators', function () {
             const value = chance.floating();
             try {
                 validators.positiveIntegerValidator('thing', value);
-                throw new Error(`Didn't throw`);
+                throw new Error('Didn\'t throw');
             } catch (err) {
                 expect(err.message).to.be.eq(getErrorText(value));
             }
@@ -383,7 +385,7 @@ describe('validators', function () {
             const value = chance.string();
             try {
                 validators.positiveIntegerValidator('thing', value);
-                throw new Error(`Didn't throw`);
+                throw new Error('Didn\'t throw');
             } catch (err) {
                 expect(err.message).to.be.eq(getErrorText(value));
             }
@@ -391,8 +393,8 @@ describe('validators', function () {
     });
 
     describe('stringValidator', function () {
-        const getErrorText = (value) => 'Option thing must be a string. Received: ' + value;
-    
+        const getErrorText = (value) => `Option thing must be a string. Received: ${value}`;
+
         it('should return string', function () {
             const value = 'test';
             const result = validators.stringValidator('thing', value);
@@ -427,7 +429,7 @@ describe('validators', function () {
             const value = chance.integer();
             try {
                 validators.stringValidator('thing', value);
-                throw new Error(`Didn't throw`);
+                throw new Error('Didn\'t throw');
             } catch (err) {
                 expect(err.message).to.be.eq(getErrorText(value));
             }
@@ -437,7 +439,7 @@ describe('validators', function () {
             const value = chance.bool();
             try {
                 validators.stringValidator('thing', value);
-                throw new Error(`Didn't throw`);
+                throw new Error('Didn\'t throw');
             } catch (err) {
                 expect(err.message).to.be.eq(getErrorText(value));
             }
@@ -445,9 +447,9 @@ describe('validators', function () {
     });
 
     describe('typeValidator', function () {
-        const getStringErrorText = (value) => 'Option thing must be a string. Received: ' + value;
-        const getTypeErrorText = (value) => 'Option thing must be a valid type. Received: ' + value;
-    
+        const getStringErrorText = (value) => `Option thing must be a string. Received: ${value}`;
+        const getTypeErrorText = (value) => `Option thing must be a valid type. Received: ${value}`;
+
         it('should return a type', async function () {
             const value = 'fire';
             const result = await validators.typeValidator('thing', value);
@@ -482,7 +484,7 @@ describe('validators', function () {
             const value = chance.integer();
             try {
                 await validators.typeValidator('thing', value);
-                throw new Error(`Didn't throw`);
+                throw new Error('Didn\'t throw');
             } catch (err) {
                 expect(err.message).to.be.eq(getStringErrorText(value));
             }
@@ -492,7 +494,7 @@ describe('validators', function () {
             const value = chance.bool();
             try {
                 await validators.typeValidator('thing', value);
-                throw new Error(`Didn't throw`);
+                throw new Error('Didn\'t throw');
             } catch (err) {
                 expect(err.message).to.be.eq(getStringErrorText(value));
             }
@@ -502,7 +504,7 @@ describe('validators', function () {
             const value = chance.string();
             try {
                 await validators.typeValidator('thing', value);
-                throw new Error(`Didn't throw`);
+                throw new Error('Didn\'t throw');
             } catch (err) {
                 expect(err.message).to.be.eq(getTypeErrorText(value));
             }

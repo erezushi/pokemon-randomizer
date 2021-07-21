@@ -1,15 +1,16 @@
 // @ts-nocheck
+
 'ust strict';
 
-import * as picker from '../src/picker';
 import { expect } from 'chai';
 import _ from 'lodash';
 import Chance from 'chance';
+import * as picker from '../src/picker';
 
 const chance = new Chance();
 
-describe('picker', async function () {
-    describe('getFilteredPokemon', async function () {
+describe('picker', function () {
+    describe('getFilteredPokemon', function () {
         it('should handle empty object options', async function () {
             const result = await picker.getFilteredPokemon({});
             expect(result).to.exist;
@@ -32,19 +33,19 @@ describe('picker', async function () {
 
         it('should filter evolved of pokemon', async function () {
             const options = {
-                evolved: true
+                evolved: true,
             };
 
             const result = await picker.getFilteredPokemon(options);
             _.forEach(result, (poke) => expect(poke.evolveTo).to.be.undefined);
         });
 
-        describe('types', async function () {
+        describe('types', function () {
             it('should filter type of pokemon', async function () {
                 const options = {
-                    type: 'fire'
+                    type: 'fire',
                 };
-    
+
                 const result = await picker.getFilteredPokemon(options);
                 _.forEach(result, (poke) => expect(poke.type).to.include(options.type));
             });
@@ -55,11 +56,11 @@ describe('picker', async function () {
                     'Doduo', 'Dodrio', 'Lickitung', 'Chansey', 'Kangaskhan', 'Tauros', 'Ditto', 'Eevee',
                     'Porygon', 'Snorlax'];
                 const options = {
-                    type: 'normal'
+                    type: 'normal',
                 };
-    
+
                 const result = await picker.getFilteredPokemon(options);
-                const names = result.map(r => r.name);
+                const names = result.map((r) => r.name);
                 _.forEach(pokemon, (poke) => expect(names).to.include(poke));
                 expect(names.length).to.be.eq(pokemon.length);
             });
@@ -68,11 +69,11 @@ describe('picker', async function () {
                 const pokemon = ['Charmander', 'Charmeleon', 'Charizard', 'Vulpix', 'Ninetales',
                     'Growlithe', 'Arcanine', 'Ponyta', 'Rapidash', 'Magmar', 'Flareon', 'Moltres'];
                 const options = {
-                    type: 'fire'
+                    type: 'fire',
                 };
-    
+
                 const result = await picker.getFilteredPokemon(options);
-                const names = result.map(r => r.name);
+                const names = result.map((r) => r.name);
                 _.forEach(pokemon, (poke) => expect(names).to.include(poke));
                 expect(names.length).to.be.eq(pokemon.length);
             });
@@ -81,11 +82,11 @@ describe('picker', async function () {
                 const pokemon = ['Mankey', 'Primeape', 'Poliwrath', 'Machop', 'Machoke',
                     'Machamp', 'Hitmonlee', 'Hitmonchan'];
                 const options = {
-                    type: 'fighting'
+                    type: 'fighting',
                 };
-    
+
                 const result = await picker.getFilteredPokemon(options);
-                const names = result.map(r => r.name);
+                const names = result.map((r) => r.name);
                 _.forEach(pokemon, (poke) => expect(names).to.include(poke));
                 expect(names.length).to.be.eq(pokemon.length);
             });
@@ -97,11 +98,11 @@ describe('picker', async function () {
                     'Horsea', 'Seadra', 'Goldeen', 'Seaking', 'Staryu', 'Starmie', 'Magikarp',
                     'Gyarados', 'Lapras', 'Vaporeon', 'Omanyte', 'Omastar', 'Kabuto', 'Kabutops'];
                 const options = {
-                    type: 'water'
+                    type: 'water',
                 };
-    
+
                 const result = await picker.getFilteredPokemon(options);
-                const names = result.map(r => r.name);
+                const names = result.map((r) => r.name);
                 _.forEach(pokemon, (poke) => expect(names).to.include(poke));
                 expect(names.length).to.be.eq(pokemon.length);
             });
@@ -111,11 +112,11 @@ describe('picker', async function () {
                     'Spearow', 'Fearow', 'Zubat', 'Golbat', 'Farfetch\'d', 'Doduo', 'Dodrio',
                     'Scyther', 'Gyarados', 'Aerodactyl', 'Articuno', 'Zapdos', 'Moltres', 'Dragonite'];
                 const options = {
-                    type: 'flying'
+                    type: 'flying',
                 };
-    
+
                 const result = await picker.getFilteredPokemon(options);
-                const names = result.map(r => r.name);
+                const names = result.map((r) => r.name);
                 _.forEach(pokemon, (poke) => expect(names).to.include(poke));
                 expect(names.length).to.be.eq(pokemon.length);
             });
@@ -125,11 +126,11 @@ describe('picker', async function () {
                     'Paras', 'Parasect', 'Bellsprout', 'Weepinbell', 'Victreebel', 'Exeggcute',
                     'Exeggutor', 'Tangela'];
                 const options = {
-                    type: 'grass'
+                    type: 'grass',
                 };
-    
+
                 const result = await picker.getFilteredPokemon(options);
-                const names = result.map(r => r.name);
+                const names = result.map((r) => r.name);
                 _.forEach(pokemon, (poke) => expect(names).to.include(poke));
                 expect(names.length).to.be.eq(pokemon.length);
             });
@@ -141,11 +142,11 @@ describe('picker', async function () {
                     'Weepinbell', 'Victreebel', 'Tentacool', 'Tentacruel', 'Grimer', 'Muk', 'Gastly',
                     'Haunter', 'Gengar', 'Koffing', 'Weezing'];
                 const options = {
-                    type: 'poison'
+                    type: 'poison',
                 };
-    
+
                 const result = await picker.getFilteredPokemon(options);
-                const names = result.map(r => r.name);
+                const names = result.map((r) => r.name);
                 _.forEach(pokemon, (poke) => expect(names).to.include(poke));
                 expect(names.length).to.be.eq(pokemon.length);
             });
@@ -154,11 +155,11 @@ describe('picker', async function () {
                 const pokemon = ['Pikachu', 'Raichu', 'Magnemite', 'Magneton', 'Voltorb',
                     'Electrode', 'Electabuzz', 'Jolteon', 'Zapdos'];
                 const options = {
-                    type: 'electric'
+                    type: 'electric',
                 };
-    
+
                 const result = await picker.getFilteredPokemon(options);
-                const names = result.map(r => r.name);
+                const names = result.map((r) => r.name);
                 _.forEach(pokemon, (poke) => expect(names).to.include(poke));
                 expect(names.length).to.be.eq(pokemon.length);
             });
@@ -168,11 +169,11 @@ describe('picker', async function () {
                     'Dugtrio', 'Geodude', 'Graveler', 'Golem', 'Onix', 'Cubone', 'Marowak',
                     'Rhyhorn', 'Rhydon'];
                 const options = {
-                    type: 'ground'
+                    type: 'ground',
                 };
-    
+
                 const result = await picker.getFilteredPokemon(options);
-                const names = result.map(r => r.name);
+                const names = result.map((r) => r.name);
                 _.forEach(pokemon, (poke) => expect(names).to.include(poke));
                 expect(names.length).to.be.eq(pokemon.length);
             });
@@ -181,11 +182,11 @@ describe('picker', async function () {
                 const pokemon = ['Abra', 'Kadabra', 'Alakazam', 'Slowpoke', 'Slowbro', 'Drowzee', 'Hypno',
                     'Exeggcute', 'Exeggutor', 'Starmie', 'Mr. Mime', 'Jynx', 'Mewtwo', 'Mew'];
                 const options = {
-                    type: 'psychic'
+                    type: 'psychic',
                 };
-    
+
                 const result = await picker.getFilteredPokemon(options);
-                const names = result.map(r => r.name);
+                const names = result.map((r) => r.name);
                 _.forEach(pokemon, (poke) => expect(names).to.include(poke));
                 expect(names.length).to.be.eq(pokemon.length);
             });
@@ -194,11 +195,11 @@ describe('picker', async function () {
                 const pokemon = ['Geodude', 'Graveler', 'Golem', 'Onix', 'Rhyhorn', 'Rhydon',
                     'Omanyte', 'Omastar', 'Kabuto', 'Kabutops', 'Aerodactyl'];
                 const options = {
-                    type: 'rock'
+                    type: 'rock',
                 };
-    
+
                 const result = await picker.getFilteredPokemon(options);
-                const names = result.map(r => r.name);
+                const names = result.map((r) => r.name);
                 _.forEach(pokemon, (poke) => expect(names).to.include(poke));
                 expect(names.length).to.be.eq(pokemon.length);
             });
@@ -206,11 +207,11 @@ describe('picker', async function () {
             it('should filter ice pokemon', async function () {
                 const pokemon = ['Dewgong', 'Cloyster', 'Jynx', 'Lapras', 'Articuno'];
                 const options = {
-                    type: 'ice'
+                    type: 'ice',
                 };
-    
+
                 const result = await picker.getFilteredPokemon(options);
-                const names = result.map(r => r.name);
+                const names = result.map((r) => r.name);
                 _.forEach(pokemon, (poke) => expect(names).to.include(poke));
                 expect(names.length).to.be.eq(pokemon.length);
             });
@@ -219,11 +220,11 @@ describe('picker', async function () {
                 const pokemon = ['Caterpie', 'Metapod', 'Butterfree', 'Weedle', 'Kakuna',
                     'Beedrill', 'Paras', 'Parasect', 'Venonat', 'Venomoth', 'Scyther', 'Pinsir'];
                 const options = {
-                    type: 'bug'
+                    type: 'bug',
                 };
-    
+
                 const result = await picker.getFilteredPokemon(options);
-                const names = result.map(r => r.name);
+                const names = result.map((r) => r.name);
                 _.forEach(pokemon, (poke) => expect(names).to.include(poke));
                 expect(names.length).to.be.eq(pokemon.length);
             });
@@ -231,11 +232,11 @@ describe('picker', async function () {
             it('should filter dragon pokemon', async function () {
                 const pokemon = ['Dratini', 'Dragonair', 'Dragonite'];
                 const options = {
-                    type: 'dragon'
+                    type: 'dragon',
                 };
-    
+
                 const result = await picker.getFilteredPokemon(options);
-                const names = result.map(r => r.name);
+                const names = result.map((r) => r.name);
                 _.forEach(pokemon, (poke) => expect(names).to.include(poke));
                 expect(names.length).to.be.eq(pokemon.length);
             });
@@ -243,23 +244,23 @@ describe('picker', async function () {
             it('should filter ghost pokemon', async function () {
                 const pokemon = ['Gastly', 'Haunter', 'Gengar'];
                 const options = {
-                    type: 'ghost'
+                    type: 'ghost',
                 };
-    
+
                 const result = await picker.getFilteredPokemon(options);
-                const names = result.map(r => r.name);
+                const names = result.map((r) => r.name);
                 _.forEach(pokemon, (poke) => expect(names).to.include(poke));
                 expect(names.length).to.be.eq(pokemon.length);
             });
 
             it('should filter dark pokemon', async function () {
                 const options = {
-                    type: 'dark'
+                    type: 'dark',
                 };
-    
+
                 try {
                     await picker.getFilteredPokemon(options);
-                    throw new Error(`Didn't throw`);
+                    throw new Error('Didn\'t throw');
                 } catch (err) {
                     expect(err.message).to.be.eq('No pokemon satisfy those options');
                 }
@@ -268,11 +269,11 @@ describe('picker', async function () {
             it('should filter steel pokemon', async function () {
                 const pokemon = ['Magnemite', 'Magneton'];
                 const options = {
-                    type: 'steel'
+                    type: 'steel',
                 };
-    
+
                 const result = await picker.getFilteredPokemon(options);
-                const names = result.map(r => r.name);
+                const names = result.map((r) => r.name);
                 _.forEach(pokemon, (poke) => expect(names).to.include(poke));
                 expect(names.length).to.be.eq(pokemon.length);
             });
@@ -280,21 +281,21 @@ describe('picker', async function () {
             it('should filter fairy pokemon', async function () {
                 const pokemon = ['Clefairy', 'Clefable', 'Jigglypuff', 'Wigglytuff', 'Mr. Mime'];
                 const options = {
-                    type: 'fairy'
+                    type: 'fairy',
                 };
-    
+
                 const result = await picker.getFilteredPokemon(options);
-                const names = result.map(r => r.name);
+                const names = result.map((r) => r.name);
                 _.forEach(pokemon, (poke) => expect(names).to.include(poke));
                 expect(names.length).to.be.eq(pokemon.length);
             });
         });
 
-        describe('superEffective', async function () {
+        describe('superEffective', function () {
             it('should filter super effective against normal', async function () {
                 const types = ['fighting'];
                 const options = {
-                    superEffective: 'normal'
+                    superEffective: 'normal',
                 };
 
                 const result = await picker.getFilteredPokemon(options);
@@ -304,7 +305,7 @@ describe('picker', async function () {
             it('should filter super effective against fire', async function () {
                 const types = ['water', 'ground', 'rock'];
                 const options = {
-                    superEffective: 'fire'
+                    superEffective: 'fire',
                 };
 
                 const result = await picker.getFilteredPokemon(options);
@@ -314,7 +315,7 @@ describe('picker', async function () {
             it('should filter super effective against fighting', async function () {
                 const types = ['psychic', 'flying', 'fairy'];
                 const options = {
-                    superEffective: 'fighting'
+                    superEffective: 'fighting',
                 };
 
                 const result = await picker.getFilteredPokemon(options);
@@ -324,7 +325,7 @@ describe('picker', async function () {
             it('should filter super effective against water', async function () {
                 const types = ['grass', 'electric'];
                 const options = {
-                    superEffective: 'water'
+                    superEffective: 'water',
                 };
 
                 const result = await picker.getFilteredPokemon(options);
@@ -334,137 +335,137 @@ describe('picker', async function () {
             it('should filter super effective against flying', async function () {
                 const types = ['rock', 'electric', 'ice'];
                 const options = {
-                    superEffective: 'flying'
+                    superEffective: 'flying',
                 };
 
                 const result = await picker.getFilteredPokemon(options);
                 _.forEach(result, (poke) => expect(_.intersection(poke.type.split(' '), types).length).to.be.above(0));
             });
-            
+
             it('should filter super effective against grass', async function () {
                 const types = ['flying', 'poison', 'bug', 'fire', 'ice'];
                 const options = {
-                    superEffective: 'grass'
+                    superEffective: 'grass',
                 };
 
                 const result = await picker.getFilteredPokemon(options);
                 _.forEach(result, (poke) => expect(_.intersection(poke.type.split(' '), types).length).to.be.above(0));
             });
-            
+
             it('should filter super effective against poison', async function () {
                 const types = ['ground', 'psychic'];
                 const options = {
-                    superEffective: 'poison'
+                    superEffective: 'poison',
                 };
 
                 const result = await picker.getFilteredPokemon(options);
                 _.forEach(result, (poke) => expect(_.intersection(poke.type.split(' '), types).length).to.be.above(0));
             });
-            
+
             it('should filter super effective against electric', async function () {
                 const types = ['ground'];
                 const options = {
-                    superEffective: 'electric'
+                    superEffective: 'electric',
                 };
 
                 const result = await picker.getFilteredPokemon(options);
                 _.forEach(result, (poke) => expect(_.intersection(poke.type.split(' '), types).length).to.be.above(0));
             });
-            
+
             it('should filter super effective against ground', async function () {
                 const types = ['water', 'grass', 'ice'];
                 const options = {
-                    superEffective: 'ground'
+                    superEffective: 'ground',
                 };
 
                 const result = await picker.getFilteredPokemon(options);
                 _.forEach(result, (poke) => expect(_.intersection(poke.type.split(' '), types).length).to.be.above(0));
             });
-            
+
             it('should filter super effective against psychic', async function () {
                 const types = ['bug', 'ghost', 'dark'];
                 const options = {
-                    superEffective: 'psychic'
+                    superEffective: 'psychic',
                 };
 
                 const result = await picker.getFilteredPokemon(options);
                 _.forEach(result, (poke) => expect(_.intersection(poke.type.split(' '), types).length).to.be.above(0));
             });
-            
+
             it('should filter super effective against rock', async function () {
                 const types = ['fighting', 'ground', 'steel', 'water', 'grass'];
                 const options = {
-                    superEffective: 'rock'
+                    superEffective: 'rock',
                 };
 
                 const result = await picker.getFilteredPokemon(options);
                 _.forEach(result, (poke) => expect(_.intersection(poke.type.split(' '), types).length).to.be.above(0));
             });
-            
+
             it('should filter super effective against ice', async function () {
                 const types = ['fighting', 'rock', 'steel', 'fire'];
                 const options = {
-                    superEffective: 'ice'
+                    superEffective: 'ice',
                 };
 
                 const result = await picker.getFilteredPokemon(options);
                 _.forEach(result, (poke) => expect(_.intersection(poke.type.split(' '), types).length).to.be.above(0));
             });
-            
+
             it('should filter super effective against bug', async function () {
                 const types = ['flying', 'fire', 'rock'];
                 const options = {
-                    superEffective: 'bug'
+                    superEffective: 'bug',
                 };
 
                 const result = await picker.getFilteredPokemon(options);
                 _.forEach(result, (poke) => expect(_.intersection(poke.type.split(' '), types).length).to.be.above(0));
             });
-            
+
             it('should filter super effective against dragon', async function () {
                 const types = ['dragon', 'ice', 'fairy'];
                 const options = {
-                    superEffective: 'dragon'
+                    superEffective: 'dragon',
                 };
 
                 const result = await picker.getFilteredPokemon(options);
                 _.forEach(result, (poke) => expect(_.intersection(poke.type.split(' '), types).length).to.be.above(0));
             });
-            
+
             it('should filter super effective against ghost', async function () {
                 const types = ['ghost', 'dark'];
                 const options = {
-                    superEffective: 'ghost'
+                    superEffective: 'ghost',
                 };
 
                 const result = await picker.getFilteredPokemon(options);
                 _.forEach(result, (poke) => expect(_.intersection(poke.type.split(' '), types).length).to.be.above(0));
             });
-            
+
             it('should filter super effective against dark', async function () {
                 const types = ['fighting', 'bug', 'fairy'];
                 const options = {
-                    superEffective: 'dark'
+                    superEffective: 'dark',
                 };
 
                 const result = await picker.getFilteredPokemon(options);
                 _.forEach(result, (poke) => expect(_.intersection(poke.type.split(' '), types).length).to.be.above(0));
             });
-            
+
             it('should filter super effective against steel', async function () {
                 const types = ['fighting', 'ground', 'fire'];
                 const options = {
-                    superEffective: 'steel'
+                    superEffective: 'steel',
                 };
 
                 const result = await picker.getFilteredPokemon(options);
                 _.forEach(result, (poke) => expect(_.intersection(poke.type.split(' '), types).length).to.be.above(0));
             });
-            
+
             it('should filter super effective against fairy', async function () {
                 const types = ['poison', 'steel'];
                 const options = {
-                    superEffective: 'fairy'
+                    superEffective: 'fairy',
                 };
 
                 const result = await picker.getFilteredPokemon(options);
@@ -473,10 +474,10 @@ describe('picker', async function () {
         });
     });
 
-    describe('pickRandomPokemon', async function () {
+    describe('pickRandomPokemon', function () {
         it('should return expected number of pokemon', async function () {
             const options = {
-                number: chance.integer({ min: 1, max: 1000 })
+                number: chance.integer({ min: 1, max: 1000 }),
             };
 
             const result = await picker.pickRandomPokemon(options);
@@ -486,7 +487,7 @@ describe('picker', async function () {
         it('should return unique pokemon', async function () {
             const options = {
                 number: 6,
-                unique: true
+                unique: true,
             };
 
             const result = await picker.pickRandomPokemon(options);
@@ -504,11 +505,11 @@ describe('picker', async function () {
         });
     });
 
-    describe('pickRandomPokemonWithOptions', async function () {
+    describe('pickRandomPokemonWithOptions', function () {
         it('should return the options used', async function () {
             const options = {
                 number: 100,
-                randomType: true
+                randomType: true,
             };
 
             try {
@@ -524,7 +525,7 @@ describe('picker', async function () {
         it('should pick pokemon of a random type', async function () {
             const options = {
                 number: 10,
-                randomType: true
+                randomType: true,
             };
 
             try {
@@ -540,7 +541,7 @@ describe('picker', async function () {
             const options = {
                 number: 1,
                 type: 'fire',
-                randomType: true
+                randomType: true,
             };
 
             const result = await picker.pickRandomPokemonWithOptions(options);

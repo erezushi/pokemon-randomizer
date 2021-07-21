@@ -1,16 +1,17 @@
 // @ts-nocheck TODO: remove these no-checks
+
 'ust strict';
 
-import * as data from '../src/data';
 import { expect } from 'chai';
 import Chance from 'chance';
 import _ from 'lodash';
 import proxyquire from 'proxyquire';
+import * as data from '../src/data';
 
 const chance = new Chance();
 
-describe('data', async function () {
-    describe('getPokemon', async function () {
+describe('data', function () {
+    describe('getPokemon', function () {
         it('should return expected number of pokemon', async function () {
             const results = await data.getPokemon();
             expect(Object.keys(results).length).to.be.eq(151);

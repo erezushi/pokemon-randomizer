@@ -1,5 +1,3 @@
-'use strict';
-
 import _ from 'lodash';
 import * as constants from './constants';
 import * as data from './data';
@@ -60,13 +58,12 @@ export const validatePokemon = (options: types.Options, poke: types.Pokemon, all
 export const booleanValidator = (optionName: string, value: unknown) => {
     if (value === undefined || value === null) {
         return undefined;
-    } else if (value === true || value === false) {
+    } if (value === true || value === false) {
         return value;
-    } else if (isBoolString(value)) {
+    } if (isBoolString(value)) {
         return (value as string).trim().toLowerCase() === 'true';
-    } else {
-        throw Error(`Option ${optionName} must be a boolean. Received: ` + value);
     }
+    throw Error(`Option ${optionName} must be a boolean. Received: ${value}`);
 };
 
 export const isBoolString = (value: unknown) => {
@@ -76,7 +73,7 @@ export const isBoolString = (value: unknown) => {
             return true;
         }
     }
-    
+
     return false;
 };
 
@@ -89,20 +86,18 @@ export const positiveIntegerValidator = (optionName: string, value: unknown) => 
     const isInteger = !!value && !isNaN(parsed) && Number.isInteger(parsed) && parsed > 0;
     if (isInteger) {
         return parsed;
-    } else {
-        throw Error(`Option ${optionName} must be a positive integer. Received: ` + value);
     }
+    throw Error(`Option ${optionName} must be a positive integer. Received: ${value}`);
 };
 
 export const stringValidator = (optionName: string, value: unknown) => {
     if (value === undefined || value === null) {
         return undefined;
-    } else if (_.isString(value)) {
+    } if (_.isString(value)) {
         const lower = (value as string).trim().toLowerCase();
         return lower;
-    } else {
-        throw Error(`Option ${optionName} must be a string. Received: ` + value);
     }
+    throw Error(`Option ${optionName} must be a string. Received: ${value}`);
 };
 
 export const typeValidator = async (optionName: string, value: unknown) => {
@@ -114,7 +109,6 @@ export const typeValidator = async (optionName: string, value: unknown) => {
     const validTypes = await data.getTypes();
     if (Object.keys(validTypes).includes(lowerCase)) {
         return lowerCase;
-    } else {
-        throw Error(`Option ${optionName} must be a valid type. Received: ` + value);
     }
+    throw Error(`Option ${optionName} must be a valid type. Received: ${value}`);
 };

@@ -1,5 +1,3 @@
-'use strict';
-
 import _ from 'lodash';
 import Chance from 'chance';
 import * as data from './data';
@@ -33,19 +31,19 @@ const pickRandomPokemonAndOptions = async (unsanitizedOptions: unknown) => {
         throw Error('Not enough pokemon satisfy those options');
     }
 
-    let chosenPokemon: types.Pokemon[] = [];
+    const chosenPokemon: types.Pokemon[] = [];
     _.times(options.number, () => {
         const randomIndex = parseInt(getRandomKey(pokemonToPickFrom), 10);
 
         const randomPokemon = options.unique
             ? pokemonToPickFrom.splice(randomIndex, 1)[0]
-            : pokemonToPickFrom[randomIndex]
+            : pokemonToPickFrom[randomIndex];
         chosenPokemon.push(randomPokemon);
     });
-    
+
     return {
         pokemon: chosenPokemon,
-        options
+        options,
     };
 };
 
