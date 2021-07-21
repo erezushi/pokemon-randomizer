@@ -5,6 +5,11 @@ module.exports = {
         'plugin:promise/recommended',
         'plugin:mocha/recommended',
     ],
+    plugins: [
+        'chai-friendly',
+        'promise',
+        'mocha',
+    ],
     parserOptions: {
         project: './tsconfig.json',
     },
@@ -18,6 +23,7 @@ module.exports = {
         chance: true,
     },
     rules: {
+        'max-len': ['error', 150],
         indent: ['error', 4],
         '@typescript-eslint/indent': ['error', 4],
         'linebreak-style': 0,
@@ -26,6 +32,7 @@ module.exports = {
         '@typescript-eslint/no-unused-expressions': 0,
         'chai-friendly/no-unused-expressions': 2,
         "prefer-arrow-callback": 0,
-        "mocha/prefer-arrow-callback": 2
+        "mocha/prefer-arrow-callback": 2,
+        '@typescript-eslint/no-use-before-define': ['error', { variables: true, functions: false }],
     },
 };
