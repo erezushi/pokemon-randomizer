@@ -12,10 +12,7 @@
         "lib": [
             "es2016"
         ],
-        "rootDirs": [
-            "src",
-            "test",
-        ],
+        "rootDir": "src",
         "typeRoots": [
             "node_modules/@types"
         ],
@@ -27,8 +24,7 @@
         "resolveJsonModule": true
     },
     "include": [
-        "src",
-        "test"
+        "src"
     ],
     "exclude": [
         "node_modules",
