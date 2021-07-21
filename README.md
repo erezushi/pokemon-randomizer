@@ -15,10 +15,10 @@ Options:
 
 Examples:
 
-    const pokeRand = require('pokemon-randomizer');
+    const { pickRandomPokemon } = require('pokemon-randomizer');
 
     // Chooses 6 random pokemon
-    const result = await pokeRand.pickRandomPokemon();
+    const result = await pickRandomPokemon();
     result = [
         { name: 'Pikachu' ... },
         { name: 'Mewtwo' ... },
@@ -26,7 +26,7 @@ Examples:
     ]
 
     // Chooses 3 random, unique, final stage pokemon, that are super effective against fire
-    const fullyEvolved = await pokeRand.pickRandomPokemon({
+    const fullyEvolved = await pickRandomPokemon({
         number: 3,
         unique: true,
         evolved: true,
