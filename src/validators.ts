@@ -3,7 +3,7 @@ import * as constants from './constants';
 import * as data from './data';
 import * as types from './types';
 
-export const validateOptions = async (options: unknown) => {
+export async function validateOptions(options: unknown) {
     const defaultNumber = constants.DEFAULT_NUMBER;
     let inputOptions: types.Options | undefined | null = {
         number: defaultNumber,
@@ -25,9 +25,9 @@ export const validateOptions = async (options: unknown) => {
     sanitizedOptions.superEffective = await typeValidator('superEffective', inputOptions?.superEffective);
 
     return sanitizedOptions;
-};
+}
 
-export const validatePokemon = (options: types.Options, poke: types.Pokemon, allTypes: types.TypeMap) => {
+export function validatePokemon(options: types.Options, poke: types.Pokemon, allTypes: types.TypeMap) {
     if (options) {
         const pokeTypes = poke.type.split(' ');
         if (options.evolved && poke.evolveTo) {
@@ -53,9 +53,9 @@ export const validatePokemon = (options: types.Options, poke: types.Pokemon, all
     }
 
     return true;
-};
+}
 
-export const booleanValidator = (optionName: string, value: unknown) => {
+export function booleanValidator(optionName: string, value: unknown) {
     if (value === undefined || value === null) {
         return undefined;
     } if (value === true || value === false) {
@@ -64,9 +64,9 @@ export const booleanValidator = (optionName: string, value: unknown) => {
         return (value as string).trim().toLowerCase() === 'true';
     }
     throw Error(`Option ${optionName} must be a boolean. Received: ${value}`);
-};
+}
 
-export const isBoolString = (value: unknown) => {
+export function isBoolString(value: unknown) {
     if (typeof value === 'string') {
         const lowerCase = value.trim().toLowerCase();
         if (lowerCase === 'true' || lowerCase === 'false') {
@@ -75,22 +75,22 @@ export const isBoolString = (value: unknown) => {
     }
 
     return false;
-};
+}
 
-export const positiveIntegerValidator = (optionName: string, value: unknown) => {
+export function positiveIntegerValidator(optionName: string, value: unknown) {
     if (value === undefined || value === null) {
         return undefined;
     }
 
     const parsed = Number(value);
-    const isInteger = !!value && !isNaN(parsed) && Number.isInteger(parsed) && parsed > 0;
+    const isInteger = !!value && !Number.isNaN(parsed) && Number.isInteger(parsed) && parsed > 0;
     if (isInteger) {
         return parsed;
     }
     throw Error(`Option ${optionName} must be a positive integer. Received: ${value}`);
-};
+}
 
-export const stringValidator = (optionName: string, value: unknown) => {
+export function stringValidator(optionName: string, value: unknown) {
     if (value === undefined || value === null) {
         return undefined;
     } if (_.isString(value)) {
@@ -98,9 +98,9 @@ export const stringValidator = (optionName: string, value: unknown) => {
         return lower;
     }
     throw Error(`Option ${optionName} must be a string. Received: ${value}`);
-};
+}
 
-export const typeValidator = async (optionName: string, value: unknown) => {
+export async function typeValidator(optionName: string, value: unknown) {
     if (value === null || value === undefined) {
         return undefined;
     }
@@ -111,4 +111,4 @@ export const typeValidator = async (optionName: string, value: unknown) => {
         return lowerCase;
     }
     throw Error(`Option ${optionName} must be a valid type. Received: ${value}`);
-};
+}

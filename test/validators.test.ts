@@ -1,7 +1,5 @@
 // @ts-nocheck
 
-'ust strict';
-
 import { expect } from 'chai';
 import Chance from 'chance';
 import * as validators from '../src/validators';

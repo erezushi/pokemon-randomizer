@@ -1,6 +1,3 @@
-import * as fsp from 'fs/promises';
-import * as path from 'path';
-import * as constants from './constants';
 import * as types from './types';
 import POKEMON from './data/pokemon.json';
 import TYPES from './data/types.json';

@@ -6,20 +6,20 @@ import * as types from './types';
 
 const chance = new Chance();
 
-export const pickRandomPokemon = async (unsantizedOptions: unknown) => {
+export async function pickRandomPokemon(unsantizedOptions: unknown) {
     const result = await pickRandomPokemonAndOptions(unsantizedOptions);
     return result.pokemon;
-};
+}
 
-export const pickRandomPokemonWithOptions = async (unsantizedOptions: unknown) => {
+export async function pickRandomPokemonWithOptions(unsantizedOptions: unknown) {
     return pickRandomPokemonAndOptions(unsantizedOptions);
-};
+}
 
-const pickRandomPokemonAndOptions = async (unsanitizedOptions: unknown) => {
+async function pickRandomPokemonAndOptions(unsanitizedOptions: unknown) {
     const options = await validators.validateOptions(unsanitizedOptions);
     if (options && options.randomType === true && !options.type) {
-        const types = await data.getTypes();
-        const randomType = getRandomKey(types);
+        const pokemonTypes = await data.getTypes();
+        const randomType = getRandomKey(pokemonTypes);
         options.type = randomType;
     }
 
@@ -45,16 +45,16 @@ const pickRandomPokemonAndOptions = async (unsanitizedOptions: unknown) => {
         pokemon: chosenPokemon,
         options,
     };
-};
+}
 
-const getRandomKey = (items: types.Pokemon[] | types.TypeMap) => {
+function getRandomKey(items: types.Pokemon[] | types.TypeMap) {
     const keys = Object.keys(items);
     const numItems = keys.length;
     const randomNum = chance.integer({ min: 0, max: numItems - 1 });
     return keys[randomNum];
-};
+}
 
-export const getFilteredPokemon = async (options: types.Options) => {
+export async function getFilteredPokemon(options: types.Options) {
     const allPokemon = await data.getPokemon();
     const allTypes = await data.getTypes();
     const filteredPokemon: types.Pokemon[] = [];
@@ -69,4 +69,4 @@ export const getFilteredPokemon = async (options: types.Options) => {
     }
 
     return filteredPokemon;
-};
+}

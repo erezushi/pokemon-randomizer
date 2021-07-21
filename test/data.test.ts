@@ -1,14 +1,8 @@
 // @ts-nocheck TODO: remove these no-checks
 
-'ust strict';
-
 import { expect } from 'chai';
-import Chance from 'chance';
 import _ from 'lodash';
-import proxyquire from 'proxyquire';
 import * as data from '../src/data';
-
-const chance = new Chance();
 
 describe('data', function () {
     describe('getPokemon', function () {
@@ -19,7 +13,7 @@ describe('data', function () {
 
         it('should return names for all pokemon', async function () {
             const results = await data.getPokemon();
-            _.forEach(results, (result, key) => {
+            _.forEach(results, (result) => {
                 expect(result.name).to.exist;
             });
         });

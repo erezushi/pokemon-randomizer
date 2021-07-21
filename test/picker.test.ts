@@ -1,7 +1,5 @@
 // @ts-nocheck
 
-'ust strict';
-
 import { expect } from 'chai';
 import _ from 'lodash';
 import Chance from 'chance';
@@ -495,11 +493,11 @@ describe('picker', function () {
                 if (!acc[poke.name]) {
                     acc[poke.name] = 1;
                 } else {
-                    acc[poke.name]++;
+                    acc[poke.name] += 1;
                 }
                 return acc;
             }, {});
-            _.forEach(counts, (value, key) => {
+            _.forEach(counts, (value) => {
                 expect(value).to.be.eq(1);
             });
         });
