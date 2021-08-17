@@ -17,42 +17,106 @@ export async function validateOptions(options: unknown) {
     const sanitizedOptions: types.Options = {
         number: constants.DEFAULT_NUMBER,
     };
+
+    sanitizedOptions.baby = booleanValidator('baby', inputOptions?.baby);
+    sanitizedOptions.basic = booleanValidator('basic', inputOptions?.basic);
     sanitizedOptions.number = positiveIntegerValidator('number', inputOptions?.number) || constants.DEFAULT_NUMBER;
     sanitizedOptions.evolved = booleanValidator('evolved', inputOptions?.evolved);
     sanitizedOptions.unique = booleanValidator('unique', inputOptions?.unique);
     sanitizedOptions.randomType = booleanValidator('randomType', inputOptions?.randomType);
     sanitizedOptions.type = await typeValidator('type', inputOptions?.type);
     sanitizedOptions.superEffective = await typeValidator('superEffective', inputOptions?.superEffective);
+    sanitizedOptions.starter = booleanValidator('starter', inputOptions.starter);
+    sanitizedOptions.legendary = booleanValidator('legendary', inputOptions.legendary);
+    sanitizedOptions.mythical = booleanValidator('mythical', inputOptions.mythical);
+    sanitizedOptions.forms = booleanValidator('forms', inputOptions.forms);
+    sanitizedOptions.generations = await generationArrayValidator('generations', inputOptions.generations);
 
     return sanitizedOptions;
 }
 
-export function validatePokemon(options: types.Options, poke: types.Pokemon, allTypes: types.TypeMap) {
+export async function validatePokemon(
+    options: types.Options,
+    poke: types.Pokemon,
+    dexNo: string,
+    allTypes: types.TypeMap,
+): Promise<types.Pokemon | null> {
+    const pokeCopy = { ...poke };
     if (options) {
-        const pokeTypes = poke.type.split(' ');
-        if (options.evolved && poke.evolveTo) {
-            return false;
+        if (options.baby && (!pokeCopy.evolveTo || parseInt(pokeCopy.evolveTo, 10) > parseInt(dexNo, 10))) {
+            return null;
         }
 
+        if (options.basic && !pokeCopy.basic) {
+            return null;
+        }
+        if (options.evolved && pokeCopy.evolveTo) {
+            return null;
+        }
+
+        const pokeTypes = pokeCopy.type.split(' ') as types.Types[];
         if (options.type) {
-            if (!pokeTypes.includes(options.type)) {
+            if (!(pokeTypes.includes(options.type) || (options.forms && pokeCopy.forms && pokeCopy.forms.some((form) => {
+                if (options.type) {
+                    const formTypes = form.type.split(' ') as types.Types[];
+
+                    return formTypes.includes(options.type);
+                }
+
                 return false;
+            })))) {
+                return null;
             }
+
+            if (pokeCopy.forms) {
+                pokeCopy.modifiedForms = pokeCopy.forms.filter((form) => {
+                    if (options.type) {
+                        const formTypes = form.type.split(' ') as types.Types[];
+
+                        return formTypes.includes(options.type);
+                    }
+
+                    return false;
+                });
+            }
+        } else {
+            pokeCopy.modifiedForms = pokeCopy.forms;
         }
 
         if (options.superEffective) {
-            const type = _.find(allTypes, (value, key) => key === options.superEffective);
+            const type = allTypes[options.superEffective];
 
             if (type) {
                 const vulnerables = type.vulnerable.split(' ');
                 if (!_.intersection(pokeTypes, vulnerables).length) {
-                    return false;
+                    return null;
                 }
             }
         }
-    }
 
-    return true;
+        if (options.starter && !pokeCopy.starter) {
+            return null;
+        }
+
+        if (options.legendary && !(pokeCopy.legendary || pokeCopy.mythical)) {
+            return null;
+        }
+
+        if (options.mythical && !pokeCopy.mythical) {
+            return null;
+        }
+
+        if (options.generations) {
+            const allGens = await data.getGenerations();
+            if (!options.generations.some((gen) => {
+                return parseInt(dexNo, 10) >= allGens[gen].first
+                && parseInt(dexNo, 10) <= allGens[gen].last;
+            })) {
+                return null;
+            }
+        }
+    }
+    return pokeCopy;
 }
 
 export function booleanValidator(optionName: string, value: unknown) {
@@ -100,7 +164,7 @@ export function stringValidator(optionName: string, value: unknown) {
     throw Error(`Option ${optionName} must be a string. Received: ${value}`);
 }
 
-export async function typeValidator(optionName: string, value: unknown) {
+export async function typeValidator(optionName: string, value: unknown): Promise<types.Types | undefined> {
     if (value === null || value === undefined) {
         return undefined;
     }
@@ -108,7 +172,24 @@ export async function typeValidator(optionName: string, value: unknown) {
     const lowerCase = stringValidator(optionName, value) ?? '';
     const validTypes = await data.getTypes();
     if (Object.keys(validTypes).includes(lowerCase)) {
-        return lowerCase;
+        return lowerCase as types.Types;
     }
     throw Error(`Option ${optionName} must be a valid type. Received: ${value}`);
+}
+
+export async function generationArrayValidator(optionName: string, value: string[] | undefined | null): Promise<string[] | undefined> {
+    if (value === null || value === undefined) {
+        return undefined;
+    }
+    if (_.isArray(value)) {
+        const generations = await data.getGenerations();
+        const generationList = Object.keys(generations);
+        if (value.every((element) => generationList.includes(element))) {
+            return value.map((generation) => {
+                return generation.toString();
+            });
+        }
+        throw Error(`option ${optionName} must be an array of existing generation numbers. Recieved: ${value}`);
+    }
+    throw Error(`option ${optionName} must be an array of generation numbers. Recieved: ${value}`);
 }
