@@ -1,6 +1,6 @@
 Pokémon Randomizer - By Dylan Stankievech
 =========================================
-Edits made by Erez Bracha
+[original library here](https://www.npmjs.com/package/pokemon-randomizer), Edits made by Erez Bracha
 
 This is a simple library to generate random teams of Pokémon
 
