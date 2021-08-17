@@ -83,6 +83,11 @@ export async function validatePokemon(
             pokeCopy.modifiedForms = pokeCopy.forms;
         }
 
+        if (pokeCopy.modifiedForms) {
+            pokeCopy.forms = pokeCopy.modifiedForms;
+            delete pokeCopy.modifiedForms;
+        }
+
         if (options.superEffective) {
             const type = allTypes[options.superEffective];
 
