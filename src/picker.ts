@@ -19,7 +19,7 @@ async function pickRandomPokemonAndOptions(unsanitizedOptions: unknown) {
     const options = await validators.validateOptions(unsanitizedOptions);
     if (options && options.randomType === true && !options.type) {
         const pokemonTypes = await data.getTypes();
-        const randomType = getRandomKey(pokemonTypes);
+        const randomType = getRandomKey(pokemonTypes) as types.Types;
         options.type = randomType;
     }
 
@@ -58,11 +58,14 @@ export async function getFilteredPokemon(options: types.Options) {
     const allPokemon = await data.getPokemon();
     const allTypes = await data.getTypes();
     const filteredPokemon: types.Pokemon[] = [];
-    _.forEach(allPokemon, async (poke: types.Pokemon) => {
-        if (validators.validatePokemon(options, poke, allTypes)) {
-            filteredPokemon.push(poke);
+
+    await Promise.all(Object.entries(allPokemon).map(async ([dexNo, poke]) => {
+        const validated = await validators.validatePokemon(options, poke, dexNo.toString(), allTypes);
+
+        if (validated !== null) {
+            filteredPokemon.push(validated);
         }
-    });
+    }));
 
     if (filteredPokemon.length === 0) {
         throw Error('No pokemon satisfy those options');
