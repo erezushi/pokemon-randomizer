@@ -1,9 +1,10 @@
 Pokémon Randomizer - By Dylan Stankievech
 =========================================
-[original library here](https://www.npmjs.com/package/pokemon-randomizer), Edits made by Erez Bracha
+*Edits by Erez Bracha, [original library here](https://www.npmjs.com/package/pokemon-randomizer)*
 
 This is a simple library to generate random teams of Pokémon
 
+***
 
 Options:
 
@@ -11,22 +12,30 @@ Options:
 * baby: choose only baby Pokémon (Pokémon released in a generation later than their evolution) **DEFAULT: false**
 * basic: choose only basic form Pokémon (lowest evolution stage excluding babies) **DEFAULT: false**
 * evolved: choose only fully evolved Pokémon **DEFAULT: false**
-* type: choose only Pokémon of this type **DEFAULT: *all types***
+* type: choose only Pokémon of this type **DEFAULT: undefined *(all types)***
 * randomType: choose only Pokémon of a random type **DEFAULT: false**
-* superEffective: choose only Pokémon super effective against this type **DEFAULT: *none***
+* superEffective: choose only Pokémon super effective against this type **DEFAULT: undefined *(none)***
 * unique: choose unique Pokémon **DEFAULT: false**
 * starter: choose only starter Pokémon **DEFAULT: false**
 * legendary: choose only legendary and mythical Pokémon (legendary is a contraversial term) **DEFAULT: false**
 * mythical: choose only mythical Pokémon **DEFAULT: false**
 * forms: include alternate forms of Pokémon in results **DEFAULT: false**
-* generations: choose Pokémon only from the specified generations  **DEFAULT: *all gens***
+* generations: choose Pokémon only from the specified generations  **DEFAULT: undefined *(all gens)***
+
+*Please note that some options are supposed to be mutually exclusive:*
+* *Setting mutiple evolution stage filters (baby, basic, evolved) to true would return no results*
+* *Setting both legendary and mythical to true is the same as just setting mythical to true*
+* *Setting starter to true together with either legendary and/or mythical would return no results*
+* *Random type option won't work if you've set the type option*
+
+***
 
 Examples:
 
     import RandomPokemon from '@erezushi/pokemon-randomizer';
 
     // Chooses 6 random Pokémon
-    const result = await RandomPokemon();
+    const result = await RandomPokemon({}); // Options object must be sent, even if empty
     // result = [
     //     { name: 'Pikachu' ... },
     //     { name: 'Mewtwo' ... },
