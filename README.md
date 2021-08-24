@@ -23,9 +23,9 @@ Options:
 * generations: choose Pokémon only from the specified generations  **DEFAULT: undefined *(all gens)***
 
 *Please note that some options are supposed to be mutually exclusive:*
-* *Setting mutiple evolution stage filters (baby, basic, evolved) to true would return no results*
-* *Setting both legendary and mythical to true is the same as just setting mythical to true*
+* *Setting baby to true together with either basic and/or evolved would return no results*
 * *Setting starter to true together with either legendary and/or mythical would return no results*
+* *Setting both legendary and mythical to true is the same as just setting mythical to true*
 * *Random type option won't work if you've set the type option*
 
 ***
