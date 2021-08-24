@@ -26,6 +26,7 @@ interface Form {
 export interface Pokemon {
     name: string,
     type: string,
+    dexNo?: string,
     evolveTo?: string,
     starter?: boolean,
     legendary?: boolean,
