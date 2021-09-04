@@ -18,7 +18,7 @@ export type Types =
     | 'steel'
     | 'water';
 
-interface Form {
+export interface Form {
     name: string,
     type: string,
 }
