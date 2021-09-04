@@ -123,7 +123,7 @@ export async function validatePokemon(
             }
         }
     }
-    return pokeCopy;
+    return { ...pokeCopy, dexNo };
 }
 
 export function booleanValidator(optionName: string, value: unknown) {

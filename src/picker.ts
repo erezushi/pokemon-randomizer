@@ -28,7 +28,7 @@ async function pickRandomPokemonAndOptions(unsanitizedOptions: unknown) {
     const numPokemon = pokemonKeys.length;
 
     if (options.unique && numPokemon < options.number) {
-        throw Error('Not enough Pokémon satisfy those options');
+        throw Error(`only ${numPokemon} Pokémon satisfy those options${options.randomType ? `\nChosen type: ${options.type}` : ''}`);
     }
 
     const chosenPokemon: types.Pokemon[] = [];
@@ -68,7 +68,7 @@ export async function getFilteredPokemon(options: types.Options) {
     }));
 
     if (filteredPokemon.length === 0) {
-        throw Error('No Pokémon satisfy those options');
+        throw Error(`No Pokémon satisfy those options${options.randomType ? `\nChosen type: ${options.type}` : ''}`);
     }
 
     return filteredPokemon;

@@ -18,7 +18,7 @@ export type Types =
     | 'steel'
     | 'water';
 
-interface Form {
+export interface Form {
     name: string,
     type: string,
 }
@@ -26,6 +26,7 @@ interface Form {
 export interface Pokemon {
     name: string,
     type: string,
+    dexNo?: string,
     evolveTo?: string,
     starter?: boolean,
     legendary?: boolean,
