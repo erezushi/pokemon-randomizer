@@ -28,7 +28,15 @@ async function pickRandomPokemonAndOptions(unsanitizedOptions: unknown) {
     const numPokemon = pokemonKeys.length;
 
     if (options.unique && numPokemon < options.number) {
-        throw Error(`only ${numPokemon} Pokémon satisfy those options${options.randomType ? `\nChosen type: ${options.type}` : ''}`);
+        throw Error(`only ${
+            numPokemon
+        } Pokémon satisf${
+            numPokemon === 1 ? 'ies' : 'y'
+        } those options${
+            options.randomType ? `\nChosen type: ${
+                options.type
+            }` : ''
+        }`);
     }
 
     const chosenPokemon: types.Pokemon[] = [];
