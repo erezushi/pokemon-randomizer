@@ -5357,7 +5357,17 @@
         "name": "Xerneas",
         "type": "fairy",
         "legendary": true,
-        "basic": true
+        "basic": true,
+        "forms": [
+            {
+                "name": "default",
+                "type": "fairy"
+            },
+            {
+                "name": "Active",
+                "type": "fairy"
+            }
+        ]
     },
     "717": {
         "name": "Yveltal",
@@ -5372,11 +5382,11 @@
         "basic": true,
         "forms": [
             {
-                "name": "default",
+                "name": "10",
                 "type": "dragon ground"
             },
             {
-                "name": "10",
+                "name": "50",
                 "type": "dragon ground"
             },
             {
