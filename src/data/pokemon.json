@@ -3868,7 +3868,7 @@
         "type": "normal flying",
         "forms": [
             {
-                "name": "default",
+                "name": "M",
                 "type": "normal flying"
             },
             {
@@ -4338,7 +4338,7 @@
         "basic": true,
         "forms": [
             {
-                "name": "default",
+                "name": "M",
                 "type": "water ghost"
             },
             {
@@ -4352,7 +4352,7 @@
         "type": "water ghost",
         "forms": [
             {
-                "name": "default",
+                "name": "M",
                 "type": "water ghost"
             },
             {
@@ -4946,7 +4946,7 @@
         "type": "fire normal",
         "forms": [
             {
-                "name": "default",
+                "name": "M",
                 "type": "fire normal"
             },
             {
@@ -5086,7 +5086,7 @@
                 "type": "normal"
             },
             {
-                "name": "La-Raine",
+                "name": "La-Reine",
                 "type": "normal"
             },
             {
@@ -5114,11 +5114,11 @@
         "type": "psychic",
         "forms": [
             {
-                "name": "Male",
+                "name": "M",
                 "type": "psychic"
             },
             {
-                "name": "Female",
+                "name": "F",
                 "type": "psychic"
             }
         ]
@@ -5357,7 +5357,17 @@
         "name": "Xerneas",
         "type": "fairy",
         "legendary": true,
-        "basic": true
+        "basic": true,
+        "forms": [
+            {
+                "name": "default",
+                "type": "fairy"
+            },
+            {
+                "name": "Active",
+                "type": "fairy"
+            }
+        ]
     },
     "717": {
         "name": "Yveltal",
@@ -5372,11 +5382,11 @@
         "basic": true,
         "forms": [
             {
-                "name": "default",
+                "name": "10",
                 "type": "dragon ground"
             },
             {
-                "name": "10",
+                "name": "50",
                 "type": "dragon ground"
             },
             {
@@ -6591,11 +6601,11 @@
         "basic": true,
         "forms": [
             {
-                "name": "Male",
+                "name": "M",
                 "type": "psychic normal"
             },
             {
-                "name": "Female",
+                "name": "F",
                 "type": "psychic normal"
             }
         ]
