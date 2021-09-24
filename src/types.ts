@@ -33,7 +33,6 @@ export interface Pokemon {
     mythical?: boolean,
     basic?: boolean,
     forms?: Form[],
-    modifiedForms?: Form[],
 }
 
 export interface PokemonMap {
