@@ -1,10 +1,11 @@
 import _ from 'lodash';
-import * as constants from './constants';
 import * as data from './data';
 import * as types from './types';
 
+const DEFAULT_NUMBER = 6;
+
 export async function validateOptions(options: unknown) {
-    const defaultNumber = constants.DEFAULT_NUMBER;
+    const defaultNumber = DEFAULT_NUMBER;
     let inputOptions: types.Options | undefined | null = {
         number: defaultNumber,
     };
@@ -15,10 +16,10 @@ export async function validateOptions(options: unknown) {
     }
 
     const sanitizedOptions: types.Options = {
-        number: constants.DEFAULT_NUMBER,
+        number: DEFAULT_NUMBER,
     };
 
-    sanitizedOptions.number = positiveIntegerValidator('number', inputOptions?.number) || constants.DEFAULT_NUMBER;
+    sanitizedOptions.number = positiveIntegerValidator('number', inputOptions?.number) || DEFAULT_NUMBER;
     sanitizedOptions.baby = booleanValidator('baby', inputOptions?.baby);
     sanitizedOptions.basic = booleanValidator('basic', inputOptions?.basic);
     sanitizedOptions.evolved = booleanValidator('evolved', inputOptions?.evolved);
@@ -55,6 +56,7 @@ export async function validatePokemon(
         }
 
         const pokeTypes = pokeCopy.type.split(' ') as types.Types[];
+        let modifiedForms: types.Form[] | undefined = [];
         if (options.type) {
             if (!(pokeTypes.includes(options.type) || (options.forms && pokeCopy.forms && pokeCopy.forms.some((form) => {
                 if (options.type) {
@@ -69,7 +71,7 @@ export async function validatePokemon(
             }
 
             if (pokeCopy.forms) {
-                pokeCopy.modifiedForms = pokeCopy.forms.filter((form) => {
+                modifiedForms = pokeCopy.forms.filter((form) => {
                     if (options.type) {
                         const formTypes = form.type.split(' ') as types.Types[];
 
@@ -80,15 +82,14 @@ export async function validatePokemon(
                 });
             }
         } else {
-            pokeCopy.modifiedForms = pokeCopy.forms;
+            modifiedForms = pokeCopy.forms;
         }
 
-        if (options.forms && pokeCopy.modifiedForms) {
-            pokeCopy.forms = pokeCopy.modifiedForms;
+        if (options.forms && modifiedForms) {
+            pokeCopy.forms = modifiedForms;
         } else {
             delete pokeCopy.forms;
         }
-        delete pokeCopy.modifiedForms;
 
         if (options.superEffective) {
             const type = allTypes[options.superEffective];

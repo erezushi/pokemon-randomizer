@@ -6,7 +6,7 @@ import * as types from './types';
 
 const chance = new Chance();
 
-export async function pickRandomPokemon(unsantizedOptions: unknown) {
+export async function pickRandomPokemon(unsantizedOptions?: unknown) {
     const result = await pickRandomPokemonAndOptions(unsantizedOptions);
     return result.pokemon;
 }

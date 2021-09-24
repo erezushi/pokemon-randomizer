@@ -2,7 +2,9 @@ Pokémon Randomizer - By Dylan Stankievech
 =========================================
 *Edits by Erez Bracha, [original library here](https://www.npmjs.com/package/pokemon-randomizer)*
 
-This is a simple library to generate random teams of Pokémon
+This is a simple library to generate random teams of Pokémon.
+
+For an interactive UI based on this package, [click here](https://react-pokemon-generator.vercel.app/)
 
 ***
 
@@ -35,7 +37,7 @@ Examples:
     import RandomPokemon from '@erezushi/pokemon-randomizer';
 
     // Chooses 6 random Pokémon
-    const result = await RandomPokemon({}); // Options object must be sent, even if empty
+    const result = await RandomPokemon();
     // result = [
     //     { name: 'Pikachu' ... },
     //     { name: 'Mewtwo' ... },
