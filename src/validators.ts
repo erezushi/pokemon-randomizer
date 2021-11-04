@@ -19,19 +19,32 @@ export async function validateOptions(options: unknown) {
         number: DEFAULT_NUMBER,
     };
 
-    sanitizedOptions.number = positiveIntegerValidator('number', inputOptions?.number) || DEFAULT_NUMBER;
-    sanitizedOptions.baby = booleanValidator('baby', inputOptions?.baby);
-    sanitizedOptions.basic = booleanValidator('basic', inputOptions?.basic);
-    sanitizedOptions.evolved = booleanValidator('evolved', inputOptions?.evolved);
-    sanitizedOptions.unique = booleanValidator('unique', inputOptions?.unique);
-    sanitizedOptions.randomType = booleanValidator('randomType', inputOptions?.randomType);
-    sanitizedOptions.type = await typeValidator('type', inputOptions?.type);
-    sanitizedOptions.superEffective = await typeValidator('superEffective', inputOptions?.superEffective);
-    sanitizedOptions.starter = booleanValidator('starter', inputOptions?.starter);
-    sanitizedOptions.legendary = booleanValidator('legendary', inputOptions?.legendary);
-    sanitizedOptions.mythical = booleanValidator('mythical', inputOptions?.mythical);
-    sanitizedOptions.forms = booleanValidator('forms', inputOptions?.forms);
-    sanitizedOptions.generations = await generationArrayValidator('generations', inputOptions?.generations);
+    sanitizedOptions.number = positiveIntegerValidator('number',
+        inputOptions?.number) || DEFAULT_NUMBER;
+    sanitizedOptions.baby = booleanValidator('baby',
+        inputOptions?.baby);
+    sanitizedOptions.basic = booleanValidator('basic',
+        inputOptions?.basic);
+    sanitizedOptions.evolved = booleanValidator('evolved',
+        inputOptions?.evolved);
+    sanitizedOptions.unique = booleanValidator('unique',
+        inputOptions?.unique);
+    sanitizedOptions.randomType = booleanValidator('randomType',
+        inputOptions?.randomType);
+    sanitizedOptions.type = await typeValidator('type',
+        inputOptions?.type);
+    sanitizedOptions.superEffective = await typeValidator('superEffective',
+        inputOptions?.superEffective);
+    sanitizedOptions.starter = booleanValidator('starter',
+        inputOptions?.starter);
+    sanitizedOptions.legendary = booleanValidator('legendary',
+        inputOptions?.legendary);
+    sanitizedOptions.mythical = booleanValidator('mythical',
+        inputOptions?.mythical);
+    sanitizedOptions.forms = booleanValidator('forms',
+        inputOptions?.forms);
+    sanitizedOptions.generations = await generationArrayValidator('generations',
+        inputOptions?.generations);
 
     return sanitizedOptions;
 }
@@ -44,51 +57,50 @@ export async function validatePokemon(
 ): Promise<types.Pokemon | null> {
     const pokeCopy = { ...poke };
     if (options) {
-        if (options.baby && (!pokeCopy.evolveTo || parseInt(pokeCopy.evolveTo, 10) > parseInt(dexNo, 10))) {
+        if (!options.forms) {
+            delete pokeCopy.forms;
+        }
+
+        if (options.baby
+            && (!pokeCopy.evolveTo
+                || parseInt(pokeCopy.evolveTo, 10) > parseInt(dexNo, 10))) {
             return null;
         }
 
         if (options.basic && !pokeCopy.basic) {
             return null;
         }
-        if (options.evolved && pokeCopy.evolveTo) {
-            return null;
+        if (options.evolved) {
+            if (pokeCopy.evolveTo) {
+                return null;
+            }
+            if (options.forms) {
+                pokeCopy.forms = pokeCopy.forms!.filter((form) => !form.evolveTo);
+            }
         }
 
         const pokeTypes = pokeCopy.type.split(' ') as types.Types[];
-        let modifiedForms: types.Form[] | undefined = [];
         if (options.type) {
-            if (!(pokeTypes.includes(options.type) || (options.forms && pokeCopy.forms && pokeCopy.forms.some((form) => {
-                if (options.type) {
-                    const formTypes = form.type.split(' ') as types.Types[];
+            if (options.forms) {
+                let allMonTypes = pokeTypes;
+                pokeCopy.forms!.forEach(
+                    (form) => allMonTypes.push(...form.type.split(' ') as types.Types[]),
+                );
+                allMonTypes = _.uniq(allMonTypes);
 
-                    return formTypes.includes(options.type);
+                if (!allMonTypes.includes(options.type)) {
+                    return null;
                 }
 
-                return false;
-            })))) {
-                return null;
-            }
+                pokeCopy.forms = pokeCopy.forms!.filter((form) => {
+                    const formTypes: types.Types[] = form.type.split(' ') as types.Types[];
 
-            if (pokeCopy.forms) {
-                modifiedForms = pokeCopy.forms.filter((form) => {
-                    if (options.type) {
-                        const formTypes = form.type.split(' ') as types.Types[];
-
-                        return formTypes.includes(options.type);
-                    }
-
-                    return false;
+                    return formTypes.includes(options.type!);
                 });
             }
-        } else {
-            modifiedForms = pokeCopy.forms;
-        }
-
-        if (options.forms && modifiedForms) {
-            pokeCopy.forms = modifiedForms;
-        } else {
-            delete pokeCopy.forms;
+            if (!pokeTypes.includes(options.type!)) {
+                return null;
+            }
         }
 
         if (options.superEffective) {
@@ -172,7 +184,8 @@ export function stringValidator(optionName: string, value: unknown) {
     throw Error(`Option ${optionName} must be a string. Received: ${value}`);
 }
 
-export async function typeValidator(optionName: string, value: unknown): Promise<types.Types | undefined> {
+export async function typeValidator(optionName: string,
+    value: unknown): Promise<types.Types | undefined> {
     if (value === null || value === undefined) {
         return undefined;
     }
@@ -185,7 +198,8 @@ export async function typeValidator(optionName: string, value: unknown): Promise
     throw Error(`Option ${optionName} must be a valid type. Received: ${value}`);
 }
 
-export async function generationArrayValidator(optionName: string, value: string[] | undefined | null): Promise<string[] | undefined> {
+export async function generationArrayValidator(optionName: string,
+    value: string[] | undefined | null): Promise<string[] | undefined> {
     if (value === null || value === undefined) {
         return undefined;
     }
@@ -197,7 +211,13 @@ export async function generationArrayValidator(optionName: string, value: string
                 return generation.toString();
             });
         }
-        throw Error(`option ${optionName} must be an array of existing generation numbers. Recieved: ${value}`);
+        throw Error(
+            `option ${
+                optionName
+            } must be an array of existing generation numbers. Recieved: ${
+                value
+            }`,
+        );
     }
     throw Error(`option ${optionName} must be an array of generation numbers. Recieved: ${value}`);
 }
