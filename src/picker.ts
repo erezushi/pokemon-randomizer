@@ -68,7 +68,9 @@ export async function getFilteredPokemon(options: types.Options) {
     const filteredPokemon: types.Pokemon[] = [];
 
     await Promise.all(Object.entries(allPokemon).map(async ([dexNo, poke]) => {
-        const validated = await validators.validatePokemon(options, poke, dexNo.toString(), allTypes);
+        const validated = await validators.validatePokemon(
+            options, poke, dexNo.toString(), allTypes,
+        );
 
         if (validated !== null) {
             filteredPokemon.push(validated);
@@ -76,7 +78,9 @@ export async function getFilteredPokemon(options: types.Options) {
     }));
 
     if (filteredPokemon.length === 0) {
-        throw Error(`No Pokémon satisfy those options${options.randomType ? `\nChosen type: ${options.type}` : ''}`);
+        throw Error(`No Pokémon satisfy those options${
+            options.randomType ? `\nChosen type: ${options.type}` : ''
+        }`);
     }
 
     return filteredPokemon;

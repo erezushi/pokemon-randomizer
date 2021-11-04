@@ -175,11 +175,13 @@
         "forms": [
             {
                 "name": "default",
-                "type": "normal"
+                "type": "normal",
+                "evolveTo": "20"
             },
             {
                 "name": "Alolan",
-                "type": "dark normal"
+                "type": "dark normal",
+                "evolveTo": "20-Alolan"
             }
         ]
     },
@@ -220,12 +222,13 @@
     "25": {
         "name": "Pikachu",
         "type": "electric",
-        "evolveTo": "26",
+        "evolveTo": "26 26-Alolan",
         "basic": true,
         "forms": [
             {
                 "name": "default",
-                "type": "electric"
+                "type": "electric",
+                "evolveTo": "26 26-Alolan"
             },
             {
                 "name": "Gigantamax",
@@ -255,11 +258,13 @@
         "forms": [
             {
                 "name": "default",
-                "type": "ground"
+                "type": "ground",
+                "evolveTo": "28"
             },
             {
                 "name": "Alolan",
-                "type": "ice steel"
+                "type": "ice steel",
+                "evolveTo": "28-Alolan"
             }
         ]
     },
@@ -325,11 +330,13 @@
         "forms": [
             {
                 "name": "default",
-                "type": "fire"
+                "type": "fire",
+                "evolveTo": "38"
             },
             {
                 "name": "Alolan",
-                "type": "ice"
+                "type": "ice",
+                "evolveTo": "38-Alolan"
             }
         ]
     },
@@ -411,11 +418,13 @@
         "forms": [
             {
                 "name": "default",
-                "type": "ground"
+                "type": "ground",
+                "evolveTo": "51"
             },
             {
                 "name": "Alolan",
-                "type": "ground steel"
+                "type": "ground steel",
+                "evolveTo": "51-Alolan"
             }
         ]
     },
@@ -441,15 +450,18 @@
         "forms": [
             {
                 "name": "default",
-                "type": "normal"
+                "type": "normal",
+                "evolveTo": "53"
             },
             {
                 "name": "Alolan",
-                "type": "dark"
+                "type": "dark",
+                "evolveTo": "53-Alolan"
             },
             {
                 "name": "Galarian",
-                "type": "steel"
+                "type": "steel",
+                "evolveTo": "863"
             },
             {
                 "name": "Gigantamax",
@@ -599,11 +611,13 @@
         "forms": [
             {
                 "name": "default",
-                "type": "rock ground"
+                "type": "rock ground",
+                "evolveTo": "75"
             },
             {
                 "name": "Alolan",
-                "type": "rock electric"
+                "type": "rock electric",
+                "evolveTo": "75-Alolan"
             }
         ]
     },
@@ -614,11 +628,13 @@
         "forms": [
             {
                 "name": "default",
-                "type": "rock ground"
+                "type": "rock ground",
+                "evolveTo": "76"
             },
             {
                 "name": "Alolan",
-                "type": "rock electric"
+                "type": "rock electric",
+                "evolveTo": "76-Alolan"
             }
         ]
     },
@@ -644,11 +660,13 @@
         "forms": [
             {
                 "name": "default",
-                "type": "fire"
+                "type": "fire",
+                "evolveTo": "78"
             },
             {
                 "name": "Galarian",
-                "type": "psychic"
+                "type": "psychic",
+                "evolveTo": "78-Galarian"
             }
         ]
     },
@@ -674,11 +692,13 @@
         "forms": [
             {
                 "name": "default",
-                "type": "water psychic"
+                "type": "water psychic",
+                "evolveTo": "80 199"
             },
             {
                 "name": "Galarian",
-                "type": "psychic"
+                "type": "psychic",
+                "evolveTo": "80-Galarian 199-Galarian"
             }
         ]
     },
@@ -722,7 +742,8 @@
             },
             {
                 "name": "Galarian",
-                "type": "fighting"
+                "type": "fighting",
+                "evolveTo": "865"
             }
         ]
     },
@@ -754,11 +775,13 @@
         "forms": [
             {
                 "name": "default",
-                "type": "poison"
+                "type": "poison",
+                "evolveTo": "89"
             },
             {
                 "name": "Alolan",
-                "type": "poison dark"
+                "type": "poison dark",
+                "evolveTo": "89-Alolan"
             }
         ]
     },
@@ -864,7 +887,7 @@
     "102": {
         "name": "Exeggcute",
         "type": "grass psychic",
-        "evolveTo": "103",
+        "evolveTo": "103 103-Alolan",
         "basic": true
     },
     "103": {
@@ -884,7 +907,7 @@
     "104": {
         "name": "Cubone",
         "type": "ground",
-        "evolveTo": "105",
+        "evolveTo": "105 105-Alolan",
         "basic": true
     },
     "105": {
@@ -920,7 +943,7 @@
     "109": {
         "name": "Koffing",
         "type": "poison",
-        "evolveTo": "110",
+        "evolveTo": "110 110-Galarian",
         "basic": true
     },
     "110": {
@@ -1017,7 +1040,8 @@
             },
             {
                 "name": "Galarian",
-                "type": "ice psychic"
+                "type": "ice psychic",
+                "evolveTo": "866"
             }
         ]
     },
@@ -1112,7 +1136,8 @@
         "forms": [
             {
                 "name": "default",
-                "type": "normal"
+                "type": "normal",
+                "evolveTo": "134 135 136 196 197 470 471 700",
             },
             {
                 "name": "Gigantamax",
@@ -1811,7 +1836,8 @@
             },
             {
                 "name": "Galarian",
-                "type": "ghost"
+                "type": "ghost",
+                "evolveTo": "864"
             }
         ]
     },
@@ -2086,11 +2112,13 @@
         "forms": [
             {
                 "name": "default",
-                "type": "normal"
+                "type": "normal",
+                "evolveTo": "264"
             },
             {
                 "name": "Galarian",
-                "type": "dark normal"
+                "type": "dark normal",
+                "evolveTo": "264-Galarian"
             }
         ]
     },
@@ -2104,7 +2132,8 @@
             },
             {
                 "name": "Galarian",
-                "type": "dark normal"
+                "type": "dark normal",
+                "evolveTo": "862"
             }
         ]
     },
@@ -3095,15 +3124,18 @@
         "forms": [
             {
                 "name": "Plant",
-                "type": "bug"
+                "type": "bug",
+                "evolveTo": "413-Plant 414"
             },
             {
                 "name": "Sandy",
-                "type": "bug"
+                "type": "bug",
+                "evolveTo": "413-Sandy 414"
             },
             {
                 "name": "Trash",
-                "type": "bug"
+                "type": "bug",
+                "evolveTo": "413-Trash 414"
             }
         ]
     },
@@ -3182,11 +3214,13 @@
         "forms": [
             {
                 "name": "West",
-                "type": "water"
+                "type": "water",
+                "evolveTo": "423-West"
             },
             {
                 "name": "East",
-                "type": "water"
+                "type": "water",
+                "evolveTo": "423-East"
             }
         ]
     },
@@ -3861,7 +3895,7 @@
     "520": {
         "name": "Tranquill",
         "type": "normal flying",
-        "evolveTo": "521"
+        "evolveTo": "521-M 521-F"
     },
     "521": {
         "name": "Unfezant",
@@ -4065,11 +4099,13 @@
         "forms": [
             {
                 "name": "default",
-                "type": "fire"
+                "type": "fire",
+                "evolveTo": "555"
             },
             {
                 "name": "Galarian",
-                "type": "ice"
+                "type": "ice",
+                "evolveTo": "555-Galarian"
             }
         ]
     },
@@ -4128,16 +4164,18 @@
     "562": {
         "name": "Yamask",
         "type": "ghost",
-        "evolveTo": "563 867",
+        "evolveTo": "563",
         "basic": true,
         "forms": [
             {
                 "name": "default",
-                "type": "ghost"
+                "type": "ghost",
+                "evolveTo": "563"
             },
             {
                 "name": "Galarian",
-                "type": "ground ghost"
+                "type": "ground ghost",
+                "evolveTo": "867"
             }
         ]
     },
@@ -4268,19 +4306,23 @@
         "forms": [
             {
                 "name": "Spring",
-                "type": "normal grass"
+                "type": "normal grass",
+                "evolveTo": "586-Spring"
             },
             {
                 "name": "Summer",
-                "type": "normal grass"
+                "type": "normal grass",
+                "evolveTo": "586-Summer"
             },
             {
                 "name": "Autumn",
-                "type": "normal grass"
+                "type": "normal grass",
+                "evolveTo": "586-Autumn"
             },
             {
                 "name": "Winter",
-                "type": "normal grass"
+                "type": "normal grass",
+                "evolveTo": "586-Winter"
             }
         ]
     },
@@ -4339,11 +4381,13 @@
         "forms": [
             {
                 "name": "M",
-                "type": "water ghost"
+                "type": "water ghost",
+                "evolveTo": "593-M"
             },
             {
                 "name": "F",
-                "type": "water ghost"
+                "type": "water ghost",
+                "evolveTo": "593-F"
             }
         ]
     },
@@ -4938,7 +4982,7 @@
     "667": {
         "name": "Litleo",
         "type": "fire normal",
-        "evolveTo": "668",
+        "evolveTo": "668-M 668-F",
         "basic": true
     },
     "668": {
@@ -4963,23 +5007,28 @@
         "forms": [
             {
                 "name": "Red",
-                "type": "fairy"
+                "type": "fairy",
+                "evolveTo": "670-Red"
             },
             {
                 "name": "Blue",
-                "type": "fairy"
+                "type": "fairy",
+                "evolveTo": "670-Blue"
             },
             {
                 "name": "Orange",
-                "type": "fairy"
+                "type": "fairy",
+                "evolveTo": "670-Orange"
             },
             {
                 "name": "White",
-                "type": "fairy"
+                "type": "fairy",
+                "evolveTo": "670-White"
             },
             {
                 "name": "Yellow",
-                "type": "fairy"
+                "type": "fairy",
+                "evolveTo": "670-Yellow"
             }
         ]
     },
@@ -4990,23 +5039,28 @@
         "forms": [
             {
                 "name": "Red",
-                "type": "fairy"
+                "type": "fairy",
+                "evolveTo": "671-Red"
             },
             {
                 "name": "Blue",
-                "type": "fairy"
+                "type": "fairy",
+                "evolveTo": "671-Blue"
             },
             {
                 "name": "Orange",
-                "type": "fairy"
+                "type": "fairy",
+                "evolveTo": "671-Orange"
             },
             {
                 "name": "White",
-                "type": "fairy"
+                "type": "fairy",
+                "evolveTo": "671-White"
             },
             {
                 "name": "Yellow",
-                "type": "fairy"
+                "type": "fairy",
+                "evolveTo": "671-Yellow"
             }
         ]
     },
@@ -5106,7 +5160,7 @@
     "677": {
         "name": "Espurr",
         "type": "psychic",
-        "evolveTo": "678",
+        "evolveTo": "678-M 678-F",
         "basic": true
     },
     "678": {
@@ -5295,19 +5349,23 @@
         "forms": [
             {
                 "name": "Small",
-                "type": "ghost grass"
+                "type": "ghost grass",
+                "evolveTo": "711-Small"
             },
             {
                 "name": "Average",
-                "type": "ghost grass"
+                "type": "ghost grass",
+                "evolveTo": "711-Average"
             },
             {
                 "name": "Large",
-                "type": "ghost grass"
+                "type": "ghost grass",
+                "evolveTo": "711-Large"
             },
             {
                 "name": "Super",
-                "type": "ghost grass"
+                "type": "ghost grass",
+                "evolveTo": "711-Super"
             }
         ]
     },
@@ -5573,7 +5631,7 @@
     "744": {
         "name": "Rockruff",
         "type": "rock",
-        "evolveTo": "745",
+        "evolveTo": "745-Midday 745-Midnight 745-Dusk",
         "basic": true
     },
     "745": {
@@ -6380,7 +6438,7 @@
     "848": {
         "name": "Toxel",
         "type": "electric poison",
-        "evolveTo": "849",
+        "evolveTo": "849-Amped 849-Low-Key",
         "basic": true
     },
     "849": {
@@ -6746,7 +6804,7 @@
     "891": {
         "name": "Kubfu",
         "type": "fighting",
-        "evolveTo": "892",
+        "evolveTo": "892-Single-Strike 892-Rapid-Strike",
         "legendary": true,
         "basic": true
     },
