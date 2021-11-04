@@ -21,6 +21,7 @@ export type Types =
 export interface Form {
     name: string,
     type: string,
+    evolveTo?: string,
 }
 
 export interface Pokemon {

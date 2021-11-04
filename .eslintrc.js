@@ -23,7 +23,7 @@ module.exports = {
         chance: true,
     },
     rules: {
-        'max-len': ['error', 150],
+        'max-len': ['error', 100],
         indent: ['error', 4],
         '@typescript-eslint/indent': ['error', 4],
         'linebreak-style': 0,
