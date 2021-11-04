@@ -3264,7 +3264,7 @@
     "434": {
         "name": "Stunky",
         "type": "poison dark",
-        "evolveTo": "436",
+        "evolveTo": "435",
         "basic": true
     },
     "435": {
@@ -3274,7 +3274,7 @@
     "436": {
         "name": "Bronzor",
         "type": "steel psychic",
-        "evolveTo": "438",
+        "evolveTo": "437",
         "basic": true
     },
     "437": {
@@ -3309,13 +3309,13 @@
     "443": {
         "name": "Gible",
         "type": "dragon ground",
-        "evolveTo": "445",
+        "evolveTo": "444",
         "basic": true
     },
     "444": {
         "name": "Gabite",
         "type": "dragon ground",
-        "evolveTo": "446"
+        "evolveTo": "445"
     },
     "445": {
         "name": "Garchomp",
@@ -5951,7 +5951,7 @@
         "basic": true
     },
     "790": {
-        "name": "Cosmog",
+        "name": "Cosmoem",
         "type": "psychic",
         "evolveTo": "791 792",
         "legendary": true
