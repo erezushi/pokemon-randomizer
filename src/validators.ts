@@ -74,16 +74,16 @@ export async function validatePokemon(
             if (pokeCopy.evolveTo) {
                 return null;
             }
-            if (options.forms) {
-                pokeCopy.forms = pokeCopy.forms!.filter((form) => !form.evolveTo);
+            if (options.forms && pokeCopy.forms) {
+                pokeCopy.forms = pokeCopy.forms.filter((form) => !form.evolveTo);
             }
         }
 
         const pokeTypes = pokeCopy.type.split(' ') as types.Types[];
         if (options.type) {
-            if (options.forms) {
+            if (options.forms && pokeCopy.forms) {
                 let allMonTypes = pokeTypes;
-                pokeCopy.forms!.forEach(
+                pokeCopy.forms.forEach(
                     (form) => allMonTypes.push(...form.type.split(' ') as types.Types[]),
                 );
                 allMonTypes = _.uniq(allMonTypes);
@@ -92,7 +92,7 @@ export async function validatePokemon(
                     return null;
                 }
 
-                pokeCopy.forms = pokeCopy.forms!.filter((form) => {
+                pokeCopy.forms = pokeCopy.forms.filter((form) => {
                     const formTypes: types.Types[] = form.type.split(' ') as types.Types[];
 
                     return formTypes.includes(options.type!);
