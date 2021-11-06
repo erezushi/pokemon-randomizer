@@ -127,7 +127,7 @@ export async function validatePokemon(
         }
 
         if (options.generations) {
-            const allGens = await data.getGenerations();
+            const allGens = data.getGenerations();
             if (!options.generations.some((gen) => {
                 return parseInt(dexNo, 10) >= allGens[gen].first
                 && parseInt(dexNo, 10) <= allGens[gen].last;
@@ -191,7 +191,7 @@ export async function typeValidator(optionName: string,
     }
 
     const lowerCase = stringValidator(optionName, value) ?? '';
-    const validTypes = await data.getTypes();
+    const validTypes = data.getTypes();
     if (Object.keys(validTypes).includes(lowerCase)) {
         return lowerCase as types.Types;
     }
@@ -204,7 +204,7 @@ export async function generationArrayValidator(optionName: string,
         return undefined;
     }
     if (_.isArray(value)) {
-        const generations = await data.getGenerations();
+        const generations = data.getGenerations();
         const generationList = Object.keys(generations);
         if (value.every((element) => generationList.includes(element))) {
             return value.map((generation) => {
