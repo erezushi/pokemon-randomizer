@@ -18,7 +18,7 @@ export async function pickRandomPokemonWithOptions(unsantizedOptions: unknown) {
 async function pickRandomPokemonAndOptions(unsanitizedOptions: unknown) {
     const options = await validators.validateOptions(unsanitizedOptions);
     if (options && options.randomType === true && !options.type) {
-        const pokemonTypes = await data.getTypes();
+        const pokemonTypes = data.getTypes();
         const randomType = getRandomKey(pokemonTypes) as types.Types;
         options.type = randomType;
     }
@@ -63,8 +63,8 @@ function getRandomKey(items: types.Pokemon[] | types.TypeMap) {
 }
 
 export async function getFilteredPokemon(options: types.Options) {
-    const allPokemon = await data.getPokemon();
-    const allTypes = await data.getTypes();
+    const allPokemon = data.getPokemon();
+    const allTypes = data.getTypes();
     const filteredPokemon: types.Pokemon[] = [];
 
     await Promise.all(Object.entries(allPokemon).map(async ([dexNo, poke]) => {
