@@ -8,21 +8,23 @@ For an interactive UI based on this package, [click here](https://react-pokemon-
 
 ***
 
-Options:
+**Options**:
 
-* number: Number of random Pokémon to generate **DEFAULT: 6**
-* baby: Choose only baby Pokémon (Pokémon released in a generation later than their evolution) **DEFAULT: false**
-* basic: Choose only basic form Pokémon (lowest evolution stage excluding babies) **DEFAULT: false**
-* evolved: Choose only fully evolved Pokémon **DEFAULT: false**
-* type: Choose only Pokémon of this type **DEFAULT: undefined *(all types)***
-* randomType: Choose only Pokémon of a random type **DEFAULT: false**
-* superEffective: Choose only Pokémon super effective against this type **DEFAULT: undefined *(none)***
-* unique: Choose unique Pokémon **DEFAULT: false**
-* starter: Choose only starter Pokémon **DEFAULT: false**
-* legendary: Choose only legendary and mythical Pokémon (legendary is a contraversial term) **DEFAULT: false**
-* mythical: Choose only mythical Pokémon **DEFAULT: false**
-* forms: Include alternate forms of Pokémon in results **DEFAULT: false**
-* generations: Choose Pokémon only from the specified generations  **DEFAULT: undefined *(all gens)***
+| Option | Type | Description | Default | Notes |
+|:---:|:---:|:---:|:---:|:---:|
+| number | number | Number of random Pokémon to generate | 6 | integer > 0 |
+| baby | boolean | Choose only baby Pokémon (species released in a later generation than their evolutions) | false |  |
+| basic | boolean | Choose only basic Pokémon (lowest evolution stage excluding babies) | false |  |
+| evolved | boolean | Choose only fully evolved Pokémon | false |  |
+| type | string | Choose only Pokémon of this type |  | enter a single type's name in lowercase |
+| randomType | boolean | Choose only Pokémon of a random type | false |  |
+| superEffective | string | Choose only Pokémon super effective against this type |  | enter a single type's name in lowercase |
+| unique | boolean | Choose no duplicate Pokémon | false |  |
+| starter | boolean | Choose only Pokémon from the starter lines | false |  |
+| legendary | boolean | Choose only Legendary and Mythical Pokémon (Legendary can be a controversial term) | false |  |
+| mythical | boolean | Choose only Mythical Pokémon | false |  |
+| forms | boolean | Include alternate forms of Pokémon in the results | false |  |
+| generations | string[] | Choose Pokémon only from the specified generations |  | Example: ['1', '2', '4', '6'] |
 
 *Please note that some options are supposed to be mutually exclusive:*
 * *Setting baby to true together with either basic and/or evolved would return no results*
@@ -32,7 +34,7 @@ Options:
 
 ***
 
-Returned fields:
+**Returned fields**:
 
 * name: The name of the Pokémon.
 * type: The type[s] of the Pokémon.
@@ -46,7 +48,7 @@ Returned fields:
 
 ***
 
-Examples:
+**Examples**:
 
     import RandomPokemon from '@erezushi/pokemon-randomizer';
 

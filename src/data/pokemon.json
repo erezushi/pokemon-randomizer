@@ -25,6 +25,10 @@
             {
                 "name": "Mega",
                 "type": "grass poison"
+            },
+            {
+                "name": "Gigantamax",
+                "type": "grass poison"
             }
         ]
     },
@@ -88,6 +92,10 @@
             },
             {
                 "name": "Mega",
+                "type": "water"
+            },
+            {
+                "name": "Gigantamax",
                 "type": "water"
             }
         ]
@@ -3189,7 +3197,7 @@
     "420": {
         "name": "Cherubi",
         "type": "grass",
-        "evolveTo": "421",
+        "evolveTo": "421 421-Sunshine",
         "basic": true
     },
     "421": {
@@ -3323,7 +3331,7 @@
     "439": {
         "name": "Mime Jr.",
         "type": "psychic fairy",
-        "evolveTo": "122"
+        "evolveTo": "122 122-Galarian"
     },
     "440": {
         "name": "Happiny",
@@ -4105,7 +4113,7 @@
             {
                 "name": "Galarian",
                 "type": "ice",
-                "evolveTo": "555-Galarian"
+                "evolveTo": "555-Galarian-Standard"
             }
         ]
     },
@@ -5186,7 +5194,7 @@
     "680": {
         "name": "Doublade",
         "type": "steel ghost",
-        "evolveTo": "681"
+        "evolveTo": "681 681-Blade"
     },
     "681": {
         "name": "Aegislash",
@@ -6169,7 +6177,17 @@
     "812": {
         "name": "Rillaboom",
         "type": "grass",
-        "starter": true
+        "starter": true,
+        "forms": [
+            {
+                "name": "default",
+                "type": "grass"
+            },
+            {
+                "name": "Gigantamax",
+                "type": "grass"
+            }
+        ]
     },
     "813": {
         "name": "Scorbunny",
@@ -6187,7 +6205,17 @@
     "815": {
         "name": "Cinderace",
         "type": "fire",
-        "starter": true
+        "starter": true,
+        "forms": [
+            {
+                "name": "default",
+                "type": "fire"
+            },
+            {
+                "name": "Gigantamax",
+                "type": "fire"
+            }
+        ]
     },
     "816": {
         "name": "Sobble",
@@ -6205,7 +6233,17 @@
     "818": {
         "name": "Inteleon",
         "type": "water",
-        "starter": true
+        "starter": true,
+        "forms": [
+            {
+                "name": "default",
+                "type": "water"
+            },
+            {
+                "name": "Gigantamax",
+                "type": "water"
+            }
+        ]
     },
     "819": {
         "name": "Skwovet",
@@ -6438,7 +6476,7 @@
     "848": {
         "name": "Toxel",
         "type": "electric poison",
-        "evolveTo": "849-Amped 849-Low-Key",
+        "evolveTo": "849 849-Low-Key",
         "basic": true
     },
     "849": {
