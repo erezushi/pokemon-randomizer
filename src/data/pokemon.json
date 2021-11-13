@@ -4113,7 +4113,7 @@
             {
                 "name": "Galarian",
                 "type": "ice",
-                "evolveTo": "555-Galarian"
+                "evolveTo": "555-Galarian-Standard"
             }
         ]
     },
@@ -5194,7 +5194,7 @@
     "680": {
         "name": "Doublade",
         "type": "steel ghost",
-        "evolveTo": "681"
+        "evolveTo": "681 681-Blade"
     },
     "681": {
         "name": "Aegislash",
@@ -6476,7 +6476,7 @@
     "848": {
         "name": "Toxel",
         "type": "electric poison",
-        "evolveTo": "849-Amped 849-Low-Key",
+        "evolveTo": "849 849-Low-Key",
         "basic": true
     },
     "849": {
