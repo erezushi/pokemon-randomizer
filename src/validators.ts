@@ -51,7 +51,7 @@ export async function validateOptions(options: unknown) {
 
 export async function validatePokemon(
     options: types.Options,
-    poke: types.Pokemon,
+    poke: types.ListPokemon,
     dexNo: string,
     allTypes: types.TypeMap,
 ): Promise<types.Pokemon | null> {
