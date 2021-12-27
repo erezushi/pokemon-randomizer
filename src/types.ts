@@ -35,7 +35,7 @@ export interface ListPokemon {
     forms?: Form[],
 }
 
-export interface Pokemon {
+export interface Pokemon extends ListPokemon {
     dexNo: string,
 }
 
