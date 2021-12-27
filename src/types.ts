@@ -24,10 +24,9 @@ export interface Form {
     evolveTo?: string,
 }
 
-export interface Pokemon {
+export interface ListPokemon {
     name: string,
     type: string,
-    dexNo?: string,
     evolveTo?: string,
     starter?: boolean,
     legendary?: boolean,
@@ -36,8 +35,12 @@ export interface Pokemon {
     forms?: Form[],
 }
 
+export interface Pokemon {
+    dexNo: string,
+}
+
 export interface PokemonMap {
-    [id: string]: Pokemon,
+    [id: string]: ListPokemon,
 }
 
 export interface Type {
