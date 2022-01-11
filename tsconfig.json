@@ -9,7 +9,7 @@
         "module": "commonjs",
         "moduleResolution": "node",
         "sourceMap": true,
-        "mapRoot": "/dist",
+        "mapRoot": "./",
         "lib": [
             "es2017"
         ],
