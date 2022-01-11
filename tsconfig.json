@@ -4,11 +4,13 @@
         "checkJs": true,
         "declaration": true,
         "strict": true,
-        "target": "es5",
+        "target": "es6",
         "outDir": "dist",
         "module": "commonjs",
         "moduleResolution": "node",
         "sourceMap": true,
+        "inlineSources": true,
+        "mapRoot": "../dist",
         "lib": [
             "es2017"
         ],
