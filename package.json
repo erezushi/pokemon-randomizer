@@ -1,6 +1,6 @@
 {
   "name": "@erezushi/pokemon-randomizer",
-  "version": "1.6.2-rev3",
+  "version": "1.6.2-rev4",
   "description": "Library to pick random teams of pokemon, updated to Gen VIII",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
