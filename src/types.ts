@@ -39,9 +39,7 @@ export interface Pokemon extends ListPokemon {
     dexNo: string,
 }
 
-export interface PokemonMap {
-    [id: string]: ListPokemon,
-}
+export type PokemonMap = Record<string, ListPokemon>;
 
 export interface Type {
     superEffective: string,
@@ -51,9 +49,7 @@ export interface Type {
     immune: string,
 }
 
-export interface TypeMap {
-    [name: string]: Type
-}
+export type TypeMap = Record<string, Type>;
 
 export interface Options {
     number: number,
@@ -76,6 +72,4 @@ export interface Generation {
     last: number,
 }
 
-export interface GenerationMap {
-    [number: string]: Generation
-}
+export type GenerationMap = Record<string, Generation>;
