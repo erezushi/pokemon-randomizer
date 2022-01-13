@@ -6,7 +6,6 @@ module.exports = {
         'plugin:mocha/recommended',
     ],
     plugins: [
-        'chai-friendly',
         'promise',
         'mocha',
     ],
