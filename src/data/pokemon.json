@@ -4156,13 +4156,13 @@
     },
     "559": {
         "name": "Scraggy",
-        "type": "drak fighting",
+        "type": "dark fighting",
         "evolveTo": "560",
         "basic": true
     },
     "560": {
         "name": "Scrafty",
-        "type": "drak fighting"
+        "type": "dark fighting"
     },
     "561": {
         "name": "Sigilyph",
