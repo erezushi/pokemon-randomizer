@@ -1,13 +1,14 @@
 module.exports = {
     extends: [
         'airbnb-typescript',
-        'plugin:chai-friendly/recommended',
         'plugin:promise/recommended',
         'plugin:mocha/recommended',
+        'plugin:import/recommended'
     ],
     plugins: [
         'promise',
         'mocha',
+        'import',
     ],
     parserOptions: {
         project: './tsconfig.json',
@@ -29,7 +30,6 @@ module.exports = {
         'func-names': 0,
         'arrow-body-style': 0,
         '@typescript-eslint/no-unused-expressions': 0,
-        'chai-friendly/no-unused-expressions': 2,
         "prefer-arrow-callback": 0,
         "mocha/prefer-arrow-callback": 2,
         '@typescript-eslint/no-use-before-define': ['error', { variables: true, functions: false }],
