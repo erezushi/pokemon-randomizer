@@ -1,7 +1,7 @@
 {
   "name": "@erezushi/pokemon-randomizer",
   "version": "1.7.2",
-  "description": "Library to pick random teams of pokemon, updated to Gen VIII",
+  "description": "Library to pick random teams of pokemon, updated to Legends: Arceus",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
