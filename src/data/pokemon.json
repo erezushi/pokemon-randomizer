@@ -515,11 +515,33 @@
         "name": "Growlithe",
         "type": "fire",
         "evolveTo": "59",
-        "basic": true
+        "basic": true,
+        "forms": [
+            {
+                "name": "default",
+                "type": "fire",
+                "evolveTo": "59"
+            },
+            {
+                "name": "Hisuian",
+                "type": "fire rock",
+                "evolveTo": "59-Hisuian"
+            }
+        ]
     },
     "59": {
         "name": "Arcanine",
-        "type": "fire"
+        "type": "fire",
+        "forms": [
+            {
+                "name": "default",
+                "type": "fire"
+            },
+            {
+                "name": "Hisuian",
+                "type": "fire rock"
+            }
+        ]
     },
     "60": {
         "name": "Poliwag",
@@ -886,11 +908,33 @@
         "name": "Voltorb",
         "type": "electric",
         "evolveTo": "101",
-        "basic": true
+        "basic": true,
+        "forms": [
+            {
+                "name": "default",
+                "type": "electric",
+                "evolveTo": "101"
+            },
+            {
+                "name": "Hisuian",
+                "type": "electric grass",
+                "evolveTo": "101-Hisuian"
+            }
+        ]
     },
     "101": {
         "name": "Electrode",
-        "type": "electric"
+        "type": "electric",
+        "forms": [
+            {
+                "name": "default",
+                "type": "electric"
+            },
+            {
+                "name": "Hisuian",
+                "type": "electric grass"
+            }
+        ]
     },
     "102": {
         "name": "Exeggcute",
@@ -1056,7 +1100,7 @@
     "123": {
         "name": "Scyther",
         "type": "bug flying",
-        "evolveTo": "212",
+        "evolveTo": "212 900",
         "basic": true
     },
     "124": {
@@ -1338,13 +1382,23 @@
     "156": {
         "name": "Quilava",
         "type": "fire",
-        "evolveTo": "157",
+        "evolveTo": "157 157-Hisuian",
         "starter": true
     },
     "157": {
         "name": "Typhlosion",
         "type": "fire",
-        "starter": true
+        "starter": true,
+        "forms": [
+            {
+                "name": "default",
+                "type": "fire"
+            },
+            {
+                "name": "Hisuian",
+                "type": "fire ghost"
+            }
+        ]
     },
     "158": {
         "name": "Totodile",
@@ -1760,7 +1814,18 @@
     "211": {
         "name": "Qwilfish",
         "type": "water poison",
-        "basic": true
+        "basic": true,
+        "forms": [
+            {
+                "name": "default",
+                "type": "water poison"
+            },
+            {
+                "name": "Hisuian",
+                "type": "dark poison",
+                "evolveTo": "904"
+            }
+        ]
     },
     "212": {
         "name": "Scizor",
@@ -1800,7 +1865,19 @@
         "name": "Sneasel",
         "type": "dark ice",
         "evolveTo": "461",
-        "basic": true
+        "basic": true,
+        "forms": [
+            {
+                "name": "default",
+                "type": "dark ice",
+                "evolveTo": "461"
+            },
+            {
+                "name": "Hisuian",
+                "type": "fighting poison",
+                "evolveTo": "903"
+            }
+        ]
     },
     "216": {
         "name": "Teddiursa",
@@ -1810,7 +1887,8 @@
     },
     "217": {
         "name": "Ursaring",
-        "type": "normal"
+        "type": "normal",
+        "evolveTo": "901"
     },
     "218": {
         "name": "Slugma",
@@ -1916,7 +1994,8 @@
     "234": {
         "name": "Stantler",
         "type": "normal",
-        "basic": true
+        "basic": true,
+        "evolveTo": "899"
     },
     "235": {
         "name": "Smeargle",
@@ -3603,13 +3682,33 @@
         "name": "Dialga",
         "type": "steel dragon",
         "legendary": true,
-        "basic": true
+        "basic": true,
+        "forms": [
+            {
+                "name": "Altered",
+                "type": "steel dragon"
+            },
+            {
+                "name": "Origin",
+                "type": "steel dragon"
+            }
+        ]
     },
     "484": {
         "name": "Palkia",
         "type": "water dragon",
         "legendary": true,
-        "basic": true
+        "basic": true,
+        "forms": [
+            {
+                "name": "Altered",
+                "type": "water dragon"
+            },
+            {
+                "name": "Origin",
+                "type": "water dragon"
+            }
+        ]
     },
     "485": {
         "name": "Heatran",
@@ -3811,13 +3910,23 @@
     "502": {
         "name": "Dewott",
         "type": "water",
-        "evolveTo": "503",
+        "evolveTo": "503 503-Hisuian",
         "starter": true
     },
     "503": {
         "name": "Samurott",
         "type": "water",
-        "starter": true
+        "starter": true,
+        "forms": [
+            {
+                "name": "default",
+                "type": "water"
+            },
+            {
+                "name": "Hisuian",
+                "type": "water dark"
+            }
+        ]
     },
     "504": {
         "name": "Patrat",
@@ -4062,12 +4171,22 @@
     "548": {
         "name": "Petilil",
         "type": "grass",
-        "evolveTo": "549",
+        "evolveTo": "549 549-Hisuian",
         "basic": true
     },
     "549": {
         "name": "Lilligant",
-        "type": "grass"
+        "type": "grass",
+        "forms": [
+            {
+                "name": "default",
+                "type": "grass"
+            },
+            {
+                "name": "Hisuian",
+                "type": "grass fighting"
+            }
+        ]
     },
     "550": {
         "name": "Basculin",
@@ -4081,6 +4200,11 @@
             {
                 "name": "Blue-Striped",
                 "type": "water"
+            },
+            {
+                "name": "White-Striped",
+                "type": "water",
+                "evolveTo": "902"
             }
         ]
     },
@@ -4235,11 +4359,33 @@
         "name": "Zorua",
         "type": "dark",
         "evolveTo": "571",
-        "basic": true
+        "basic": true,
+        "forms": [
+            {
+                "name": "default",
+                "type": "dark",
+                "evolveTo": "571"
+            },
+            {
+                "name": "Hisuian",
+                "type": "normal ghost",
+                "evolveTo": "571-Hisuian"
+            }
+        ]
     },
     "571": {
         "name": "Zoroark",
-        "type": "dark"
+        "type": "dark",
+        "forms": [
+            {
+                "name": "default",
+                "type": "dark"
+            },
+            {
+                "name": "Hisuian",
+                "type": "normal ghost"
+            }
+        ]
     },
     "572": {
         "name": "Minccino",
@@ -4591,12 +4737,22 @@
     "627": {
         "name": "Rufflet",
         "type": "normal flying",
-        "evolveTo": "628",
+        "evolveTo": "628 628-Hisuian",
         "basic": true
     },
     "628": {
         "name": "Braviary",
-        "type": "normal flying"
+        "type": "normal flying",
+        "forms": [
+            {
+                "name": "default",
+                "type": "normal flying"
+            },
+            {
+                "name": "Hisuian",
+                "type": "psychic flying"
+            }
+        ]
     },
     "629": {
         "name": "Vullaby",
@@ -5322,17 +5478,39 @@
     "704": {
         "name": "Goomy",
         "type": "dragon",
-        "evolveTo": "705",
+        "evolveTo": "705 705-Hisuian",
         "basic": true
     },
     "705": {
         "name": "Sliggoo",
         "type": "dragon",
-        "evolveTo": "706"
+        "evolveTo": "706",
+        "forms": [
+            {
+                "name": "default",
+                "type": "dragon",
+                "evolveTo": "706"
+            },
+            {
+                "name": "Hisuian",
+                "type": "steel dragon",
+                "evolveTo": "706-Hisuian"
+            }
+        ]
     },
     "706": {
         "name": "Goodra",
-        "type": "dragon"
+        "type": "dragon",
+        "forms": [
+            {
+                "name": "default",
+                "type": "dragon"
+            },
+            {
+                "name": "Hisuian",
+                "type": "steel dragon"
+            }
+        ]
     },
     "707": {
         "name": "Klefki",
@@ -5402,12 +5580,22 @@
     "712": {
         "name": "Bergmite",
         "type": "ice",
-        "evolveTo": "713",
+        "evolveTo": "713 713-Hisuian",
         "basic": true
     },
     "713": {
         "name": "Avalugg",
-        "type": "ice"
+        "type": "ice",
+        "forms": [
+            {
+                "name": "default",
+                "type": "ice"
+            },
+            {
+                "name": "Hisuian",
+                "type": "ice rock"
+            }
+        ]
     },
     "714": {
         "name": "Noibat",
@@ -5509,13 +5697,23 @@
     "723": {
         "name": "Dartrix",
         "type": "grass flying",
-        "evolveTo": "724",
+        "evolveTo": "724 724-Hisuian",
         "starter": true
     },
     "724": {
         "name": "Decidueye",
         "type": "grass ghost",
-        "starter": true
+        "starter": true,
+        "forms":[
+            {
+                "name": "default",
+                "type": "grass ghost"
+            },
+            {
+                "name": "Hisuian",
+                "type": "grass fighting"
+            }
+        ]
     },
     "725": {
         "name": "Litten",
@@ -6926,6 +7124,56 @@
             {
                 "name": "Shadow-Rider",
                 "type": "psychic ghost"
+            }
+        ]
+    },
+    "899": {
+        "name": "Wyrdeer",
+        "type": "normal psychic"
+    },
+    "900": {
+        "name": "Kleavor",
+        "type": "bug rock"
+    },
+    "901": {
+        "name": "Ursaluna",
+        "type": "ground normal"
+    },
+    "902": {
+        "name": "Basculegion",
+        "type": "water ghost",
+        "forms": [
+            {
+                "name": "M",
+                "type": "water ghost"
+            },
+            {
+                "name": "F",
+                "type": "water ghost"
+            }
+        ]
+    },
+    "903": {
+        "name": "Sneasler",
+        "type": "fighting poison"
+    },
+    "904": {
+        "name": "Overqwil",
+        "type": "dark poison"
+    },
+    "905": {
+        "name": "Enamorus",
+        "type": "fairy flying",
+        "basic": true,
+        "legendary": true,
+        "forms": [
+            {
+                "name": "default",
+                "type": "fairy flying"
+            },
+            {
+                "name": "Therian",
+                "type": "fairy flying"
             }
         ]
     }
