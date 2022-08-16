@@ -7164,8 +7164,8 @@
     "905": {
         "name": "Enamorus",
         "type": "fairy flying",
-        "basic": true,
         "legendary": true,
+        "basic": true,
         "forms": [
             {
                 "name": "default",

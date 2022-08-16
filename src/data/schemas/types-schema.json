@@ -1,0 +1,35 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "title": "Types list",
+    "description": "List of the Pokémon types and thier effectiveness against other types",
+    "type": "object",
+    "required": [],
+    "additionalProperties": {
+        "description": "A Pokémon type",
+        "type": "object",
+        "properties": {
+            "superEffective": {
+                "description": "Types this type is super effective against",
+                "type": "string"
+            },
+            "notEffective": {
+                "description": "Types this type is not very effective / ineffective against",
+                "type": "string"
+            },
+            "vulnerable": {
+                "description": "Types this type is weak to",
+                "type": "string"
+            },
+            "resists": {
+                "description": "Types this type resists",
+                "type": "string"
+            },
+            "immune": {
+                "description": "Types this type is immune to",
+                "type": "string"
+            }
+        },
+        "required": ["superEffective", "notEffective", "vulnerable", "resists", "immune"],
+        "additionalProperties": false
+    }
+}

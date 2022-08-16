@@ -1,0 +1,32 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "title": "Generation List",
+    "description": "The list of generations used by the randomizer",
+    "type": "object",
+    "required": [],
+    "additionalProperties": {
+        "description": "A Pokémon generation",
+        "type": "object",
+        "properties": {
+            "first": {
+                "description": "Pokédex number of the first Pokémon in the generation",
+                "type": "number"
+            },
+            "last": {
+                "description": "Pokédex number of the last Pokémon in the generation",
+                "type": "number"
+            }
+        },
+        "additionalProperties": false,
+        "required": ["first", "last"],
+        "defaultSnippets": [
+            {
+                "label": "Generation",
+                "body": {
+                    "first": "^$1",
+                    "last": "^$2"
+                }
+            }
+        ]
+    }
+}

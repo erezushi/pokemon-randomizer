@@ -79,12 +79,12 @@ export async function validatePokemon(
             }
         }
 
-        const pokeTypes = pokeCopy.type.split(' ') as types.Types[];
+        const pokeTypes = pokeCopy.type.split(' ') as types.PokemonType[];
         if (options.type) {
             if (options.forms && pokeCopy.forms) {
                 let allMonTypes = pokeTypes;
                 pokeCopy.forms.forEach(
-                    (form) => allMonTypes.push(...form.type.split(' ') as types.Types[]),
+                    (form) => allMonTypes.push(...form.type.split(' ') as types.PokemonType[]),
                 );
                 allMonTypes = _.uniq(allMonTypes);
 
@@ -93,7 +93,7 @@ export async function validatePokemon(
                 }
 
                 pokeCopy.forms = pokeCopy.forms.filter((form) => {
-                    const formTypes: types.Types[] = form.type.split(' ') as types.Types[];
+                    const formTypes = form.type.split(' ') as types.PokemonType[];
 
                     return formTypes.includes(options.type!);
                 });
@@ -185,7 +185,7 @@ export function stringValidator(optionName: string, value: unknown) {
 }
 
 export async function typeValidator(optionName: string,
-    value: unknown): Promise<types.Types | undefined> {
+    value: unknown): Promise<types.PokemonType | undefined> {
     if (value === null || value === undefined) {
         return undefined;
     }
@@ -193,7 +193,7 @@ export async function typeValidator(optionName: string,
     const lowerCase = stringValidator(optionName, value) ?? '';
     const validTypes = data.getTypes();
     if (Object.keys(validTypes).includes(lowerCase)) {
-        return lowerCase as types.Types;
+        return lowerCase as types.PokemonType;
     }
     throw Error(`Option ${optionName} must be a valid type. Received: ${value}`);
 }
