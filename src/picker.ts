@@ -19,7 +19,7 @@ async function pickRandomPokemonAndOptions(unsanitizedOptions: unknown) {
     const options = await validators.validateOptions(unsanitizedOptions);
     if (options && options.randomType === true && !options.type) {
         const pokemonTypes = data.getTypes();
-        const randomType = getRandomKey(pokemonTypes) as types.Types;
+        const randomType = getRandomKey(pokemonTypes) as types.PokemonType;
         options.type = randomType;
     }
 

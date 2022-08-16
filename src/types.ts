@@ -1,4 +1,4 @@
-type PokemonType =
+export type PokemonType =
     'bug'
     | 'dark'
     | 'dragon'
