@@ -1,0 +1,141 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "title": "Pokemon list",
+    "description": "The list of Pokémon used by the randomizer",
+    "type": "object",
+    "required": [],
+    "additionalProperties": {
+        "description": "A Pokémon specie",
+        "type": "object",
+        "properties": {
+            "name": {
+                "description": "The name of the Pokémon",
+                "type": "string"
+            },
+            "type": {
+                "description": "The Pokémon's typing",
+                "type": "string"
+            },
+            "evolveTo": {
+                "description": "Number and form (when applicable) that this Pokémon evolves to",
+                "type": "string"
+            },
+            "starter": {
+                "description": "Asserts that this Pokémon is a starter",
+                "type": "boolean"
+            },
+            "legendary": {
+                "description": "Asserts that this Pokémon is a legendary",
+                "type": "boolean"
+            },
+            "mythical": {
+                "description": "Asserts that this Pokémon is a mythical",
+                "type": "boolean"
+            },
+            "basic": {
+                "description": "Asserts that this Pokémon is in the basic evolution stage",
+                "type": "boolean"
+            },
+            "forms": {
+                "description": "Various forms this Pokémon has",
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "description": "Name of the form",
+                            "type": "string"
+                        },
+                        "type": {
+                            "description": "The form's typing",
+                            "type": "string"
+                        },
+                        "evolveTo": {
+                            "description": "Number and form (when applicable) that this form evolves to",
+                            "type": "string"
+                        }
+                    },
+                    "required": ["name", "type"]
+                },
+                "minItems": 1
+            }
+        },
+        "patternProperties": {
+            "^_": {
+                "description": "ignored key",
+                "type": ["boolean", "number", "string"]
+            }
+        },
+        "required": ["name", "type"],
+        "defaultSnippets": [
+            {
+                "label": "Basic evolving Pokémon",
+                "body": {
+                    "name": "$1",
+                    "type": "$2",
+                    "evolveTo": "$3",
+                    "basic": true
+                }
+            },
+            {
+                "label": "Evolving Pokémon",
+                "body": {
+                    "name": "$1",
+                    "type": "$2",
+                    "evolveTo": "$3"
+                }
+            },
+            {
+                "label": "Fully evolved Pokémon",
+                "body": {
+                    "name": "$1",
+                    "type": "$2"
+                }
+            },
+            {
+                "label": "Standalone Pokémon",
+                "body": {
+                    "name": "$1",
+                    "type": "$2",
+                    "basic": true
+                }
+            },
+            {
+                "label": "Starter Pokémon",
+                "body": {
+                    "name": "$1",
+                    "type": "$2",
+                    "starter": true
+                }
+            },
+            {
+                "label": "Basic starter Pokémon",
+                "body": {
+                    "name": "$1",
+                    "type": "$2",
+                    "evolveTo": "$3",
+                    "starter": true,
+                    "basic": "true"
+                }
+            },
+            {
+                "label": "Legendary Pokémon",
+                "body": {
+                    "name": "$1",
+                    "type": "$2",
+                    "legendary": true,
+                    "basic": true
+                }
+            },
+            {
+                "label": "Mythical Pokémon",
+                "body": {
+                    "name": "$1",
+                    "type": "$2",
+                    "mythical": true,
+                    "basic": true
+                }
+            }
+        ]
+    }
+}
