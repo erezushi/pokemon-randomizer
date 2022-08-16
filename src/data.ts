@@ -4,13 +4,13 @@ import TYPES from './data/types.json';
 import GENERATIONS from './data/generations.json';
 
 export const getPokemon = () => {
-    return (POKEMON as unknown) as types.PokemonMap;
+    return POKEMON as unknown as types.PokemonMap;
 };
 
-export const getTypes = () => {
-    return (TYPES as unknown) as types.TypeMap;
+export const getTypes = (): types.TypeMap => {
+    return TYPES;
 };
 
-export const getGenerations = () => {
-    return (GENERATIONS as unknown) as types.GenerationMap;
+export const getGenerations = (): types.GenerationMap => {
+    return GENERATIONS;
 };

@@ -1,4 +1,4 @@
-export type Types =
+type PokemonType =
     'bug'
     | 'dark'
     | 'dragon'
@@ -18,20 +18,22 @@ export type Types =
     | 'steel'
     | 'water';
 
+export type SpecieType = PokemonType | `${PokemonType} ${PokemonType}` | 'bird normal';
+
 export interface Form {
     name: string,
-    type: string,
+    type: SpecieType,
     evolveTo?: string,
 }
 
 export interface ListPokemon {
     name: string,
-    type: string,
+    type: SpecieType,
     evolveTo?: string,
-    starter?: boolean,
-    legendary?: boolean,
-    mythical?: boolean,
-    basic?: boolean,
+    starter?: true,
+    legendary?: true,
+    mythical?: true,
+    basic?: true,
     forms?: Form[],
 }
 
@@ -58,8 +60,8 @@ export interface Options {
     evolved?: boolean,
     unique?: boolean,
     randomType?: boolean,
-    type?: Types,
-    superEffective?: Types,
+    type?: PokemonType,
+    superEffective?: PokemonType,
     starter?: boolean,
     legendary?: boolean,
     mythical?: boolean,
