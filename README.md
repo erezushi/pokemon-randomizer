@@ -53,7 +53,7 @@ For an interactive UI based on this package, [click here](https://react-pokemon-
     import RandomPokemon from '@erezushi/pokemon-randomizer';
 
     // Chooses 6 random Pokémon
-    const result = await RandomPokemon();
+    const result = RandomPokemon();
     // result = [
     //     { name: 'Pikachu' ... },
     //     { name: 'Mewtwo' ... },
@@ -61,7 +61,7 @@ For an interactive UI based on this package, [click here](https://react-pokemon-
     // ]
 
     // Chooses 3 random, unique, final stage Pokémon, that are super effective against fire
-    const fullyEvolved = await RandomPokemon({
+    const fullyEvolved = RandomPokemon({
         number: 3,
         unique: true,
         evolved: true,

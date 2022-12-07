@@ -6,24 +6,20 @@ import * as types from './types';
 
 const chance = new Chance();
 
-export async function pickRandomPokemon(unsantizedOptions?: unknown) {
-    const result = await pickRandomPokemonAndOptions(unsantizedOptions);
+export function pickRandomPokemon(unsantizedOptions?: unknown) {
+    const result = pickRandomPokemonAndOptions(unsantizedOptions);
     return result.pokemon;
 }
 
-export async function pickRandomPokemonWithOptions(unsantizedOptions: unknown) {
-    return pickRandomPokemonAndOptions(unsantizedOptions);
-}
-
-async function pickRandomPokemonAndOptions(unsanitizedOptions: unknown) {
-    const options = await validators.validateOptions(unsanitizedOptions);
+function pickRandomPokemonAndOptions(unsanitizedOptions: unknown) {
+    const options = validators.validateOptions(unsanitizedOptions);
     if (options && options.randomType === true && !options.type) {
         const pokemonTypes = data.getTypes();
         const randomType = getRandomKey(pokemonTypes) as types.PokemonType;
         options.type = randomType;
     }
 
-    const pokemonToPickFrom = await getFilteredPokemon(options);
+    const pokemonToPickFrom = getFilteredPokemon(options);
     const pokemonKeys = Object.keys(pokemonToPickFrom);
     const numPokemon = pokemonKeys.length;
 
@@ -62,20 +58,20 @@ function getRandomKey(items: types.Pokemon[] | types.TypeMap) {
     return keys[randomNum];
 }
 
-export async function getFilteredPokemon(options: types.Options) {
+export function getFilteredPokemon(options: types.Options) {
     const allPokemon = data.getPokemon();
     const allTypes = data.getTypes();
     const filteredPokemon: types.Pokemon[] = [];
 
-    await Promise.all(Object.entries(allPokemon).map(async ([dexNo, poke]) => {
-        const validated = await validators.validatePokemon(
+    Object.entries(allPokemon).forEach(([dexNo, poke]) => {
+        const validated = validators.validatePokemon(
             options, poke, dexNo.toString(), allTypes,
         );
 
         if (validated !== null) {
             filteredPokemon.push(validated);
         }
-    }));
+    });
 
     if (filteredPokemon.length === 0) {
         throw Error(`No Pokémon satisfy those options${

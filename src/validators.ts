@@ -4,7 +4,7 @@ import * as types from './types';
 
 const DEFAULT_NUMBER = 6;
 
-export async function validateOptions(options: unknown) {
+export function validateOptions(options: unknown) {
     const defaultNumber = DEFAULT_NUMBER;
     let inputOptions: types.Options | undefined | null = {
         number: defaultNumber,
@@ -31,9 +31,9 @@ export async function validateOptions(options: unknown) {
         inputOptions?.unique);
     sanitizedOptions.randomType = booleanValidator('randomType',
         inputOptions?.randomType);
-    sanitizedOptions.type = await typeValidator('type',
+    sanitizedOptions.type = typeValidator('type',
         inputOptions?.type);
-    sanitizedOptions.superEffective = await typeValidator('superEffective',
+    sanitizedOptions.superEffective = typeValidator('superEffective',
         inputOptions?.superEffective);
     sanitizedOptions.starter = booleanValidator('starter',
         inputOptions?.starter);
@@ -43,18 +43,18 @@ export async function validateOptions(options: unknown) {
         inputOptions?.mythical);
     sanitizedOptions.forms = booleanValidator('forms',
         inputOptions?.forms);
-    sanitizedOptions.generations = await generationArrayValidator('generations',
+    sanitizedOptions.generations = generationArrayValidator('generations',
         inputOptions?.generations);
 
     return sanitizedOptions;
 }
 
-export async function validatePokemon(
+export function validatePokemon(
     options: types.Options,
     poke: types.ListPokemon,
     dexNo: string,
     allTypes: types.TypeMap,
-): Promise<types.Pokemon | null> {
+): types.Pokemon | null {
     const pokeCopy = { ...poke };
     if (options) {
         if (!options.forms) {
@@ -184,8 +184,8 @@ export function stringValidator(optionName: string, value: unknown) {
     throw Error(`Option ${optionName} must be a string. Received: ${value}`);
 }
 
-export async function typeValidator(optionName: string,
-    value: unknown): Promise<types.PokemonType | undefined> {
+export function typeValidator(optionName: string,
+    value: unknown): types.PokemonType | undefined {
     if (value === null || value === undefined) {
         return undefined;
     }
@@ -198,8 +198,8 @@ export async function typeValidator(optionName: string,
     throw Error(`Option ${optionName} must be a valid type. Received: ${value}`);
 }
 
-export async function generationArrayValidator(optionName: string,
-    value: string[] | undefined | null): Promise<string[] | undefined> {
+export function generationArrayValidator(optionName: string,
+    value: string[] | undefined | null): string[] | undefined {
     if (value === null || value === undefined) {
         return undefined;
     }
