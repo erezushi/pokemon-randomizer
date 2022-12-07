@@ -115,7 +115,7 @@
                     "type": "$2",
                     "evolveTo": "$3",
                     "starter": true,
-                    "basic": "true"
+                    "basic": true
                 }
             },
             {
