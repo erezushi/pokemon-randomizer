@@ -509,7 +509,8 @@
     },
     "57": {
         "name": "Primeape",
-        "type": "fighting"
+        "type": "fighting",
+        "evolveTo": "979"
     },
     "58": {
         "name": "Growlithe",
@@ -1138,7 +1139,25 @@
     "128": {
         "name": "Tauros",
         "type": "normal",
-        "basic": true
+        "basic": true,
+        "forms": [
+            {
+                "name": "default",
+                "type": "normal"
+            },
+            {
+                "name": "Combat",
+                "type": "fighting"
+            },
+            {
+                "name": "Blaze",
+                "type": "fighting fire"
+            },
+            {
+                "name": "Aqua",
+                "type": "fighting water"
+            }
+        ]
     },
     "129": {
         "name": "Magikarp",
@@ -1597,7 +1616,19 @@
         "name": "Wooper",
         "type": "water ground",
         "evolveTo": "195",
-        "basic": true
+        "basic": true,
+        "forms": [
+            {
+                "name": "default",
+                "type": "water ground",
+                "evolveTo": "195"
+            },
+            {
+                "name": "Paldean",
+                "type": "poison ground",
+                "evolveTo": "980"
+            }
+        ]
     },
     "195": {
         "name": "Quagsire",
@@ -1764,7 +1795,8 @@
     "203": {
         "name": "Girafarig",
         "type": "normal psychic",
-        "basic": true
+        "basic": true,
+        "evolveTo": "981"
     },
     "204": {
         "name": "Pineco",
@@ -1779,7 +1811,8 @@
     "206": {
         "name": "Dunsparce",
         "type": "normal",
-        "basic": true
+        "basic": true,
+        "evolveTo": "982"
     },
     "207": {
         "name": "Gligar",
@@ -4727,7 +4760,8 @@
     },
     "625": {
         "name": "Bisharp",
-        "type": "dark steel"
+        "type": "dark steel",
+        "evolveTo": "983"
     },
     "626": {
         "name": "Bouffalant",
@@ -7176,5 +7210,595 @@
                 "type": "fairy flying"
             }
         ]
+    },
+    "906": {
+        "name": "Sprigatito",
+        "type": "grass",
+        "evolveTo": "907",
+        "starter": true,
+        "basic": true
+    },
+    "907": {
+        "name": "Floragato",
+        "type": "grass",
+        "evolveTo": "908",
+        "starter": true
+    },
+    "908": {
+        "name": "Meowscarada",
+        "type": "grass dark",
+        "starter": true
+    },
+    "909": {
+        "name": "Fuecoco",
+        "type": "fire",
+        "evolveTo": "910",
+        "starter": true,
+        "basic": true
+    },
+    "910": {
+        "name": "Crocalor",
+        "type": "fire",
+        "evolveTo": "911",
+        "starter": true
+    },
+    "911": {
+        "name": "Skeledirge",
+        "type": "fire ghost",
+        "starter": true
+    },
+    "912": {
+        "name": "Quaxly",
+        "type": "water",
+        "evolveTo": "913",
+        "starter": true,
+        "basic": true
+    },
+    "913": {
+        "name": "Quaxwell",
+        "type": "water",
+        "evolveTo": "914",
+        "starter": true
+    },
+    "914": {
+        "name": "Quaquaval",
+        "type": "water fighting",
+        "starter": true
+    },
+    "915": {
+        "name": "Lechonk",
+        "type": "normal",
+        "evolveTo": "916",
+        "basic": true
+    },
+    "916": {
+        "name": "Oinkologne",
+        "type": "normal",
+        "forms": [
+            {
+                "name": "M",
+                "type": "normal"
+            },
+            {
+                "name": "F",
+                "type": "normal"
+            }
+        ]
+    },
+    "917": {
+        "name": "Tarountula",
+        "type": "bug",
+        "evolveTo": "918",
+        "basic": true
+    },
+    "918": {
+        "name": "Spidops",
+        "type": "bug"
+    },
+    "919": {
+        "name": "Nymble",
+        "type": "bug",
+        "evolveTo": "920",
+        "basic": true
+    },
+    "920": {
+        "name": "Lokix",
+        "type": "bug dark"
+    },
+    "921": {
+        "name": "Pawmi",
+        "type": "electric",
+        "evolveTo": "922",
+        "basic": true
+    },
+    "922": {
+        "name": "Pawmo",
+        "type": "electric fighting",
+        "evolveTo": "923"
+    },
+    "923": {
+        "name": "Pawmot",
+        "type": "electric fighting"
+    },
+    "924": {
+        "name": "Tandemaus",
+        "type": "normal",
+        "evolveTo": "925",
+        "basic": true
+    },
+    "925": {
+        "name": "Maushold",
+        "type": "normal",
+        "forms": [
+            {
+                "name": "Four",
+                "type": "normal"
+            },
+            {
+                "name": "Three",
+                "type": "normal"
+            }
+        ]
+    },
+    "926": {
+        "name": "Fidough",
+        "type": "fairy",
+        "evolveTo": "927",
+        "basic": true
+    },
+    "927": {
+        "name": "Dachsbun",
+        "type": "fairy"
+    },
+    "928": {
+        "name": "Smoliv",
+        "type": "grass normal",
+        "evolveTo": "929",
+        "basic": true
+    },
+    "929": {
+        "name": "Dolliv",
+        "type": "grass normal",
+        "evolveTo": "930"
+    },
+    "930": {
+        "name": "Arboliva",
+        "type": "grass normal"
+    },
+    "931": {
+        "name": "Squawkabilly",
+        "type": "normal flying",
+        "basic": true
+    },
+    "932": {
+        "name": "Nacli",
+        "type": "rock",
+        "evolveTo": "933",
+        "basic": true
+    },
+    "933": {
+        "name": "Naclstack",
+        "type": "rock",
+        "evolveTo": "934"
+    },
+    "934": {
+        "name": "Garganacl",
+        "type": "rock"
+    },
+    "935": {
+        "name": "Charcadet",
+        "type": "fire",
+        "evolveTo": "936 937",
+        "basic": true
+    },
+    "936": {
+        "name": "Armarouge",
+        "type": "fire psychic"
+    },
+    "937": {
+        "name": "Ceruledge",
+        "type": "fire ghost"
+    },
+    "938": {
+        "name": "Tadbulb",
+        "type": "electric",
+        "evolveTo": "939",
+        "basic": true
+    },
+    "939": {
+        "name": "Bellibolt",
+        "type": "electric"
+    },
+    "940": {
+        "name": "Wattrel",
+        "type": "electric flying",
+        "evolveTo": "941",
+        "basic": true
+    },
+    "941": {
+        "name": "Kilowattrel",
+        "type": "electric flying"
+    },
+    "942": {
+        "name": "Maschiff",
+        "type": "dark",
+        "evolveTo": "943",
+        "basic": true
+    },
+    "943": {
+        "name": "Mabosstiff",
+        "type": "dark"
+    },
+    "944": {
+        "name": "Shroodle",
+        "type": "poison normal",
+        "evolveTo": "945",
+        "basic": true
+    },
+    "945": {
+        "name": "Grafaiai",
+        "type": "poison normal"
+    },
+    "946": {
+        "name": "Bramblin",
+        "type": "grass ghost",
+        "evolveTo": "947",
+        "basic": true
+    },
+    "947": {
+        "name": "Brambleghast",
+        "type": "grass ghost"
+    },
+    "948": {
+        "name": "Toedscool",
+        "type": "ground grass",
+        "evolveTo": "949",
+        "basic": true
+    },
+    "949": {
+        "name": "Toedscruel",
+        "type": "ground grass"
+    },
+    "950": {
+        "name": "Klawf",
+        "type": "rock",
+        "basic": true
+    },
+    "951": {
+        "name": "Capsakid",
+        "type": "grass",
+        "evolveTo": "952",
+        "basic": true
+    },
+    "952": {
+        "name": "Scovillain",
+        "type": "grass fire"
+    },
+    "953": {
+        "name": "Rellor",
+        "type": "bug",
+        "evolveTo": "954",
+        "basic": true
+    },
+    "954": {
+        "name": "Rabsca",
+        "type": "bug psychic"
+    },
+    "955": {
+        "name": "Flittle",
+        "type": "psychic",
+        "evolveTo": "956",
+        "basic": true
+    },
+    "956": {
+        "name": "Espathra",
+        "type": "psychic"
+    },
+    "957": {
+        "name": "Tinkatink",
+        "type": "fairy steel",
+        "evolveTo": "958",
+        "basic": true
+    },
+    "958": {
+        "name": "Tinkatuff",
+        "type": "fairy steel",
+        "evolveTo": "959"
+    },
+    "959": {
+        "name": "Tinkaton",
+        "type": "fairy steel"
+    },
+    "960": {
+        "name": "Wiglett",
+        "type": "water",
+        "evolveTo": "961",
+        "basic": true
+    },
+    "961": {
+        "name": "Wugtrio",
+        "type": "water"
+    },
+    "962": {
+        "name": "Bombirdier",
+        "type": "flying dark",
+        "basic": true
+    },
+    "963": {
+        "name": "Finizen",
+        "type": "water",
+        "evolveTo": "964",
+        "basic": true
+    },
+    "964": {
+        "name": "Palafin",
+        "type": "water",
+        "forms": [
+            {
+                "name": "Zero",
+                "type": "water"
+            },
+            {
+                "name": "Hero",
+                "type": "water"
+            }
+        ]
+    },
+    "965": {
+        "name": "Varoom",
+        "type": "steel poison",
+        "evolveTo": "966",
+        "basic": true
+    },
+    "966": {
+        "name": "Revavroom",
+        "type": "steel poison"
+    },
+    "967": {
+        "name": "Cyclizar",
+        "type": "dragon normal",
+        "basic": true
+    },
+    "968": {
+        "name": "Orthworm",
+        "type": "steel",
+        "basic": true
+    },
+    "969": {
+        "name": "Glimmet",
+        "type": "rock poison",
+        "evolveTo": "970",
+        "basic": true
+    },
+    "970": {
+        "name": "Glimmora",
+        "type": "rock poison"
+    },
+    "971": {
+        "name": "Greavard",
+        "type": "ghost",
+        "evolveTo": "972",
+        "basic": true
+    },
+    "972": {
+        "name": "Houndstone",
+        "type": "ghost"
+    },
+    "973": {
+        "name": "Flamigo",
+        "type": "flying fighting",
+        "basic": true
+    },
+    "974": {
+        "name": "Cetoddle",
+        "type": "ice",
+        "evolveTo": "975",
+        "basic": true
+    },
+    "975": {
+        "name": "Cetitan",
+        "type": "ice"
+    },
+    "976": {
+        "name": "Veluza",
+        "type": "water psychic",
+        "basic": true
+    },
+    "977": {
+        "name": "Dondozo",
+        "type": "water",
+        "basic": true
+    },
+    "978": {
+        "name": "Tatsugiri",
+        "type": "dragon water",
+        "basic": true,
+        "forms": [
+            {
+                "name": "Curly",
+                "type": "dragon water"
+            },
+            {
+                "name": "Droopy",
+                "type": "dragon water"
+            },
+            {
+                "name": "Stretchy",
+                "type": "dragon water"
+            }
+        ]
+    },
+    "979": {
+        "name": "Annihilape",
+        "type": "fighting ghost"
+    },
+    "980": {
+        "name": "Clodsire",
+        "type": "poison ground"
+    },
+    "981": {
+        "name": "Farigiraf",
+        "type": "normal psychic"
+    },
+    "982": {
+        "name": "Dudunsparce",
+        "type": "normal",
+        "forms": [
+            {
+                "name": "Two-Segment",
+                "type": "normal"
+            },
+            {
+                "name": "Three-Segment",
+                "type": "normal"
+            }
+        ]
+    },
+    "983": {
+        "name": "Kingambit",
+        "type": "dark steel"
+    },
+    "984": {
+        "name": "Great Tusk",
+        "type": "ground fighting",
+        "basic": true
+    },
+    "985": {
+        "name": "Scream Tail",
+        "type": "fairy psychic",
+        "basic": true
+    },
+    "986": {
+        "name": "Brute Bonnet",
+        "type": "grass dark",
+        "basic": true
+    },
+    "987": {
+        "name": "Flutter Mane",
+        "type": "ghost fairy",
+        "basic": true
+    },
+    "988": {
+        "name": "Slither Wing",
+        "type": "bug fighting",
+        "basic": true
+    },
+    "989": {
+        "name": "Sandy Shocks",
+        "type": "electric ground",
+        "basic": true
+    },
+    "990": {
+        "name": "Iron Treads",
+        "type": "ground steel",
+        "basic": true
+    },
+    "991": {
+        "name": "Iron Bundle",
+        "type": "ice water",
+        "basic": true
+    },
+    "992": {
+        "name": "Iron hands",
+        "type": "fighting electric",
+        "basic": true
+    },
+    "993": {
+        "name": "Iron Jugulis",
+        "type": "dark flying",
+        "basic": true
+    },
+    "994": {
+        "name": "Iron Moth",
+        "type": "fire poison",
+        "basic": true
+    },
+    "995": {
+        "name": "Iron Thorns",
+        "type": "rock electric",
+        "basic": true
+    },
+    "996": {
+        "name": "Frigibax",
+        "type": "dragon ice",
+        "evolveTo": "997",
+        "basic": true
+    },
+    "997": {
+        "name": "Arctibax",
+        "type": "dragon ice",
+        "evolveTo": "998"
+    },
+    "998": {
+        "name": "Baxcalibur",
+        "type": "dragon ice"
+    },
+    "999": {
+        "name": "Gimmighoul",
+        "type": "ghost",
+        "evolveTo": "1000",
+        "basic": true,
+        "forms": [
+            {
+                "name": "Chest",
+                "type": "ghost",
+                "evolveTo": "1000"
+            },
+            {
+                "name": "Roaming",
+                "type": "ghost",
+                "evolveTo": "1000"
+            }
+        ]
+    },
+    "1000": {
+        "name": "Gholdengo",
+        "type": "steel ghost"
+    },
+    "1001": {
+        "name": "Wo-Chien",
+        "type": "dark grass",
+        "legendary": true,
+        "basic": true
+    },
+    "1002": {
+        "name": "Chien-Pao",
+        "type": "dark ice",
+        "legendary": true,
+        "basic": true
+    },
+    "1003": {
+        "name": "Ting-Lu",
+        "type": "dark ground",
+        "legendary": true,
+        "basic": true
+    },
+    "1004": {
+        "name": "Chi-Yu",
+        "type": "dark fire",
+        "legendary": true,
+        "basic": true
+    },
+    "1005": {
+        "name": "Roaring Moon",
+        "type": "dragon dark",
+        "basic": true
+    },
+    "1006": {
+        "name": "Iron Valiant",
+        "type": "fairy fighting",
+        "basic": true
+    },
+    "1007": {
+        "name": "Koraidon",
+        "type": "fighting dragon",
+        "legendary": true,
+        "basic": true
+    },
+    "1008": {
+        "name": "Miraidon",
+        "type": "electric dragon",
+        "legendary": true,
+        "basic": true
     }
 }
