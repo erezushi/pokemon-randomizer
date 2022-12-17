@@ -1,7 +1,7 @@
 {
   "name": "@erezushi/pokemon-randomizer",
   "version": "1.10.0",
-  "description": "Library to pick random teams of pokemon, updated to Legends: Arceus",
+  "description": "Library to pick random teams of Pokémon, updated to Scarlet & Violet",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -16,7 +16,10 @@
   ],
   "keywords": [
     "pokemon",
-    "random"
+    "random",
+    "list",
+    "sv",
+    "scarletviolet"
   ],
   "author": "Dylan Stankievech",
   "contributors": [
