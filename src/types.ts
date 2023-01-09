@@ -43,7 +43,7 @@ export interface Pokemon extends ListPokemon {
 
 export type PokemonMap = Record<string, ListPokemon>;
 
-export interface Type {
+export interface TypeMatchups {
     superEffective: string,
     notEffective: string,
     vulnerable: string,
@@ -51,7 +51,7 @@ export interface Type {
     immune: string,
 }
 
-export type TypeMap = Record<string, Type>;
+export type TypeMap = Record<PokemonType, TypeMatchups>;
 
 export interface Options {
     number: number,
@@ -67,6 +67,7 @@ export interface Options {
     mythical?: boolean,
     forms?: boolean,
     generations?: string[],
+    customList?: string[],
 }
 
 export interface Generation {
