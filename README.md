@@ -25,12 +25,14 @@ For an interactive UI based on this package, [click here](https://react-pokemon-
 | mythical | boolean | Choose only Mythical Pokémon | false |  |
 | forms | boolean | Include alternate forms of Pokémon in the results | false |  |
 | generations | string[] | Choose Pokémon only from the specified generations |  | Example: ['1', '2', '4', '6'] |
+| customList | string[] | Specify names of Pokémon to choose from | | Pokémon names must match internal names in all but case. Internal list can be obtained using the exported `getPokemon` function for increased ease.
 
 *Please note that some options are supposed to be mutually exclusive:*
-* *Setting baby to true together with either basic and/or evolved would return no results*
-* *Setting starter to true together with either legendary and/or mythical would return no results*
-* *Setting both legendary and mythical to true is the same as just setting mythical to true*
-* *Random type option won't work if you've set the type option*
+* *Setting `baby` to true together with either `basic` and/or `evolved` would return no results*
+* *Setting `starter` to true together with either `legendary` and/or `mythical` would return no results*
+* *Setting both `legendary` and `mythical` to true is the same as just setting mythical to true*
+* *`randomType` option will be ignored if you've set the `type` option*
+* *setting the `customList` option will cause all options except `number`, `unique` and `forms` to be ignored*
 
 ***
 
@@ -48,15 +50,37 @@ For an interactive UI based on this package, [click here](https://react-pokemon-
 
 ***
 
+**Non-default exports**
+
+* TypeScript types (all types used in the library are exported):
+    * PokemonType: String enum of all 18 types.
+    * SpecieType: String enum of all possible typings a Pokémon specie can have.
+    * Form: The type of the values in the `forms` field of the Pokémon list.
+    * ListPokemon: Object detailing a Pokémon species (Returned Fields without dexNo).
+    * Pokemon: The type of the values in the main function's result array.
+    * PokemonMap: Record<string, ListPokemon> - The type of the internal Pokémon List.
+    * TypeMatchups: Object detailing type matchups of a specific type. 
+    * TypeMap: Record<PokemonType, TypeMatchups> - The type of the internal type list.
+    * Options: Type of the only parameter of the main function.
+    * Generation: Object detailing the first and last indices of a generation.
+    * GenerationMap: Record<string, Generation> - The type of the internal generation list.
+* Extra functions:
+    * getPokemon: () => PokemonMap - Returns the internal Pokémon list
+    * getTypes: () => TypeMap - Returns the internal type list
+    * getGenerations: () => GenerationMap - Returns the internal Generation list
+   
+
+***
+
 **Examples**:
 
     import RandomPokemon from '@erezushi/pokemon-randomizer';
 
-    // Chooses 6 random Pokémon
+    // No options - Chooses 6 random Pokémon
     const result = RandomPokemon();
     // result = [
-    //     { name: 'Pikachu' ... },
-    //     { name: 'Mewtwo' ... },
+    //     { name: 'Pikachu', ... },
+    //     { name: 'Mewtwo', ... },
     //     ...
     // ]
 
@@ -68,8 +92,30 @@ For an interactive UI based on this package, [click here](https://react-pokemon-
         superEffective: 'fire'
     });
     // fullyEvolved = [
-    //     { name: 'Blastoise' ... },
-    //     { name: 'Golem' ... },
-    //     { name: 'Omastar' ...},
+    //     { name: 'Blastoise', ... },
+    //     { name: 'Golem', ... },
+    //     { name: 'Omastar', ...},
     // ]
 
+    // Using the customList option
+    const customList = [
+        "charmander",
+        "vulpix",
+        "eevee",
+        "latias",
+        "zorua",
+        "fennekin",
+        "litten",
+        "sprigatito",
+    ];
+
+    const customFilter = RandomPokemon({
+        number: 3,
+        unique: true,
+        customList,
+    });
+    // CustomFilter = [
+    //     { name: 'Fennekin' ... },
+    //     { name: 'Vulpix' ... },
+    //     { name: 'Latias' ... },
+    // ]
