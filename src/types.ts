@@ -38,7 +38,7 @@ export interface ListPokemon {
 }
 
 export interface Pokemon extends ListPokemon {
-    dexNo: string,
+    dexNo: number,
 }
 
 export type PokemonMap = Record<string, ListPokemon>;

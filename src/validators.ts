@@ -52,7 +52,7 @@ export function validateOptions(options: unknown) {
 export function validatePokemon(
     options: types.Options,
     poke: types.ListPokemon,
-    dexNo: string,
+    dexNo: number,
     allTypes: types.TypeMap,
 ): types.Pokemon | null {
     const pokeCopy = { ...poke };
@@ -63,7 +63,7 @@ export function validatePokemon(
 
         if (options.baby
             && (!pokeCopy.evolveTo
-                || parseInt(pokeCopy.evolveTo, 10) > parseInt(dexNo, 10))) {
+                || parseInt(pokeCopy.evolveTo, 10) > dexNo)) {
             return null;
         }
 
@@ -129,8 +129,8 @@ export function validatePokemon(
         if (options.generations) {
             const allGens = data.getGenerations();
             if (!options.generations.some((gen) => {
-                return parseInt(dexNo, 10) >= allGens[gen].first
-                && parseInt(dexNo, 10) <= allGens[gen].last;
+                return dexNo >= allGens[gen].first
+                && dexNo <= allGens[gen].last;
             })) {
                 return null;
             }
