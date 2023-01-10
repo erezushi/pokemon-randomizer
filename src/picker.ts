@@ -65,7 +65,7 @@ export function getFilteredPokemon(options: types.Options) {
 
     Object.entries(allPokemon).forEach(([dexNo, poke]) => {
         const validated = validators.validatePokemon(
-            options, poke, dexNo.toString(), allTypes,
+            options, poke, parseInt(dexNo, 10), allTypes,
         );
 
         if (validated !== null) {
