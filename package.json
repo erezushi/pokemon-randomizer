@@ -12,7 +12,8 @@
     "prepack": "npm run build"
   },
   "files": [
-    "dist"
+    "dist",
+    "example"
   ],
   "keywords": [
     "pokemon",
