@@ -7331,11 +7331,11 @@
         "type": "normal",
         "forms": [
             {
-                "name": "Four",
+                "name": "Family-Of-Four",
                 "type": "normal"
             },
             {
-                "name": "Three",
+                "name": "Family-Of-Three",
                 "type": "normal"
             }
         ]
@@ -7368,7 +7368,25 @@
     "931": {
         "name": "Squawkabilly",
         "type": "normal flying",
-        "basic": true
+        "basic": true,
+        "forms": [
+            {
+                "name": "Green-Plumage",
+                "type": "normal flying"
+            },
+            {
+                "name": "Blue-Plumage",
+                "type": "normal flying"
+            },
+            {
+                "name": "Yellow-Plumage",
+                "type": "normal flying"
+            },
+            {
+                "name": "White-Plumage",
+                "type": "normal flying"
+            }
+        ]
     },
     "932": {
         "name": "Nacli",
