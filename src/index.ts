@@ -1,4 +1,4 @@
-import { pickRandomPokemon } from './picker';
+import pickRandomPokemon from './picker';
 
 export default pickRandomPokemon;
 export * from './types';

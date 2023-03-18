@@ -1,83 +1,86 @@
-import _ from 'lodash';
 import Chance from 'chance';
+import _ from 'lodash';
+
 import * as data from './data';
-import * as validators from './validators';
 import * as types from './types';
+import * as validators from './validators';
 
 const chance = new Chance();
 
-export function pickRandomPokemon(unsantizedOptions?: unknown) {
-    const result = pickRandomPokemonAndOptions(unsantizedOptions);
-    return result.pokemon;
-}
+const getRandomKey = (items: types.Pokemon[] | types.TypeMap) => {
+  const keys = Object.keys(items);
+  const numItems = keys.length;
+  const randomNum = chance.integer({ min: 0, max: numItems - 1 });
 
-function pickRandomPokemonAndOptions(unsanitizedOptions: unknown) {
-    const options = validators.validateOptions(unsanitizedOptions);
-    if (options && options.randomType === true && !options.type) {
-        const pokemonTypes = data.getTypes();
-        const randomType = getRandomKey(pokemonTypes) as types.PokemonType;
-        options.type = randomType;
+  return keys[randomNum];
+};
+
+const getFilteredPokemon = (options: types.Options) => {
+  const allPokemon = data.getPokemon();
+  const allTypes = data.getTypes();
+  const filteredPokemon: types.Pokemon[] = [];
+
+  Object.entries(allPokemon).forEach(([dexNo, poke]) => {
+    const validated = validators.validatePokemon(options, poke, parseInt(dexNo, 10), allTypes);
+
+    if (validated !== null) {
+      filteredPokemon.push(validated);
     }
+  });
 
-    const pokemonToPickFrom = getFilteredPokemon(options);
-    const pokemonKeys = Object.keys(pokemonToPickFrom);
-    const numPokemon = pokemonKeys.length;
+  if (filteredPokemon.length === 0) {
+    throw Error(`No Pokémon satisfy those options${
+      options.randomType ? `\nChosen type: ${options.type}` : ''
+    }`);
+  }
 
-    if (options.unique && numPokemon < options.number) {
-        throw Error(`only ${
-            numPokemon
-        } Pokémon satisf${
-            numPokemon === 1 ? 'ies' : 'y'
-        } those options${
-            options.randomType ? `\nChosen type: ${
-                options.type
-            }` : ''
-        }`);
-    }
+  return filteredPokemon;
+};
 
-    const chosenPokemon: types.Pokemon[] = [];
-    _.times(options.number, () => {
-        const randomIndex = parseInt(getRandomKey(pokemonToPickFrom), 10);
+const pickRandomPokemonAndOptions = (unsanitizedOptions: unknown) => {
+  const options = validators.validateOptions(unsanitizedOptions);
+  if (options && options.randomType === true && !options.type) {
+    const pokemonTypes = data.getTypes();
+    const randomType = getRandomKey(pokemonTypes) as types.PokemonType;
+    options.type = randomType;
+  }
 
-        const randomPokemon = options.unique
-            ? pokemonToPickFrom.splice(randomIndex, 1)[0]
-            : pokemonToPickFrom[randomIndex];
-        chosenPokemon.push(randomPokemon);
-    });
+  const pokemonToPickFrom = getFilteredPokemon(options);
+  const pokemonKeys = Object.keys(pokemonToPickFrom);
+  const numPokemon = pokemonKeys.length;
 
-    return {
-        pokemon: chosenPokemon,
-        options,
-    };
-}
+  if (options.unique && numPokemon < options.number) {
+    throw Error(`only ${
+      numPokemon
+    } Pokémon satisf${
+      numPokemon === 1 ? 'ies' : 'y'
+    } those options${
+      options.randomType ? `\nChosen type: ${
+        options.type
+      }` : ''
+    }`);
+  }
 
-function getRandomKey(items: types.Pokemon[] | types.TypeMap) {
-    const keys = Object.keys(items);
-    const numItems = keys.length;
-    const randomNum = chance.integer({ min: 0, max: numItems - 1 });
-    return keys[randomNum];
-}
+  const chosenPokemon: types.Pokemon[] = [];
+  _.times(options.number, () => {
+    const randomIndex = parseInt(getRandomKey(pokemonToPickFrom), 10);
 
-export function getFilteredPokemon(options: types.Options) {
-    const allPokemon = data.getPokemon();
-    const allTypes = data.getTypes();
-    const filteredPokemon: types.Pokemon[] = [];
+    const randomPokemon = options.unique
+      ? pokemonToPickFrom.splice(randomIndex, 1)[0]
+      : pokemonToPickFrom[randomIndex];
+    chosenPokemon.push(randomPokemon);
+  });
 
-    Object.entries(allPokemon).forEach(([dexNo, poke]) => {
-        const validated = validators.validatePokemon(
-            options, poke, parseInt(dexNo, 10), allTypes,
-        );
+  return {
+    pokemon: chosenPokemon,
+    options,
+  };
+};
 
-        if (validated !== null) {
-            filteredPokemon.push(validated);
-        }
-    });
+const pickRandomPokemon = (unsantizedOptions?: unknown) => {
+  const result = pickRandomPokemonAndOptions(unsantizedOptions);
 
-    if (filteredPokemon.length === 0) {
-        throw Error(`No Pokémon satisfy those options${
-            options.randomType ? `\nChosen type: ${options.type}` : ''
-        }`);
-    }
+  return result.pokemon;
+};
 
-    return filteredPokemon;
-}
+export default pickRandomPokemon;
