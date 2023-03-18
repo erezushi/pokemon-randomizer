@@ -7268,7 +7268,7 @@
     "915": {
         "name": "Lechonk",
         "type": "normal",
-        "evolveTo": "916-M 926-F",
+        "evolveTo": "916-M 916-F",
         "basic": true
     },
     "916": {
