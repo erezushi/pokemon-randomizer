@@ -1,0 +1,54 @@
+{
+    "extends": [
+        "airbnb-base",
+        "airbnb-typescript/base",
+        "plugin:promise/recommended",
+        "plugin:import/recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "plugins": [
+        "promise",
+        "import",
+        "@typescript-eslint"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "project": "./tsconfig.json"    
+    },
+    "env": {
+        "commonjs": true,
+        "node": true
+    },
+    "globals": {
+        "chance": true
+    },
+    "rules": {
+        // Generic rules
+        "arrow-parens": 1,
+        "linebreak-style": 0,
+        "max-len": ["warn", 100],
+        "newline-before-return": 2,
+        "no-debugger": 1,
+        "no-multiple-empty-lines": ["error", { "max": 1}],
+        "no-shadow": 0,
+        "no-unused-vars": 0,
+        "no-use-before-define": 0,
+        "object-curly-spacing": 0,
+        // @typescript-eslint
+        "@typescript-eslint/ban-ts-comment": 1,
+        "@typescript-eslint/no-explicit-any": 0,
+        "@typescript-eslint/no-non-null-assertion": 0,
+        "@typescript-eslint/no-shadow": 2,
+        "@typescript-eslint/no-unused-vars": 2,
+        "@typescript-eslint/no-use-before-define": 2,
+        "@typescript-eslint/object-curly-spacing": 2,
+        // import
+        "import/extensions": 0,
+        "import/no-unresolved": 0,
+        "import/order": ["warn", {
+            "groups": ["builtin", "external", "parent"],
+            "newlines-between": "always",
+            "alphabetize": { "order": "asc", "caseInsensitive": true }
+        }]
+    }
+}
