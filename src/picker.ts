@@ -77,8 +77,8 @@ const pickRandomPokemonAndOptions = (unsanitizedOptions: unknown) => {
   };
 };
 
-const pickRandomPokemon = (unsantizedOptions?: unknown) => {
-  const result = pickRandomPokemonAndOptions(unsantizedOptions);
+const pickRandomPokemon = (unsanitizedOptions?: unknown) => {
+  const result = pickRandomPokemonAndOptions(unsanitizedOptions);
 
   return result.pokemon;
 };

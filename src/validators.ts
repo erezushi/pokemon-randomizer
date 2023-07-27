@@ -30,7 +30,7 @@ const booleanValidator = (optionName: string, value: unknown) => {
     return (value as string).trim().toLowerCase() === 'true';
   }
 
-  throw Error(`Option ${optionName} must be a boolean. Received: ${value}`);
+  throw Error(`Option ${optionName} must be a boolean. Received: ${typeof value}`);
 };
 
 const positiveIntegerValidator = (optionName: string, value: unknown) => {
@@ -45,7 +45,7 @@ const positiveIntegerValidator = (optionName: string, value: unknown) => {
     return parsed;
   }
 
-  throw Error(`Option ${optionName} must be a positive integer. Received: ${value}`);
+  throw Error(`Option ${optionName} must be a positive integer. Received: ${typeof value}`);
 };
 
 const stringValidator = (optionName: string, value: unknown) => {
@@ -54,12 +54,12 @@ const stringValidator = (optionName: string, value: unknown) => {
   }
 
   if (_.isString(value)) {
-    const lower = (value as string).trim().toLowerCase();
+    const lower = value.trim().toLowerCase();
 
     return lower;
   }
 
-  throw Error(`Option ${optionName} must be a string. Received: ${value}`);
+  throw Error(`Option ${optionName} must be a string. Received: ${typeof value}`);
 };
 
 const typeValidator = (
@@ -77,7 +77,7 @@ const typeValidator = (
     return lowerCase as types.PokemonType;
   }
 
-  throw Error(`Option ${optionName} must be a valid type. Received: ${value}`);
+  throw Error(`Option ${optionName} must be a valid type. Received: ${typeof value}`);
 };
 
 const generationArrayValidator = (
@@ -99,13 +99,15 @@ const generationArrayValidator = (
     throw Error(
       `option ${
         optionName
-      } must be an array of existing generation numbers. Recieved: ${
-        value
+      } must be an array of existing generation numbers. Received: ${
+        typeof value
       }`,
     );
   }
 
-  throw Error(`option ${optionName} must be an array of generation numbers. Recieved: ${value}`);
+  throw Error(
+    `option ${optionName} must be an array of generation numbers. Received: ${typeof value}`,
+  );
 };
 
 const pokemonListValidator = (
@@ -126,7 +128,7 @@ const pokemonListValidator = (
     }
   }
 
-  throw Error(`option ${optionName} must be an array of Pokémon names. Received: ${value}`);
+  throw Error(`option ${optionName} must be an array of Pokémon names. Received: ${typeof value}`);
 };
 
 export const validateOptions = (options: unknown) => {
@@ -145,7 +147,7 @@ export const validateOptions = (options: unknown) => {
   sanitizedOptions.number = positiveIntegerValidator(
     'number',
     inputOptions?.number,
-  ) || DEFAULT_NUMBER;
+  ) ?? DEFAULT_NUMBER;
   sanitizedOptions.baby = booleanValidator('baby', inputOptions?.baby);
   sanitizedOptions.basic = booleanValidator('basic', inputOptions?.basic);
   sanitizedOptions.evolved = booleanValidator('evolved', inputOptions?.evolved);
@@ -221,7 +223,7 @@ export const validatePokemon = (
           return formTypes.includes(options.type!);
         });
       }
-      if (!pokeTypes.includes(options.type!)) {
+      if (!pokeTypes.includes(options.type)) {
         return null;
       }
     }
@@ -241,7 +243,7 @@ export const validatePokemon = (
       return null;
     }
 
-    if (options.legendary && !(pokeCopy.legendary || pokeCopy.mythical)) {
+    if (options.legendary && !pokeCopy.legendary && !pokeCopy.mythical) {
       return null;
     }
 
