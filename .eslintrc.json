@@ -4,7 +4,8 @@
         "airbnb-typescript/base",
         "plugin:promise/recommended",
         "plugin:import/recommended",
-        "plugin:@typescript-eslint/recommended"
+        "plugin:@typescript-eslint/recommended-type-checked",
+        "plugin:@typescript-eslint/stylistic-type-checked"
     ],
     "plugins": [
         "promise",
@@ -13,7 +14,7 @@
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
-        "project": "./tsconfig.json"    
+        "project": true    
     },
     "env": {
         "commonjs": true,
@@ -24,27 +25,25 @@
     },
     "rules": {
         // Generic rules
-        "arrow-parens": 1,
-        "linebreak-style": 0,
+        "arrow-parens": "warn",
+        "linebreak-style": "off",
         "max-len": ["warn", 100],
-        "newline-before-return": 2,
-        "no-debugger": 1,
+        "newline-before-return": "error",
+        "no-debugger": "warn",
         "no-multiple-empty-lines": ["error", { "max": 1}],
-        "no-shadow": 0,
-        "no-unused-vars": 0,
-        "no-use-before-define": 0,
-        "object-curly-spacing": 0,
+        "no-shadow": "off",
+        "no-unused-vars": "off",
+        "no-use-before-define": "off",
+        "object-curly-spacing": "off",
         // @typescript-eslint
-        "@typescript-eslint/ban-ts-comment": 1,
-        "@typescript-eslint/no-explicit-any": 0,
-        "@typescript-eslint/no-non-null-assertion": 0,
-        "@typescript-eslint/no-shadow": 2,
-        "@typescript-eslint/no-unused-vars": 2,
-        "@typescript-eslint/no-use-before-define": 2,
-        "@typescript-eslint/object-curly-spacing": 2,
+        "@typescript-eslint/ban-ts-comment": "warn",
+        "@typescript-eslint/no-shadow": "error",
+        "@typescript-eslint/no-unused-vars": "error",
+        "@typescript-eslint/no-use-before-define": "error",
+        "@typescript-eslint/object-curly-spacing": "error",
         // import
-        "import/extensions": 0,
-        "import/no-unresolved": 0,
+        "import/extensions": "off",
+        "import/no-unresolved": "off",
         "import/order": ["warn", {
             "groups": ["builtin", "external", "parent"],
             "newlines-between": "always",
