@@ -1,5 +1,5 @@
 {
-    "$schema": "http://json-schema.org/schema",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
     "title": "Generation List",
     "description": "The list of generations used by the randomizer",
     "type": "object",
