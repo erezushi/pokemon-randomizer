@@ -27,7 +27,10 @@
     "Erez Bracha"
   ],
   "license": "ISC",
-  "repository": "https://github.com/erezushi/pokemon-randomizer",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erezushi/pokemon-randomizer.git"
+  },
   "dependencies": {
     "chance": "^1.1.11",
     "lodash": "^4.17.21"
