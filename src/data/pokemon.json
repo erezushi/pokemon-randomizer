@@ -6625,7 +6625,7 @@
     "840": {
         "name": "Applin",
         "type": "grass dragon",
-        "evolveTo": "841 842",
+        "evolveTo": "841 842 1011",
         "basic": true
     },
     "841": {
@@ -7818,5 +7818,71 @@
         "type": "electric dragon",
         "legendary": true,
         "basic": true
+    },
+    "1009": {
+        "name": "Walking Wake",
+        "type": "water dragon",
+        "basic": true
+    },
+    "1010": {
+        "name": "Iron Leaves",
+        "type": "grass psychic",
+        "basic": true
+    },
+    "1011": {
+        "name": "Dipplin",
+        "type": "grass dragon"
+    },
+    "1012": {
+        "name": "Poltchageist",
+        "type": "grass ghost",
+        "evolveTo": "1013",
+        "basic": true
+    },
+    "1013": {
+        "name": "Sinistcha",
+        "type": "grass ghost"
+    },
+    "1014": {
+        "name": "Okidogi",
+        "type": "poison fighting",
+        "legendary": true,
+        "basic": true
+    },
+    "1015": {
+        "name": "Munkidori",
+        "type": "poison psychic",
+        "legendary": true,
+        "basic": true
+    },
+    "1016": {
+        "name": "Fezandipiti",
+        "type": "poison fairy",
+        "legendary": true,
+        "basic": true
+    },
+    "1017": {
+        "name": "Ogerpon",
+        "type": "grass",
+        "legendary": true,
+        "basic": true,
+        "forms": [
+            {
+                "name": "Teal Mask",
+                "type": "grass"
+            },
+            {
+                "name": "Hearthflame Mask",
+                "type": "grass fire"
+            },
+            {
+                "name": "Wellspring Mask",
+                "type": "grass water"
+            },
+            {
+                "name": "Cornerstone Mask",
+                "type": "grass rock"
+            }
+        ]
     }
 }
