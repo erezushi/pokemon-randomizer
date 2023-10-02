@@ -1,5 +1,5 @@
 {
-    "$schema": "http://json-schema.org/schema",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
     "title": "Pokemon list",
     "description": "The list of Pokémon used by the randomizer",
     "type": "object",

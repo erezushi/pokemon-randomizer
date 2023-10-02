@@ -1,7 +1,7 @@
 {
-    "$schema": "http://json-schema.org/schema",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
     "title": "Types list",
-    "description": "List of the Pokémon types and thier effectiveness against other types",
+    "description": "List of the Pokémon types and their effectiveness against other types",
     "type": "object",
     "required": [],
     "additionalProperties": {
