@@ -7171,7 +7171,16 @@
     },
     "901": {
         "name": "Ursaluna",
-        "type": "ground normal"
+        "type": "ground normal",
+        "forms": [{
+            "name": "default",
+            "type": "ground normal"
+            },
+            {
+                "name": "Bloodmoon",
+                "type": "ground normal"
+            }
+        ]
     },
     "902": {
         "name": "Basculegion",
