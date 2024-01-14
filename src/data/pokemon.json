@@ -6997,10 +6997,12 @@
         "name": "Duraludon",
         "type": "steel dragon",
         "basic": true,
+        "evolveTo": "1018",
         "forms": [
             {
                 "name": "default",
-                "type": "steel dragon"
+                "type": "steel dragon",
+                "evolveTo": "1018"
             },
             {
                 "name": "Gigantamax",
@@ -7840,7 +7842,8 @@
     },
     "1011": {
         "name": "Dipplin",
-        "type": "grass dragon"
+        "type": "grass dragon",
+        "evolveTo": "1019"
     },
     "1012": {
         "name": "Poltchageist",
@@ -7893,5 +7896,50 @@
                 "type": "grass rock"
             }
         ]
+    },
+    "1018": {
+        "name": "Archaludon",
+        "type": "steel dragon"
+    },
+    "1019": {
+        "name": "Hydrapple",
+        "type": "grass dragon"
+    },
+    "1020": {
+        "name": "Gouging Fire",
+        "type": "fire dragon",
+        "basic": true
+    },
+    "1021": {
+        "name": "Raging Bolt",
+        "type": "electric dragon",
+        "basic": true
+    },
+    "1022": {
+        "name": "Iron Boulder",
+        "type": "rock psychic",
+        "basic": true
+    },
+    "1023": {
+        "name": "Terapagos",
+        "type": "normal",
+        "legendary": true,
+        "basic": true,
+        "forms": [
+            {
+                "name": "default",
+                "type": "normal"
+            },
+            {
+                "name": "Terastal",
+                "type": "normal"
+            }
+        ]
+    },
+    "1024": {
+        "name": "Pecharunt",
+        "type": "poison ghost",
+        "mythical": true,
+        "basic": true
     }
 }
