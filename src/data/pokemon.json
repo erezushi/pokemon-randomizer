@@ -7921,6 +7921,11 @@
         "basic": true
     },
     "1023": {
+        "name": "Iron Crown",
+        "type": "steel psychic",
+        "basic": true
+    },
+    "1024": {
         "name": "Terapagos",
         "type": "normal",
         "legendary": true,
@@ -7936,7 +7941,7 @@
             }
         ]
     },
-    "1024": {
+    "1025": {
         "name": "Pecharunt",
         "type": "poison ghost",
         "mythical": true,
