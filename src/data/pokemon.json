@@ -7884,15 +7884,15 @@
                 "type": "grass"
             },
             {
-                "name": "Hearthflame Mask",
+                "name": "Hearthflame-Mask",
                 "type": "grass fire"
             },
             {
-                "name": "Wellspring Mask",
+                "name": "Wellspring-Mask",
                 "type": "grass water"
             },
             {
-                "name": "Cornerstone Mask",
+                "name": "Cornerstone-Mask",
                 "type": "grass rock"
             }
         ]
