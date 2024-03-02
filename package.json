@@ -44,7 +44,7 @@
     "depcheck": "^1.4.3",
     "eslint": "^8.57.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-airbnb-typescript": "^17.1.0",
+    "eslint-config-airbnb-typescript": "^18.0.0",
     "eslint-plugin-import": "^2.29.0",
     "eslint-plugin-promise": "^6.1.1",
     "typescript": "^5.3.2"
