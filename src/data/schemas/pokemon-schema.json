@@ -63,9 +63,10 @@
         "patternProperties": {
             "^_": {
                 "description": "ignored key",
-                "type": ["boolean", "number", "string"]
+                "type": ["boolean", "number", "string", "array"]
             }
         },
+        "additionalProperties": false,
         "required": ["name", "type"],
         "defaultSnippets": [
             {
