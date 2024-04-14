@@ -9,7 +9,7 @@
 
 This is a simple library to generate random teams of Pokémon.
 
-For an interactive UI based on this package, [click here](https://react-pokemon-generator.vercel.app/)
+For an interactive UI based on this package, [click here](https://generator.PokeErez.com/)
 
 **Table of Contents:**
 - [Options](#options)
