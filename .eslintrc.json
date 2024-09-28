@@ -1,5 +1,7 @@
 {
     "extends": [
+        "airbnb",
+        "airbnb/hooks",
         "airbnb-base",
         "airbnb-typescript/base",
         "plugin:promise/recommended",
