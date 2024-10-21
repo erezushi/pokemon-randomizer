@@ -62,10 +62,7 @@ const stringValidator = (optionName: string, value: unknown) => {
   throw Error(`Option ${optionName} must be a string. Received: ${typeof value}`);
 };
 
-const typeValidator = (
-  optionName: string,
-  value: unknown,
-): types.PokemonType | undefined => {
+const typeValidator = (optionName: string, value: unknown): types.PokemonType | undefined => {
   if (value === null || value === undefined) {
     return undefined;
   }
@@ -82,7 +79,7 @@ const typeValidator = (
 
 const generationArrayValidator = (
   optionName: string,
-  value: string[] | undefined | null,
+  value: string[] | undefined | null
 ): string[] | undefined => {
   if (value === null || value === undefined) {
     return undefined;
@@ -106,21 +103,21 @@ const generationArrayValidator = (
   }
 
   throw Error(
-    `option ${optionName} must be an array of generation numbers. Received: ${typeof value}`,
+    `option ${optionName} must be an array of generation numbers. Received: ${typeof value}`
   );
 };
 
 const pokemonListValidator = (
   optionName: string,
-  value: string[] | undefined | null,
+  value: string[] | undefined | null
 ): string[] | undefined => {
   if (value === null || value === undefined) {
     return undefined;
   }
 
   if (_.isArray(value)) {
-    const pokemonNameList = Object.values(data.getPokemon()).map(
-      (pokemon) => pokemon.name.toLowerCase(),
+    const pokemonNameList = Object.values(data.getPokemon()).map((pokemon) =>
+      pokemon.name.toLowerCase()
     );
 
     if (value.every((entryValue) => pokemonNameList.includes(entryValue.toLowerCase()))) {
@@ -144,10 +141,8 @@ export const validateOptions = (options: unknown) => {
     number: DEFAULT_NUMBER,
   };
 
-  sanitizedOptions.number = positiveIntegerValidator(
-    'number',
-    inputOptions?.number,
-  ) ?? DEFAULT_NUMBER;
+  sanitizedOptions.number =
+    positiveIntegerValidator('number', inputOptions?.number) ?? DEFAULT_NUMBER;
   sanitizedOptions.baby = booleanValidator('baby', inputOptions?.baby);
   sanitizedOptions.basic = booleanValidator('basic', inputOptions?.basic);
   sanitizedOptions.evolved = booleanValidator('evolved', inputOptions?.evolved);
@@ -159,10 +154,7 @@ export const validateOptions = (options: unknown) => {
   sanitizedOptions.legendary = booleanValidator('legendary', inputOptions?.legendary);
   sanitizedOptions.mythical = booleanValidator('mythical', inputOptions?.mythical);
   sanitizedOptions.forms = booleanValidator('forms', inputOptions?.forms);
-  sanitizedOptions.generations = generationArrayValidator(
-    'generations',
-    inputOptions?.generations,
-  );
+  sanitizedOptions.generations = generationArrayValidator('generations', inputOptions?.generations);
   sanitizedOptions.customList = pokemonListValidator('customList', inputOptions?.customList);
 
   return sanitizedOptions;
@@ -172,7 +164,7 @@ export const validatePokemon = (
   options: types.Options,
   poke: types.ListPokemon,
   dexNo: number,
-  allTypes: types.TypeMap,
+  allTypes: types.TypeMap
 ): types.Pokemon | null => {
   const pokeCopy: types.ListPokemon = { ...poke };
   if (options) {
@@ -186,9 +178,7 @@ export const validatePokemon = (
         : null;
     }
 
-    if (options.baby
-            && (!pokeCopy.evolveTo
-                || parseInt(pokeCopy.evolveTo, 10) > dexNo)) {
+    if (options.baby && (!pokeCopy.evolveTo || parseInt(pokeCopy.evolveTo, 10) > dexNo)) {
       return null;
     }
 
@@ -208,8 +198,8 @@ export const validatePokemon = (
     if (options.type) {
       if (options.forms && pokeCopy.forms) {
         let allMonTypes = pokeTypes;
-        pokeCopy.forms.forEach(
-          (form) => allMonTypes.push(...form.type.split(' ') as types.PokemonType[]),
+        pokeCopy.forms.forEach((form) =>
+          allMonTypes.push(...(form.type.split(' ') as types.PokemonType[]))
         );
         allMonTypes = _.uniq(allMonTypes);
 
@@ -253,8 +243,11 @@ export const validatePokemon = (
 
     if (options.generations) {
       const allGens = data.getGenerations();
-      if (!options.generations.some((gen) => dexNo >= allGens[gen].first
-                && dexNo <= allGens[gen].last)) {
+      if (
+        !options.generations.some(
+          (gen) => dexNo >= allGens[gen].first && dexNo <= allGens[gen].last
+        )
+      ) {
         return null;
       }
     }
