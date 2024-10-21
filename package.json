@@ -1,6 +1,6 @@
 {
   "name": "@erezushi/pokemon-randomizer",
-  "version": "1.13.6",
+  "version": "1.14.0",
   "description": "Library to pick random teams of Pokémon, updated to Scarlet & Violet",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
