@@ -1,7 +1,7 @@
 {
   "name": "@erezushi/pokemon-randomizer",
   "version": "1.14.0",
-  "description": "Library to pick random teams of Pokémon, updated to Scarlet & Violet",
+  "description": "Library to pick random teams of Pokémon, updated to Legends: Z-A",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -19,8 +19,8 @@
     "pokemon",
     "random",
     "list",
-    "sv",
-    "scarletviolet"
+    "plza",
+    "legendsza"
   ],
   "author": "Dylan Stankievech",
   "contributors": [
@@ -33,23 +33,23 @@
   },
   "homepage": "https://generator.PokeErez.com/",
   "dependencies": {
-    "chance": "^1.1.12",
+    "chance": "^1.1.13",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "@eslint/compat": "^1.2.1",
-    "@eslint/eslintrc": "^3.1.0",
-    "@eslint/js": "^9.13.0",
-    "@stylistic/eslint-plugin": "^2.9.0",
-    "@types/chance": "^1.1.6",
-    "@types/lodash": "^4.17.10",
-    "@typescript-eslint/eslint-plugin": "^8.10.0",
-    "@typescript-eslint/parser": "^8.10.0",
+    "@eslint/compat": "^2.0.0",
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.36.0",
+    "@stylistic/eslint-plugin": "^5.6.1",
+    "@types/chance": "^1.1.7",
+    "@types/lodash": "^4.17.19",
+    "@typescript-eslint/eslint-plugin": "^8.47.0",
+    "@typescript-eslint/parser": "^8.47.0",
     "depcheck": "^1.4.7",
-    "eslint": "^9.13.0",
-    "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-promise": "^7.1.0",
-    "globals": "^15.11.0",
-    "typescript": "^5.6.2"
+    "eslint": "^9.39.0",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-promise": "^7.2.1",
+    "globals": "^16.5.0",
+    "typescript": "^5.9.2"
   }
 }
