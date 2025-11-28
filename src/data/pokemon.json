@@ -328,7 +328,17 @@
     },
     "36": {
         "name": "Clefable",
-        "type": "fairy"
+        "type": "fairy",
+        "forms": [
+            {
+                "name": "default",
+                "type": "fairy"
+            },
+            {
+                "name": "Mega",
+                "type": "fairy flying"
+            }
+        ]
     },
     "37": {
         "name": "Vulpix",
@@ -622,7 +632,17 @@
     },
     "71": {
         "name": "Victreebel",
-        "type": "grass poison"
+        "type": "grass poison",
+        "forms": [
+            {
+                "name": "default",
+                "type": "grass poison"
+            },
+            {
+                "name": "Mega",
+                "type": "grass poison"
+            }
+        ]
     },
     "72": {
         "name": "Tentacool",
@@ -1080,7 +1100,17 @@
     },
     "121": {
         "name": "Starmie",
-        "type": "water psychic"
+        "type": "water psychic",
+        "forms": [
+            {
+                "name": "default",
+                "type": "water psychic"
+            },
+            {
+                "name": "Mega",
+                "type": "water psychic"
+            }
+        ]
     },
     "122": {
         "name": "Mr. Mime",
@@ -1345,7 +1375,17 @@
     },
     "149": {
         "name": "Dragonite",
-        "type": "dragon flying"
+        "type": "dragon flying",
+        "forms": [
+            {
+                "name": "default",
+                "type": "dragon flying"
+            },
+            {
+                "name": "Mega",
+                "type": "dragon flying"
+            }
+        ]
     },
     "150": {
         "name": "Mewtwo",
@@ -1389,7 +1429,17 @@
     "154": {
         "name": "Meganium",
         "type": "grass",
-        "starter": true
+        "starter": true,
+        "forms": [
+            {
+                "name": "default",
+                "type": "grass"
+            },
+            {
+                "name": "Mega",
+                "type": "grass fairy"
+            }
+        ]
     },
     "155": {
         "name": "Cyndaquil",
@@ -1435,7 +1485,17 @@
     "160": {
         "name": "Feraligatr",
         "type": "water",
-        "starter": true
+        "starter": true,
+        "forms": [
+            {
+                "name": "default",
+                "type": "water"
+            },
+            {
+                "name": "Mega",
+                "type": "water dragon"
+            }
+        ]
     },
     "161": {
         "name": "Sentret",
@@ -1983,7 +2043,17 @@
     "227": {
         "name": "Skarmory",
         "type": "steel flying",
-        "basic": true
+        "basic": true,
+        "forms": [
+            {
+                "name": "default",
+                "type": "steel flying"
+            },
+            {
+                "name": "Mega",
+                "type": "steel flying"
+            }
+        ]
     },
     "228": {
         "name": "Houndour",
@@ -3660,7 +3730,17 @@
     },
     "478": {
         "name": "Froslass",
-        "type": "ice ghost"
+        "type": "ice ghost",
+        "forms": [
+            {
+                "name": "default",
+                "type": "ice ghost"
+            },
+            {
+                "name": "Mega",
+                "type": "ice ghost"
+            }
+        ]
     },
     "479": {
         "name": "Rotom",
@@ -3931,7 +4011,17 @@
     "500": {
         "name": "Emboar",
         "type": "fire fighting",
-        "starter": true
+        "starter": true,
+        "forms": [
+            {
+                "name": "default",
+                "type": "fire fighting"
+            },
+            {
+                "name": "Mega",
+                "type": "fire, fighting"
+            }
+        ]
     },
     "501": {
         "name": "Oshawott",
@@ -4104,7 +4194,17 @@
     },
     "530": {
         "name": "Excadrill",
-        "type": "ground steel"
+        "type": "ground steel",
+        "forms": [
+            {
+                "name": "default",
+                "type": "ground steel"
+            },
+            {
+                "name": "default",
+                "type": "ground steel"
+            }
+        ]
     },
     "531": {
         "name": "Audino",
@@ -4189,7 +4289,17 @@
     },
     "545": {
         "name": "Scolipede",
-        "type": "bug poison"
+        "type": "bug poison",
+        "forms": [
+            {
+                "name": "default",
+                "type": "bug poison"
+            },
+            {
+                "name": "Mega",
+                "type": "bug poison"
+            }
+        ]
     },
     "546": {
         "name": "Cottonee",
@@ -4319,7 +4429,17 @@
     },
     "560": {
         "name": "Scrafty",
-        "type": "dark fighting"
+        "type": "dark fighting",
+        "forms": [
+            {
+                "name": "default",
+                "type": "dark fighting"
+            },
+            {
+                "name": "Mega",
+                "type": "dark fighting"
+            }
+        ]
     },
     "561": {
         "name": "Sigilyph",
@@ -4645,7 +4765,17 @@
     },
     "604": {
         "name": "Eelektross",
-        "type": "electric"
+        "type": "electric",
+        "forms": [
+            {
+                "name": "default",
+                "type": "electric"
+            },
+            {
+                "name": "Mega",
+                "type": "electric"
+            }
+        ]
     },
     "605": {
         "name": "Elgyem",
@@ -4670,7 +4800,17 @@
     },
     "609": {
         "name": "Chandelure",
-        "type": "ghost fire"
+        "type": "ghost fire",
+        "forms": [
+            {
+                "name": "default",
+                "type": "ghost fire"
+            },
+            {
+                "name": "Mega",
+                "type": "ghost fire"
+            }
+        ]
     },
     "610": {
         "name": "Axew",
@@ -5007,7 +5147,17 @@
     "652": {
         "name": "Chesnaught",
         "type": "grass fighting",
-        "starter": true
+        "starter": true,
+        "forms": [
+            {
+                "name": "default",
+                "type": "grass fighting" 
+            },
+            {
+                "name": "Mega",
+                "type": "grass fighting"
+            }
+        ]
     },
     "653": {
         "name": "Fennekin",
@@ -5025,7 +5175,17 @@
     "655": {
         "name": "Delphox",
         "type": "fire psychic",
-        "starter": true
+        "starter": true,
+        "forms": [
+            {
+                "name": "default",
+                "type": "fire psychic"
+            },
+            {
+                "name": "Mega",
+                "type": "fire psychic"
+            }
+        ]
     },
     "656": {
         "name": "Froakie",
@@ -5051,6 +5211,10 @@
             },
             {
                 "name": "Ash",
+                "type": "water dark"
+            },
+            {
+                "name": "Mega",
                 "type": "water dark"
             }
         ]
@@ -5194,6 +5358,10 @@
             {
                 "name": "F",
                 "type": "fire normal"
+            },
+            {
+                "name": "Mega",
+                "type": "fire normal"
             }
         ]
     },
@@ -5259,6 +5427,14 @@
                 "name": "Yellow",
                 "type": "fairy",
                 "evolveTo": "671-Yellow"
+            },
+            {
+                "name": "Eternal",
+                "type": "fairy"
+            },
+            {
+                "name": "Mega",
+                "type": "fairy"
             }
         ]
     },
@@ -5428,7 +5604,17 @@
     },
     "687": {
         "name": "Malamar",
-        "type": "dark psychic"
+        "type": "dark psychic",
+        "forms": [
+            {
+                "name": "default",
+                "type": "dark psychic"
+            },
+            {
+                "name": "Mega",
+                "type": "dark psychic"
+            }
+        ]
     },
     "688": {
         "name": "Binacle",
@@ -5438,7 +5624,17 @@
     },
     "689": {
         "name": "Barbaracle",
-        "type": "rock water"
+        "type": "rock water",
+        "forms": [
+            {
+                "name": "default",
+                "type": "rock water"
+            },
+            {
+                "name": "Mega",
+                "type": "rock fighting"
+            }
+        ]
     },
     "690": {
         "name": "Skrelp",
@@ -5448,7 +5644,17 @@
     },
     "691": {
         "name": "Dragalge",
-        "type": "poison dragon"
+        "type": "poison dragon",
+        "forms": [
+            {
+                "name": "default",
+                "type": "poison dragon"
+            },
+            {
+                "name": "Mega",
+                "type": "poison dragon"
+            }
+        ]
     },
     "692": {
         "name": "Clauncher",
@@ -5497,7 +5703,17 @@
     "701": {
         "name": "Hawlucha",
         "type": "fighting flying",
-        "basic": true
+        "basic": true,
+        "forms": [
+            {
+                "name": "default",
+                "type": "fighting flying"
+            },
+            {
+                "name": "Mega",
+                "type": "fighting flying"
+            }
+        ]
     },
     "702": {
         "name": "Dedenne",
@@ -5679,6 +5895,10 @@
             },
             {
                 "name": "Complete",
+                "type": "dragon ground"
+            },
+            {
+                "name": "Mega",
                 "type": "dragon ground"
             }
         ]
@@ -6195,7 +6415,17 @@
     "780": {
         "name": "Drampa",
         "type": "normal dragon",
-        "basic": true
+        "basic": true,
+        "forms": [
+            {
+                "name": "default",
+                "type": "normal dragon"
+            },
+            {
+                "name": "Mega",
+                "type": "normal dragon"
+            }
+        ]
     },
     "781": {
         "name": "Dhelmise",
@@ -6886,7 +7116,17 @@
     "870": {
         "name": "Falinks",
         "type": "fighting",
-        "basic": true
+        "basic": true,
+        "forms": [
+            {
+                "name": "default",
+                "type": "fighting"
+            },
+            {
+                "name": "Mega",
+                "type": "fighting"
+            }
+        ]
     },
     "871": {
         "name": "Pincurchin",
