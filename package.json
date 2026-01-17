@@ -1,6 +1,6 @@
 {
   "name": "@erezushi/pokemon-randomizer",
-  "version": "1.15.2",
+  "version": "1.16.0",
   "description": "Library to pick random teams of Pokémon, updated to Legends: Z-A",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
