@@ -255,6 +255,14 @@
             {
                 "name": "Alolan",
                 "type": "electric psychic"
+            },
+            {
+                "name": "Mega-X",
+                "type": "electric"
+            },
+            {
+                "name": "Mega-Y",
+                "type": "electric"
             }
         ]
     },
@@ -2914,7 +2922,17 @@
     "358": {
         "name": "Chimecho",
         "type": "psychic",
-        "basic": true
+        "basic": true,
+        "forms": [
+            {
+                "name": "default",
+                "type": "psychic"
+            },
+            {
+                "name": "Mega",
+                "type": "psychic steel"
+            }
+        ]
     },
     "359": {
         "name": "Absol",
@@ -2928,6 +2946,10 @@
             {
                 "name": "Mega",
                 "type": "dark"
+            },
+            {
+                "name": "Mega-Z",
+                "type": "dark ghost"
             }
         ]
     },
@@ -3240,7 +3262,17 @@
     },
     "398": {
         "name": "Staraptor",
-        "type": "normal flying"
+        "type": "normal flying",
+        "forms": [
+            {
+                "name": "default",
+                "type": "normal flying"
+            },
+            {
+                "name": "Mega",
+                "type": "fighting flying"
+            }
+        ]
     },
     "399": {
         "name": "Bidoof",
@@ -3552,6 +3584,10 @@
             {
                 "name": "Mega",
                 "type": "dragon ground"
+            },
+            {
+                "name": "Mega-Z",
+                "type": "dragon"
             }
         ]
     },
@@ -3576,6 +3612,10 @@
             },
             {
                 "name": "Mega",
+                "type": "fighting steel"
+            },
+            {
+                "name": "Mega-Z",
                 "type": "fighting steel"
             }
         ]
@@ -3827,7 +3867,17 @@
         "name": "Heatran",
         "type": "fire steel",
         "legendary": true,
-        "basic": true
+        "basic": true,
+        "forms": [
+            {
+                "name": "default",
+                "type": "fire steel"
+            },
+            {
+                "name": "Mega",
+                "type": "fire steel"
+            }
+        ]
     },
     "486": {
         "name": "Regigigas",
@@ -3873,7 +3923,17 @@
         "name": "Darkrai",
         "type": "dark",
         "mythical": true,
-        "basic": true
+        "basic": true,
+        "forms": [
+            {
+                "name": "default",
+                "type": "dark"
+            },
+            {
+                "name": "Mega",
+                "type": "dark"
+            }
+        ]
     },
     "492": {
         "name": "Shaymin",
@@ -4890,7 +4950,17 @@
     },
     "623": {
         "name": "Golurk",
-        "type": "ground ghost"
+        "type": "ground ghost",
+        "forms": [
+            {
+                "name": "default",
+                "type": "ground ghost"
+            },
+            {
+                "name": "Mega",
+                "type": "ground ghost"
+            }
+        ]
     },
     "624": {
         "name": "Pawniard",
@@ -5151,7 +5221,7 @@
         "forms": [
             {
                 "name": "default",
-                "type": "grass fighting" 
+                "type": "grass fighting"
             },
             {
                 "name": "Mega",
@@ -5547,6 +5617,10 @@
             },
             {
                 "name": "F",
+                "type": "psychic"
+            },
+            {
+                "name": "Mega",
                 "type": "psychic"
             }
         ]
@@ -5958,7 +6032,7 @@
         "name": "Decidueye",
         "type": "grass ghost",
         "starter": true,
-        "forms":[
+        "forms": [
             {
                 "name": "default",
                 "type": "grass ghost"
@@ -6053,7 +6127,17 @@
     },
     "740": {
         "name": "Crabominable",
-        "type": "fighting ice"
+        "type": "fighting ice",
+        "forms": [
+            {
+                "name": "default",
+                "type": "fighting ice"
+            },
+            {
+                "name": "Mega",
+                "type": "fighting ice"
+            }
+        ]
     },
     "741": {
         "name": "Oricorio",
@@ -6235,7 +6319,17 @@
     },
     "768": {
         "name": "Golisopod",
-        "type": "bug water"
+        "type": "bug water",
+        "forms": [
+            {
+                "name": "default",
+                "type": "bug water"
+            },
+            {
+                "name": "Mega",
+                "type": "bug steel"
+            }
+        ]
     },
     "769": {
         "name": "Sandygast",
@@ -6566,6 +6660,14 @@
             {
                 "name": "Original",
                 "type": "steel fairy"
+            },
+            {
+                "name": "Mega",
+                "type": "steel fairy"
+            },
+            {
+                "name": "Mega-Original",
+                "type": "steel fairy"
             }
         ]
     },
@@ -6599,7 +6701,17 @@
         "name": "Zeraora",
         "type": "electric",
         "mythical": true,
-        "basic": true
+        "basic": true,
+        "forms": [
+            {
+                "name": "default",
+                "type": "electric"
+            },
+            {
+                "name": "Mega",
+                "type": "electric"
+            }
+        ]
     },
     "808": {
         "name": "Meltan",
@@ -7414,9 +7526,10 @@
     "901": {
         "name": "Ursaluna",
         "type": "ground normal",
-        "forms": [{
-            "name": "default",
-            "type": "ground normal"
+        "forms": [
+            {
+                "name": "default",
+                "type": "ground normal"
             },
             {
                 "name": "Bloodmoon",
@@ -7741,7 +7854,17 @@
     },
     "952": {
         "name": "Scovillain",
-        "type": "grass fire"
+        "type": "grass fire",
+        "forms": [
+            {
+                "name": "default",
+                "type": "grass fire"
+            },
+            {
+                "name": "Mega",
+                "type": "grass fire"
+            }
+        ]
     },
     "953": {
         "name": "Rellor",
@@ -7841,7 +7964,17 @@
     },
     "970": {
         "name": "Glimmora",
-        "type": "rock poison"
+        "type": "rock poison",
+        "forms": [
+            {
+                "name": "default",
+                "type": "rock poison"
+            },
+            {
+                "name": "Mega",
+                "type": "rock poison"
+            }
+        ]
     },
     "971": {
         "name": "Greavard",
@@ -7893,6 +8026,18 @@
             },
             {
                 "name": "Stretchy",
+                "type": "dragon water"
+            },
+            {
+                "name": "Mega-Curly",
+                "type": "dragon water"
+            },
+            {
+                "name": "Mega-Droopy",
+                "type": "dragon water"
+            },
+            {
+                "name": "Mega-Stretchy",
                 "type": "dragon water"
             }
         ]
@@ -8000,7 +8145,17 @@
     },
     "998": {
         "name": "Baxcalibur",
-        "type": "dragon ice"
+        "type": "dragon ice",
+        "forms": [
+            {
+                "name": "default",
+                "type": "dragon ice"
+            },
+            {
+                "name": "Mega",
+                "type": "dragon ice"
+            }
+        ]
     },
     "999": {
         "name": "Gimmighoul",
