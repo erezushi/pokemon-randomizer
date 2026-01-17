@@ -1,6 +1,5 @@
 # Pokémon Randomizer - By Dylan Stankievech
 
-[![Try @erezushi/pokemon-randomizer on RunKit](https://badge.runkitcdn.com/@erezushi/pokemon-randomizer.svg)](https://npm.runkit.com/@erezushi/pokemon-randomizer)
 ![NPM](https://img.shields.io/npm/l/@erezushi/pokemon-randomizer?style=plastic)
 ![npm bundle size (scoped)](https://img.shields.io/bundlephobia/min/@erezushi/pokemon-randomizer?color=brightgreen&label=size&style=plastic)
 ![Libraries.io dependency status for latest release](https://img.shields.io/librariesio/release/npm/@erezushi/pokemon-randomizer?style=plastic)
