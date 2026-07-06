@@ -41,7 +41,7 @@ const getFilteredPokemon = (options: types.Options) => {
 
 const pickRandomPokemonAndOptions = (unsanitizedOptions: unknown) => {
   const options = validators.validateOptions(unsanitizedOptions);
-  if (options && options.randomType === true && !options.type) {
+  if (options?.randomType === true && !options.type) {
     const pokemonTypes = data.getTypes();
     const randomType = getRandomKey(pokemonTypes) as types.PokemonType;
     options.type = randomType;

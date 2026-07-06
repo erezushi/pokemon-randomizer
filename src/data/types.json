@@ -45,7 +45,7 @@
         "superEffective": "bug grass ice steel",
         "notEffective": "dragon fire rock water",
         "vulnerable": "ground rock water",
-        "resists": "bug fire grass ice steel",
+        "resists": "bug fairy fire grass ice steel",
         "immune": ""
     },
     "flying": {
@@ -94,7 +94,7 @@
         "superEffective": "fairy grass",
         "notEffective": "ghost ground poison rock steel",
         "vulnerable": "ground psychic",
-        "resists": "fairy fighting grass poison",
+        "resists": "bug fairy fighting grass poison",
         "immune": ""
     },
     "psychic": {
