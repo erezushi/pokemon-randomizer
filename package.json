@@ -45,7 +45,7 @@
     "@types/lodash": "^4.17.24",
     "@types/node": "^26.2.0",
     "@typescript-eslint/eslint-plugin": "^8.66.0",
-    "@typescript-eslint/parser": "^8.62.1",
+    "@typescript-eslint/parser": "^8.67.0",
     "depcheck": "^1.4.7",
     "eslint": "^10.6.0",
     "globals": "^17.10.0",
